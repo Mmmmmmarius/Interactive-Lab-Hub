@@ -4,7 +4,9 @@ _This project is to be done in teams of 2._
 
 **NAME OF BOTH COLLABORATOR(S) HERE**
 
-**THE MASTERWORK YOU DREW FROM THE HAT:**
+**THE MASTERWORK YOU DREW FROM THE HAT:** Clavilux, by Thomas Wilfred
+
+**Source document:** [Lab 1a.pdf](Lab%201a.pdf)
 
 ---
 
@@ -89,8 +91,21 @@ the interaction*:
 
   Sometimes the details of how the interaction worked are lost in history. Try filling it in with your imagination!
 
-**Describe your masterwork here, in your own words. What is the core interaction
-someone would recognize it by?**
+### Research: Clavilux
+
+The Clavilux, invented by Thomas Wilfred in the early 20th century, is a performable instrument that generates *lumia*, a form of visual light art. It projects light onto a screen using glass discs, lenses, and motorized reflectors to create shifting shapes and colours. Its name comes from Latin and means "light played by key" (Wiki, as cited in the source PDF).
+
+**What inputs are available to the user? What responses does the work give?**
+
+The original model described in our research does not allow interaction between viewers and the installation: viewers can only watch predetermined patterns of lumia. Later versions allow interaction between the user and the device.
+
+**Who is present, and how does the piece colour the relationships between them?**
+
+The device and its viewers are present, generally an individual or a few people depending on the scale of the device. The relationship between the installation and the viewer depends on the possibility of interaction, since some models cannot be interacted with.
+
+**What is the piece famous for? What are its strengths and its weaknesses?**
+
+Clavilux offers an instrumental way of displaying lumia. The work and its inventor, Thomas Wilfred, demonstrate an avant-garde art form that influences people's understanding of what art can be and how it can be created.
 
 ## Part A. Plan
 
@@ -103,14 +118,56 @@ For your masterwork, reconstruct the interaction as a scene:
 - **Activity:** What is happening between the players and the light?
 - **Goals:** What is each player trying to do?
 
-**Describe your setting, players, activity, and goals here.**
+### Design concept
+
+In these performances, light was the medium of expression. This led us to consider how light can communicate intention and affect emotions. Our proposed device explores this idea through an interactive process that reads the user's facial expressions and physical actions to generate different themes of shapes and colours, with the aim of influencing their mood. The device also changes colour based on the weather and time, providing users with a clear visual interpretation of their surroundings.
+
+In our design, light serves two main purposes: it creates a congenial atmosphere to influence emotion, and it acts as an effective medium of communication.
+
+- **Setting:** The interaction takes place inside an individual's living space, in an area intended for relaxation and mindfulness.
+- **Players:** The main players are the occupant and the lighting device. Friends and family may occasionally visit, but the general interaction process remains the same. When multiple faces are recognised, the proposed device changes its behaviour based on an algorithm that identifies scenarios such as a party, family dining, or a late-night conversation.
+- **Activity:** The device would automatically collect, analyse, and react to inputs including facial expressions, body posture, sound, season, and other relevant memories. It would generate corresponding lumia to support mindfulness, altering illumination, pace, and colour while providing a clear visual interpretation of the surroundings.
+- **Goals:** The device aims to create a congenial atmosphere that gives the occupant a sense of belonging and comfort. It also serves as a medium of communication, helping users understand their surroundings through light.
 
 Now **sketch a 3 storyboards** of the interaction you are recreating. (The number may depend on the thing you drew, but stretch your thinking!) They
 don't need to be beautiful, but they must capture and communicate not only the behavior of the light, but how it affects
 and the people around it. If you're new to storyboarding, read
 [this explanation](https://www.nngroup.com/articles/storyboards-visualize-ideas/).
 
-**Include pictures of your storyboards here.**
+### Storyboards
+
+#### 1. Responding to environmental input
+
+![Three storyboard panels showing lights off, lights matching television colours, and lighting responding to different television content.](images/lab-1a-environmental-input.png)
+
+1. Surrounding lights are off when there is no environmental input.
+2. The lights may react to environmental input, such as the colour theme of the television content.
+3. The lighting device may also respond to the type of television content, such as music, a podcast, or wallpaper, and act accordingly.
+
+#### 2. Responding to body gestures
+
+![Three storyboard panels showing a bedside light switched on, switched off when the occupant sleeps, and providing light when the occupant gets up at night.](images/lab-1a-body-gestures.png)
+
+1. Lighting devices can be turned on or off at any time with a physical switch.
+2. They may also react automatically to body gesture recognition. For example, when the device notices someone trying to sleep, it may turn off.
+3. The response may change with context. If someone gets up in the middle of the night, the device may provide appropriate illumination for their purpose, such as going to the restroom.
+
+#### 3. Responding to behaviour
+
+![Three storyboard panels showing a person entering a room, sitting down to read, and receiving coordinated ambient and reading light.](images/lab-1a-behaviour.png)
+
+1. Lighting devices may serve different purposes according to the participant's intentions and behaviour. They can provide general illumination while someone navigates the space.
+2. If the person starts another activity, such as reading, the system may recognise that behaviour and communicate it to the lighting devices.
+3. The devices may then coordinate adjustments to colour and brightness to better fulfil the needs of the activity.
+
+#### 4. Responding to weather
+
+![Four storyboard panels showing a cloudy morning, a user waking up, a device displaying shapes and colours based on the weather and time, and the user interpreting the light as slightly cloudy weather.](images/lab-1a-weather.png)
+
+1. It is a cloudy morning.
+2. The user wakes up and wonders what the weather is like.
+3. The device detects that the user is awake and displays different shapes and colours based on the weather and time.
+4. The user sees the lighting and understands that it is slightly cloudy.
 
 Use the storyboards to decide what interaction to prototype.
 
