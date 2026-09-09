@@ -255,7 +255,16 @@ guess the masterwork and the goals of the characters, and ask about anything tha
 wasn't clear.
 
 **Who were the other groups you kibitzed with? Add links to their project pages here.**
+
+- Group 1 [Pepper's Ghost by Xie Li](https://github.com/mc3223/Peppers-Ghost/blob/Fall2026/Lab%201/README.md)
+- Group 2 [GLOWORM by Hong Yuan Cao](https://github.com/hongyuanc/Interactive-Lab-Hub)
+- Group 3 [Philips Hue by Shenye Wang](https://github.com/sw2486-hub/Interactive-Lab-Hub/blob/Fall2026/Lab%201/README.md)
+
 **Summarize the feedback you got from your partners here.**
+
+The feedbacks we received includes various comments from different aspect of the project. The major comments includes its practicality and a modern adaptation towards the original installations. People really like how in theory, the device may be used and accompanied with users during various use cases. On the other hand, we do received suggestions on possible deeper adaptations on the combination of lights and illuminations, as some think the original piece really emphasize on the interaction between different light sources.
+
+Overall, we do believe having the ability to includes even more ways to enjoy and interact with the device is our ultimate target, if the capability allows us to achieve such envision.
 
 ## Remix, Update, or Critique the Master
 
