@@ -211,6 +211,8 @@ video feed of whichever scene you want to capture.)
 
 **Include your first attempts at recording the wizarded set-up here.**
 
+[Wizard_the_device.mp4](Wizard_the_device.mp4)
+
 ## Part E. (optional) Costume the Device
 
 Only now should you worry about what the device looks like. Costume your phone so it reads
