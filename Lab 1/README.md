@@ -287,6 +287,35 @@ your response engages with what your master was really doing.
 **Document everything here — especially the storyboard and video. Photos of the
 prototype are great too.**
 
+### Remix Plan: Clavilux Mood Dial
+
+I really liked the results of our previous attempt, especially how the lighting supported different everyday activities. My remix would build on that experience by adding a control unit that lets users express how they feel and guide the atmosphere around them.
+
+This follows the spirit of the home Clavilux instruments, whose exterior knobs allowed viewers to manipulate the light compositions. [Cleveland Museum of Art](https://www.clevelandart.org/art/2000.129)
+
+I envision a circular terminal inspired by Google’s Nest controls, with a glossy glass face and a smooth rotary ring. It should feel like a carefully crafted object that people enjoy touching. Pressing the face would switch between two settings, while turning the ring would adjust the selected value:
+
+- **Brightness, 0–100%:** controls the overall illumination.
+- **Energy, 0–100:** lets users indicate how energised they feel.
+
+The system would combine the energy setting with activity cues to coordinate colours, movement, and interactions between light sources. Initial settings to explore would include:
+
+| Energy | Proposed lighting response |
+|---|---|
+| 15: Rest | Warm colours and gentle, nearly still patterns |
+| 50: Everyday | Balanced colour blends and slow movement |
+| 85: Social | Richer colours and more active, coordinated patterns |
+
+Brightness would remain independent, allowing an energetic atmosphere at a comfortable light level. Changes would transition gradually.
+
+For the next prototype, I would use a cardboard rotary controller and a phone display, with a hidden operator controlling the lights through Tinkerbelle. I would test both adjustments separately, gather feedback on the controls and lighting responses, then refine the storyboard and record the interaction.
+
+### Concept Sketch
+
+![Clavilux Mood Dial concept sketch showing the rotary controller, brightness and energy settings, and three proposed lighting scenes.](images/clavilux-mood-dial-concept.png)
+
+*Concept sketch for the proposed Clavilux Mood Dial.*
+
 ---
 
 
