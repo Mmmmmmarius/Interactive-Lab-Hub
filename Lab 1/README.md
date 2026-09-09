@@ -289,7 +289,7 @@ prototype are great too.**
 
 ### Remix Plan: Clavilux Mood Dial
 
-I really liked the results of our previous attempt, especially how the lighting supported different everyday activities. My remix would build on that experience by adding a control unit that lets users express how they feel and guide the atmosphere around them.
+I really liked the results of our previous attempt, especially how the lighting supported different everyday activities. My remix would build on that experience by adding a control unit that lets users express how they feel and guide the atmosphere around them just like how later model of the Clavilux enables audiances' ability to control the result.
 
 This follows the spirit of the home Clavilux instruments, whose exterior knobs allowed viewers to manipulate the light compositions. [Cleveland Museum of Art](https://www.clevelandart.org/art/2000.129)
 
@@ -308,13 +308,12 @@ The system would combine the energy setting with activity cues to coordinate col
 
 Brightness would remain independent, allowing an energetic atmosphere at a comfortable light level. Changes would transition gradually.
 
-For the next prototype, I would use a cardboard rotary controller and a phone display, with a hidden operator controlling the lights through Tinkerbelle. I would test both adjustments separately, gather feedback on the controls and lighting responses, then refine the storyboard and record the interaction.
 
 ### Concept Sketch
 
 ![Clavilux Mood Dial concept sketch showing the rotary controller, brightness and energy settings, and three proposed lighting scenes.](images/clavilux-mood-dial-concept.png)
 
-*Concept sketch for the proposed Clavilux Mood Dial.*
+*Concept sketch for the proposed Clavilux Mood Dial using Generative AI.*
 
 ---
 
