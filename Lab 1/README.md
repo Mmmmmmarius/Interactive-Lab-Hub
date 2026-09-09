@@ -211,7 +211,7 @@ video feed of whichever scene you want to capture.)
 
 **Include your first attempts at recording the wizarded set-up here.**
 
-[Wizard_the_device.mp4](Wizard_the_device.mp4)
+https://github.com/user-attachments/assets/c5b6db0f-2465-46c0-bec3-da07ec881c92
 
 ## Part E. (optional) Costume the Device
 
