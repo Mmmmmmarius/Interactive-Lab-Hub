@@ -1,5 +1,5 @@
 # Interactive Prototyping: The Clock of Pi
-**NAMES OF COLLABORATORS HERE**
+**Hanle_Gu_hg542, Tony_Wang_yw2946**
 
 Does it feel like time is moving strangely during this semester?
 
@@ -23,7 +23,7 @@ This guide covers how to pull updates without overwriting your completed work, h
 
 2. ### Get Kit and Inventory Parts
 Take inventory of the kit parts that you have, and note anything that is missing:
-
+***I am sharing a kit with Tony, and we are not missing any parts***
 ***Update your [parts list inventory](partslist.md)***
 
 3. ### Prepare your Pi for lab this week
@@ -50,9 +50,7 @@ F) [Make a short video of your modified barebones PiClock](#part-f)
 G) [Sketch and brainstorm further interactions and features you would like for your clock for Part 2.](#part-g)
 
 ## The Report
-This readme.md page in your own repository should be edited to include the work you have done. You can delete everything but the headers and the sections between the \*\*\***stars**\*\*\*. Write the answers to the questions under the starred sentences. Include any material that explains what you did in this lab hub folder, and link it in the readme.
 
-Labs are due on Sunday midnight. Make sure this page is linked to on your main class hub page.
 
 ## Part A. 
 ### Connect to your Pi
@@ -186,14 +184,14 @@ Pro Tip: Using tools like [code-server](https://coder.com/docs/code-server/lates
 ## Part E. Read Part 2. Sketch and brainstorm further interactions and features you would like for your clock.
 
 One potential source of ideas might be thinking about other clocks and timekeeping devices for inspiration.
-
 Another might be novel units of time. How do you measure a year? [In daylights? In midnights? In cups of coffee?](https://www.youtube.com/watch?v=wsj15wPpjLY)
-
 We strongly discourage literal digital or analog clock display: Be creative.
-
 
 ** Insert ideas, sketches, [Verplank diagrams](https://ccrma.stanford.edu/courses/250a-fall-2004/IDSketchbok.pdf)), storyboards for your ideas **
 
+Referring from my own and many other people's experiences, we don't perceive the speed of time as a constant. Instead, it feels increasingly more valuable and pressured towards the end of the completion of a certain tasks (ex:People feel pressured when getting closer and closer towards the deadline and the task still isn't finished). Therefore we want to replicate and demonstrate this elastic feeling of time perception with this clock. 
+
+In particular, we would like to use 2 different capability of the clock to demonstrate this. We want to use the remainder of time within an hour as anchor and represent the lost of time using flicker on the screen. **Imagining we are dropping a ball at every start of a hour, clock flicks every time the ball touches the ground.** At the start of every hour, it took very long time for the ball to touch the ground as it carries a lot momentum and speed from the initial launch. However, as the times go by, the ball will gradually lose them and bounce more and more repetitively until the end of the hour. I think it is a very intuitive way to demonstrate the dynamics of perception and the flow of time, considering people also tend to feel "running out of time" at the end of certain project, just like towards the end of a hour or a day. 
 
 
 **Put the names of the people you gave feedback to here. (Even better, add links to their repos here!)**
@@ -201,24 +199,20 @@ We strongly discourage literal digital or analog clock display: Be creative.
 # Lab 2 Part 2
 
 ## Prep 
-
 1. Pick up remaining parts for kit on Wednesday lab class. Check the updated [parts list inventory](partslist.md) and let the TA know if there is any part missing.
 
 2. Look at and give feedback on the Part E. for at least 3 other people in the class and get 3 people to comment on your Part E!)
 **Put the feedback for your ideas here.**
 
 ## Update your Lab Hub
-
 [Update your Lab Hub](pull_updates/README.md) to get the latest content and requirements for Part 2.
 
 ## Modify the barebones clock to make it your own
 
 Start small, pick just one element of your overall idea, just to show you have a handle on the code and components.
-
 \*\*\***Put a copy of your code in your Lab 2 Github repo.**\*\*\*
 
 ## Make a short video of your modified barebones PiClock
-
 \*\*\***Take a video of your barely modified PiClock.**\*\*\*
 
 After you edit and work on the scripts for Lab 2, the files should be upload back to your own GitHub repo! You can push to your personal github repo by adding the files here, commiting and pushing.
@@ -232,7 +226,6 @@ After you edit and work on the scripts for Lab 2, the files should be upload bac
 After that, Git will ask you to login to your GitHub account to push the updates online, you will be asked to provide your GitHub user name and password. Remember to use the "Personal Access Tokens" you set up in Part A as the password instead of your account one! Go on your GitHub repo with your laptop, you should be able to see the updated files from your Pi!
 
 ## Now, make your own PiClock
-
 Do take advantage of having done the previous iteration to refine and simplify your design.
 
 ** Insert any updates ideas, sketches, [Verplank diagrams](https://ccrma.stanford.edu/courses/250a-fall-2004/IDSketchbok.pdf))!, storyboards for your ideas **
@@ -241,7 +234,6 @@ Do take advantage of having done the previous iteration to refine and simplify y
 \*\*\***Put a copy of your code in your Lab 2 Github repo.**\*\*\*
 
 \*\*\***Take a video of your PiClock.**\*\*\*
-
 
 As always, make sure you document contributions and ideas from others (and AI) explicitly in your writeup.
 
