@@ -8,7 +8,7 @@ For our first Pi project, we will pay homage to the [timekeeping devices of old]
 It is worth spending a little time thinking about how you mark time, and what would be useful in a clock of your own design.
 
 **Please indicate anyone you collaborated with on this Lab here.**
-Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
+I am sharing a kit with Tony because I didn't recieve the kit
 
 ## Prep
 
@@ -22,15 +22,11 @@ This guide covers how to pull updates without overwriting your completed work, h
 
 
 2. ### Get Kit and Inventory Parts
-Take inventory of the kit parts that you have, and note anything that is missing:
-***I am sharing a kit with Tony, and we are not missing any parts***
+*I am sharing a kit with Tony because I didn't recieve the kit*
 ***Update your [parts list inventory](partslist.md)***
 
 3. ### Prepare your Pi for lab this week
 [Follow these instructions](prep.md) to download and burn the image for your Raspberry Pi before lab Wednesday.
-
-
-
 
 ## Overview
 For this assignment, you are going to 
@@ -189,12 +185,25 @@ We strongly discourage literal digital or analog clock display: Be creative.
 
 ** Insert ideas, sketches, [Verplank diagrams](https://ccrma.stanford.edu/courses/250a-fall-2004/IDSketchbok.pdf)), storyboards for your ideas **
 
-Referring from my own and many other people's experiences, we don't perceive the speed of time as a constant. Instead, it feels increasingly more valuable and pressured towards the end of the completion of a certain tasks (ex:People feel pressured when getting closer and closer towards the deadline and the task still isn't finished). Therefore we want to replicate and demonstrate this elastic feeling of time perception with this clock. 
+We started off designing our device by expecting it to be a combination of utility and intuitiveness. And through our exploration, we quickly realized the idea is very similar to our day to day device watches. In particular, smartwatches like Apple Watch offer a very similar outcome which allow people to understand time through different combinations of complexity and graphic indication. We derive from the solar-themed watch faces on Apple Watch, which connect the time of day with the sun’s position. We want to adapt this idea to a small Raspberry Pi display, using changes in the sky to make the progression of a day visually understandable.
 
-In particular, we would like to use 2 different capability of the clock to demonstrate this. We want to use the remainder of time within an hour as anchor and represent the lost of time using flicker on the screen. **Imagining we are dropping a ball at every start of a hour, clock flicks every time the ball touches the ground.** At the start of every hour, it took very long time for the ball to touch the ground as it carries a lot momentum and speed from the initial launch. However, as the times go by, the ball will gradually lose them and bounce more and more repetitively until the end of the hour. I think it is a very intuitive way to demonstrate the dynamics of perception and the flow of time, considering people also tend to feel "running out of time" at the end of certain project, just like towards the end of a hour or a day. 
+The concept has four phases: sunrise, daytime, sunset, and night. The sun emerges from the horizon in the morning, moves across the sky during the day, and disappears below the horizon in the evening. And the night scene features a moon and stars. Changes in the background color reinforce these transitions.
+
+The landscape provides a visual sense of where we are within the daily cycle, while a smaller numerical display provides the exact time. Our prototype uses simplified, preset sunrise and sunset times to explore this way of representing time.
+
+![Solar Clock Storyboard](https://github.com/user-attachments/assets/d5fa91e4-cb32-4f13-a03a-c58f2d56e76c)
 
 
 **Put the names of the people you gave feedback to here. (Even better, add links to their repos here!)**
+
+**Yangchen Jin**
+https://github.com/MortalJin/Interactive-Lab-Hub/blob/Fall2026/Lab%202/README.md
+
+**Feiyu Zhou、Sirapop Umnakkittikul**
+https://github.com/Morinzzz/Interactive-Lab-Hub/blob/Fall2026/Lab%202/README.md
+
+**Bowei Huang(bh654), Shengye Wang**
+https://github.com/bh654-dev/Interactive-Lab-Hub/blob/Fall2026/Lab%202/README.md
 
 # Lab 2 Part 2
 
@@ -202,6 +211,15 @@ In particular, we would like to use 2 different capability of the clock to demon
 1. Pick up remaining parts for kit on Wednesday lab class. Check the updated [parts list inventory](partslist.md) and let the TA know if there is any part missing.
 
 2. Look at and give feedback on the Part E. for at least 3 other people in the class and get 3 people to comment on your Part E!)
+
+**Comments on other projects:**
+
+Yangchen Jin’s idea also took a focus on clear and intuitive indication of time with just a glimpse. Using a very simple but clever combination of size, binary state and order, the envisioned plan did a really good job on telling the time to anyone without requirement of language or understanding of reading gauges. I do think it will be more interactive and pleasing if additional aesthetics elements may be added such as colors and other interactive elements.
+
+Feiyu Zhou and Sirapop Umnakkittikul’s project took a very different approach compared to Yangchen, where aesthetics were taken to utmost consideration and the whole interaction was a lot more complicated and visually appealing. They decided to use numbers as a direct representation of time and added an additional element of a “growing animal” as an alternative way of exhibiting the flow of time in a more macroscopic level. I think it serves really as a unique “clock” considering how our everyday objects are just plainly showing time with numbers and simple clicks.
+
+Bowei Huang and Shengye Wang’s idea is like an even further exploration of Feiyu and Sirapop’s attempt where the functionality of delivering a sense of time were completely expressed through the action of the “pet”. They use a cat as a model, which I personally feel more attracted to, and use its routine action to represent different sections of the day. I really like the overall plan, where it is fun and interactive, but I also see potential discrepancies between different users as individuals may have different schedules for routine activities.
+
 **Put the feedback for your ideas here.**
 
 ## Update your Lab Hub
@@ -234,6 +252,8 @@ Do take advantage of having done the previous iteration to refine and simplify y
 \*\*\***Put a copy of your code in your Lab 2 Github repo.**\*\*\*
 
 \*\*\***Take a video of your PiClock.**\*\*\*
+
+https://github.com/user-attachments/assets/61fe8896-e389-4cd0-8ddf-f2e666c7744b
 
 As always, make sure you document contributions and ideas from others (and AI) explicitly in your writeup.
 
