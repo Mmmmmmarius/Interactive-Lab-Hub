@@ -1,5 +1,5 @@
 # Interactive Prototyping: The Clock of Pi
-**Hanle_Gu_hg542, Tony_Wang_yw2946**
+**Hanle_Gu_hg542, Yuxuan_Wang_yw2946**
 
 Does it feel like time is moving strangely during this semester?
 
