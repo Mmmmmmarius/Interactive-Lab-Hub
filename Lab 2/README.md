@@ -234,6 +234,8 @@ Bowei Huang and Shengye Wang’s idea is like an even further exploration of Fei
 Start small, pick just one element of your overall idea, just to show you have a handle on the code and components.
 \*\*\***Put a copy of your code in your Lab 2 Github repo.**\*\*\*
 
+[pi_initial_clock.py](pi_initial_clock.py)
+
 ## Make a short video of your modified barebones PiClock
 \*\*\***Take a video of your barely modified PiClock.**\*\*\*
 
