@@ -1,0 +1,143 @@
+{
+  "date": "2026-09-30",
+  "host": "hg542-pi",
+  "numeric_script": {
+    "path": "/home/pi/Interactive-Lab-Hub/Lab 3/speech-scripts/numeric_input.py",
+    "syntax_check": "passed",
+    "execution_exit": 0,
+    "recording": "/home/pi/course-setup-checks/lab3-20260930/BC/numeric-answer.wav",
+    "duration_seconds": 6.0,
+    "sample_rate": 16000,
+    "peak": 0.100250244140625,
+    "rms": 0.009171398356556892,
+    "clipped_percent": 0.0,
+    "ground_truth": "61820"
+  },
+  "transcription_comparison": [
+    {
+      "model": "tiny.en",
+      "device": "cpu",
+      "compute_type": "int8",
+      "beam_size": 1,
+      "audio_duration_seconds": 6.0,
+      "model_load_seconds": 0.44,
+      "transcription_seconds": 4.72,
+      "real_time_factor": 0.79,
+      "transcript": "6180.",
+      "raw_log": "/home/pi/course-setup-checks/lab3-20260930/BC/transcribe-tiny.en.log",
+      "returncode": 0,
+      "normalized_digits": "6180",
+      "matches_ground_truth": false
+    },
+    {
+      "model": "base.en",
+      "device": "cpu",
+      "compute_type": "int8",
+      "beam_size": 1,
+      "audio_duration_seconds": 6.0,
+      "model_load_seconds": 0.57,
+      "transcription_seconds": 1.74,
+      "real_time_factor": 0.29,
+      "transcript": "618-0",
+      "raw_log": "/home/pi/course-setup-checks/lab3-20260930/BC/transcribe-base.en.log",
+      "returncode": 0,
+      "normalized_digits": "6180",
+      "matches_ground_truth": false
+    }
+  ],
+  "part_C": {
+    "status": "three live VAD trials and end-to-end echo playback verified; written answers deferred",
+    "trials": [
+      {
+        "min_silence_seconds": 0.2,
+        "ready": true,
+        "live_listen_seconds": 15,
+        "returncode": 0,
+        "utterances": [
+          {
+            "speech_seconds": 1.1,
+            "asr_seconds": 0.92,
+            "transcript": "My number is..."
+          },
+          {
+            "speech_seconds": 1.3,
+            "asr_seconds": 0.88,
+            "transcript": "6180."
+          }
+        ],
+        "raw_log": "/home/pi/course-setup-checks/lab3-20260930/BC/listen-0.2.log",
+        "status": "passed"
+      },
+      {
+        "min_silence_seconds": 0.8,
+        "ready": true,
+        "live_listen_seconds": 15,
+        "returncode": 0,
+        "utterances": [
+          {
+            "speech_seconds": 2.7,
+            "asr_seconds": 0.98,
+            "transcript": "My number is 6180."
+          }
+        ],
+        "raw_log": "/home/pi/course-setup-checks/lab3-20260930/BC/listen-0.8.log",
+        "status": "passed"
+      },
+      {
+        "min_silence_seconds": 1.5,
+        "ready": true,
+        "live_listen_seconds": 15,
+        "returncode": 0,
+        "utterances": [
+          {
+            "speech_seconds": 2.9,
+            "asr_seconds": 0.95,
+            "transcript": "My number is 61820."
+          }
+        ],
+        "raw_log": "/home/pi/course-setup-checks/lab3-20260930/BC/listen-1.5.log",
+        "status": "passed"
+      }
+    ],
+    "echo_bot": {
+      "returncode": 0,
+      "model": "base.en",
+      "min_silence_seconds": 0.8,
+      "ready_tone": true,
+      "expected_test_phrase": "Kept you waiting, huh?",
+      "heard": "It ships you waiting, huh?",
+      "reply": "You said: It ships you waiting, huh?",
+      "raw_log": "/home/pi/course-setup-checks/lab3-20260930/BC/echo-bot-base.log",
+      "status": "end-to-end playback verified; transcript differs from target phrase",
+      "human_listening_confirmation": "User confirmed the Pi echo reply was heard clearly.",
+      "asr_seconds": 1.99,
+      "tts_first_audio_seconds": 0.35,
+      "post_endpoint_asr_plus_tts_seconds": 2.35,
+      "timing_note": "The course total-gap metric excludes the configured silence wait and input buffering."
+    },
+    "echo_bot_initial_tiny": {
+      "returncode": 0,
+      "min_silence_seconds": 0.8,
+      "heard": "get you waiting up.",
+      "reply": "You said: get you waiting up.",
+      "raw_log": "/home/pi/course-setup-checks/lab3-20260930/BC/echo-bot.log",
+      "status": "command passed; transcript differs from target phrase",
+      "human_listening_confirmation": "not individually assessed; the later base trial was confirmed audible",
+      "asr_seconds": 0.96,
+      "tts_first_audio_seconds": 0.27,
+      "post_endpoint_asr_plus_tts_seconds": 1.23,
+      "timing_note": "The course total-gap metric excludes the configured silence wait and input buffering."
+    }
+  },
+  "written_lab_answers": "deferred to user in another worktree/thread",
+  "verification": {
+    "numeric_script_sha256": "05f949894ae89becc4025937655e6005c5720d7a0f5deb537fcd4ef6b0568ebc",
+    "git_status": "?? \"Lab 3/speech-scripts/numeric_input.py\"\n",
+    "output_volume": "Volume: 0.70",
+    "recording_mode": "0o600",
+    "original_course_scripts": "unchanged",
+    "audio_upload": "none; recording stays on Pi"
+  },
+  "part_B_status": "numeric prompt/recording and two-model transcription experiment completed; recognition errors recorded",
+  "technical_scope_completion": "B and C technical tasks completed; ASR errors retained in raw results"
+}

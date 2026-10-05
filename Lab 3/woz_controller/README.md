@@ -4,7 +4,7 @@ A local speech interaction prototype for Lab 3 Part 2. The student chose the ord
 
 ## Status
 
-Windows Python 3.13.5: **98 tests passed, 0 failures, 0 errors, 0 skips**, including five interactive-demo integration tests. Silent console and browser checks also passed. Raspberry Pi deployment, real audio, participant trials, and a real all-day schedule observation remain pending. See [daily ornament behavior and verification](docs/DAILY_ORNAMENT.md), [baseline validation](docs/VALIDATION.md), [Part 2 requirement review](docs/PART2_GAPS.md), and [AI assistance](docs/AI_ASSISTANCE.md).
+**98 tests passed** on Windows Python 3.13.5 and on Raspberry Pi Python 3.11.2. The daily controller and virtual-clock demo were deployed to the Pi on October 4, 2026. Speaker playback was confirmed by the user; the microphone/VAD no-response path and offline recognition of an existing recording passed. The recorded participant demonstration used automatic random speech and manually triggered replies. See the [Lab 3 README](../README.md) for videos and participant feedback. A full live automatic reply cycle and an all-day timing observation are not established by those checks. Earlier validation snapshots remain in [daily verification](docs/DAILY_ORNAMENT.md) and [baseline validation](docs/VALIDATION.md).
 
 ## Interactive daily walkthrough
 
@@ -76,4 +76,4 @@ These show **Windows silent simulation**, not a Pi or participant trial.
 
 ## Attribution
 
-The dialogue JSON retains the original scenario and reference provenance. See [AI assistance](docs/AI_ASSISTANCE.md) for the technical work and its evidence limits. Personal reflection and participant findings have not been generated or filled in.
+The dialogue JSON retains the original scenario and reference provenance. The [Lab 3 README](../README.md) contains the student's reflections and reported participant feedback.
