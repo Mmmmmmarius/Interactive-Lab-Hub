@@ -8,9 +8,12 @@ import json
 from server import build_controller, dispatch_action
 
 
-HELP = """morning | listen | say TEXT | simulate TEXT (empty = silence)
-work MINUTES | remind | accept | defer | auto on/off
+HELP = """morning | chatter | listen | say TEXT | simulate TEXT (empty = silence)
+schedule on/off | auto on/off
 pause | resume | stop | reset | status | help | quit
+Legacy manual work demo: work MINUTES | remind | accept | defer
+Daily ornament: 10:30 morning, random 30-90 minute chatter before 20:00 New York.
+Stop disables the daily schedule; 'schedule on' enables it. Reset restores defaults.
 Commands use the same controller as the web view. Status lists busy/cancelling
 actions; retry after they finish. 'simulate' queues input only in dry-run mode.
 """
@@ -30,7 +33,7 @@ def command(controller, line: str) -> bool:
     if name == "status":
         print(json.dumps(controller.state.snapshot(), indent=2))
         return True
-    routes = {"morning": "/api/morning", "listen": "/api/listen",
+    routes = {"morning": "/api/morning", "chatter": "/api/self-talk", "listen": "/api/listen",
               "remind": "/api/work/expire", "accept": "/api/work/accept",
               "defer": "/api/work/defer", "pause": "/api/pause",
               "resume": "/api/resume", "stop": "/api/stop", "reset": "/api/reset"}
@@ -47,6 +50,10 @@ def command(controller, line: str) -> bool:
         if tail not in {"on", "off"}:
             raise ValueError("Use auto on or auto off")
         path, body = "/api/replies", {"automatic": tail == "on"}
+    elif name == "schedule":
+        if tail not in {"on", "off"}:
+            raise ValueError("Use schedule on or schedule off")
+        path, body = "/api/schedule", {"enabled": tail == "on"}
     else:
         raise ValueError("Unknown command; type help")
     accepted = dispatch_action(controller, path, body)

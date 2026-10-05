@@ -1,0 +1,28 @@
+{
+  "python_syntax_files": 12,
+  "console_exit": 0,
+  "console_commands": [
+    "status",
+    "chatter",
+    "pause",
+    "resume",
+    "stop",
+    "schedule on",
+    "reset",
+    "quit"
+  ],
+  "browser_checks": [
+    "manual self-talk followed by random preset reply",
+    "next morning shown as Oct 5 10:30 AM EDT",
+    "pause/resume",
+    "Stop disables daily checkbox",
+    "explicit enable",
+    "Reset restores daily defaults",
+    "legacy work panel collapsed"
+  ],
+  "browser_errors_or_warnings": [],
+  "test_port": 18766,
+  "test_server_stopped": true,
+  "real_audio_used": false,
+  "pi_deployed": false
+}

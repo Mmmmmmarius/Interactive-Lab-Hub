@@ -5,7 +5,7 @@ const hints = {
   quiet: "Resting quietly",
   paused: "Paused",
   listening: "Speak naturally",
-  thinking: "Working on your words",
+  thinking: "A tiny dramatic pause",
   speaking: "The box is talking",
 };
 let refreshSequence = 0;

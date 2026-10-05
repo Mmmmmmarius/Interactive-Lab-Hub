@@ -141,7 +141,7 @@ class TurnLoopTests(unittest.TestCase):
         backend = backend or EventBackend()
         script = ScriptLibrary(ROOT / "talking-box-dialogue.json")
         script.timing["self_talk_pause_seconds"] = 0
-        controller = TalkingBoxController(backend, script, scheduler_interval=0.005)
+        controller = TalkingBoxController(backend, script, scheduler_interval=0.005, schedule_enabled=False)
         backend.controller = controller
         self.controllers.append(controller)
         return controller, backend
@@ -198,11 +198,11 @@ class TurnLoopTests(unittest.TestCase):
         controller, backend = self.make_controller(EventBackend(["", "First reply", "Second reply", "Third reply", ""]))
         self.assertTrue(controller.start_morning())
         self.wait_idle(controller)
-        self.assertEqual(
-            backend.spoken,
-            [controller.script.lines["panel_1"], controller.script.lines["panel_2"]]
-            + [controller.script.lines["panel_3"]] * 3,
-        )
+        self.assertEqual(backend.spoken[:2],
+                         [controller.script.lines["panel_1"], controller.script.lines["panel_2"]])
+        self.assertEqual(len(backend.spoken), 5)
+        self.assertTrue(all(line in controller.script.presets["replies"] for line in backend.spoken[2:]))
+        self.assertTrue(all(a != b for a, b in zip(backend.spoken[2:], backend.spoken[3:])))
         self.assertEqual(len(backend.listen_calls), len(backend.spoken))
         self.assertEqual([event[0] for event in backend.trace], ["speak", "listen"] * 5)
         self.assertEqual(backend.overlaps, [])

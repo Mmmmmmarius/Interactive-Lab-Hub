@@ -1,10 +1,8 @@
 {
   "schema_version": 1,
   "title": "The Talking Box",
-  "stage": "local implementation; Mac simulated tests only; Pi and participant tests pending",
+  "stage": "daily ornament; Windows silent tests passed; Pi and participant tests pending",
   "timing": {
-    "morning_time": "07:30",
-    "morning_schedule_enabled": false,
     "self_talk_pause_seconds": 1.0,
     "min_silence_seconds": 0.8,
     "speech_start_timeout_seconds": 2.0,
@@ -59,12 +57,68 @@
     "core_scenarios": "student supplied and approved",
     "dialogue_and_visual_assistance": "Codex; built-in image generation",
     "reference_commit": "5fac8c241850c7d59b2b3dfecea38fe978713f6c",
-    "reference": "https://github.com/manaporkun/talking-flower/blob/5fac8c241850c7d59b2b3dfecea38fe978713f6c/character/SOUL.md"
+    "reference": "https://github.com/manaporkun/talking-flower/blob/5fac8c241850c7d59b2b3dfecea38fe978713f6c/character/SOUL.md",
+    "daily_presets": "Original English lines written with Codex for the student-approved playful ornament direction; no official Nintendo dialogue reproduced."
   },
   "interaction": {
     "default_mode": "flower",
-    "automatic_fixed_reply": true,
+    "automatic_fixed_reply": false,
     "after_each_utterance": "2 seconds to start; VAD ends the whole turn",
-    "muse_wake_interface": "reserved, unavailable, no pairing or transport"
+    "muse_wake_interface": "reserved, unavailable, no pairing or transport",
+    "automatic_preset_reply": true
+  },
+  "daily_schedule": {
+    "enabled": true,
+    "timezone": "America/New_York",
+    "morning_time": "10:30",
+    "quiet_time": "20:00",
+    "min_interval_minutes": 30,
+    "max_interval_minutes": 90
+  },
+  "presets": {
+    "self_talk": [
+      "Another busy day of being decorative. I may need an assistant.",
+      "I've been standing here doing nothing. Somehow, it suits me.",
+      "This desk needed a personality. You're welcome.",
+      "I considered being useful. Briefly. It passed.",
+      "Still no leaves. At this point, I suspect management.",
+      "A very important thought just crossed my mind. It waved and left.",
+      "I bring a lot to this room. Mostly myself.",
+      "If anyone asks, we have both been extremely productive.",
+      "I've rearranged absolutely nothing. The place looks fantastic.",
+      "Some people have a rich inner life. I have excellent corners.",
+      "I was going to make a grand entrance. Then I remembered I live here.",
+      "Look at us. Two fascinating objects near a desk.",
+      "The view hasn't changed much. Luckily, I'm in it.",
+      "I have no appointments today. Being this interesting takes time.",
+      "Quiet again. Good. My dramatic pause was getting interrupted.",
+      "I'm not staring. This is simply where my face is."
+    ],
+    "replies": [
+      "Oh, you talk to the decorations now. Excellent taste.",
+      "You had the whole room, and you chose me. Understandable.",
+      "A bold contribution from someone with so many elbows.",
+      "I would nod thoughtfully, but I've committed to this shape.",
+      "There you go, giving the furniture a social life.",
+      "Careful. Keep talking to me and I'll expect a tiny name tag.",
+      "I had a clever response ready. Then I got distracted by myself.",
+      "You sound very animated for someone who can actually sit down.",
+      "Look at us having a conversation. The lamp must be furious.",
+      "I'd give you a round of applause. Bit of an equipment shortage.",
+      "Well, that was certainly a use of your indoor voice.",
+      "You make an excellent audience. Mostly because you're here.",
+      "I see you've discovered my premium feature: more talking.",
+      "Please hold. My one imaginary employee is on a break.",
+      "You brought words. I brought presence. Fair exchange.",
+      "And here I thought I was the chatty object in this room.",
+      "Very engaging. You should tell that to something with eyebrows.",
+      "I don't have much to add. That has never stopped me before.",
+      "It's nice having a visitor who doesn't need watering. Probably.",
+      "If this is small talk, I'm exceptionally well qualified.",
+      "You've caught me at a good time. All of my time is decorative.",
+      "Such confidence. Have you considered becoming a desk ornament?",
+      "I'd lean in, but that would become a whole incident.",
+      "You may continue. I'm already standing here."
+    ]
   }
 }

@@ -328,9 +328,9 @@ class StaticWiringTests(unittest.TestCase):
         for name in ("wizard", "participant"):
             with self.subTest(page=name):
                 parser = IdCollector()
-                parser.feed((ROOT / "static" / f"{name}.html").read_text())
+                parser.feed((ROOT / "static" / f"{name}.html").read_text(encoding="utf-8"))
                 self.assertEqual(len(parser.ids), len(set(parser.ids)))
-                javascript = (ROOT / "static" / f"{name}.js").read_text()
+                javascript = (ROOT / "static" / f"{name}.js").read_text(encoding="utf-8")
                 selectors = re.findall(r'querySelector\([\'\"]#([^\'\"]+)[\'\"]\)', javascript)
                 self.assertTrue(selectors)
                 for selector in selectors:

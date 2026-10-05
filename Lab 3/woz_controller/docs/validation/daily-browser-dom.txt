@@ -1,0 +1,89 @@
+- main:
+  - heading "Talking Box Controller" [level=1]
+  - paragraph: A chatty desk ornament · original playful presets
+  - generic: quiet
+  - heading "Daily ornament" [level=2]
+  - paragraph: 10:30 morning scene · random chatter every 30–90 minutes until 20:00 · New York time
+  - checkbox "Enable daily schedule" [checked]
+  - text: Enable daily schedule
+  - paragraph: "Next morning scene: Oct 5, 10:30 AM EDT"
+  - button "Say something now"
+  - paragraph: Keep the program running. Missed scenes are not replayed. Stop disables scheduling; Reset restores defaults.
+  - heading "Scene controls" [level=2]
+  - button "Start morning scene"
+  - button "Listen for one turn"
+  - button "Return to quiet"
+  - button "Pause"
+  - button "Resume"
+  - button "Reset" [active]
+  - button "Stop now"
+  - paragraph: idle
+  - alert
+  - heading "Transcript and response" [level=2]
+  - checkbox "Use random preset replies" [checked]
+  - text: Use random preset replies
+  - paragraph: After every spoken line, start within 2 seconds. Once started, speak until your sentence ends.
+  - generic: Recognized participant speech
+  - textbox "Recognized participant speech":
+    - /placeholder: Transcript appears here
+  - button "Save correction"
+  - heading "Scripted replies" [level=3]
+  - button "Modesty? Sorry, this box is full of talent."
+  - button "Fine. I'll be quietly magnificent."
+  - button "Go on. I'll guard the desk. Heroically."
+  - heading "Custom reply" [level=3]
+  - generic: Short reply for the box
+  - textbox "Short reply for the box":
+    - /placeholder: Type what the box should say
+  - button "Speak custom reply"
+  - generic "Legacy work reminder demo (manual only)"
+  - complementary:
+    - heading "Current output" [level=2]
+    - paragraph: Silent simulation; no audio devices
+    - paragraph: Nothing spoken yet
+    - heading "Silent simulation input" [level=2]
+    - textbox "Queue the next simulated transcript, or leave empty for silence"
+    - button "Queue simulated turn"
+    - paragraph: Available only with the dry-run backend. Timing is accelerated.
+    - heading "Session log" [level=2]
+    - list:
+      - time: 21:24:06
+      - text: Reset to default Flower mode
+      - time: 21:24:06
+      - text: Random preset replies enabled
+      - time: 21:24:06
+      - text: Transcript cleared
+      - time: 21:24:06
+      - text: Stopped; daily schedule disabled and work timer cancelled
+      - time: 21:24:06
+      - text: "State: Quiet"
+      - time: 21:24:06
+      - text: Work session closed
+      - time: 21:24:06
+      - text: Daily schedule enabled
+      - time: 21:23:58
+      - text: Stopped; daily schedule disabled and work timer cancelled
+      - time: 21:23:58
+      - text: "State: Quiet"
+      - time: 21:23:58
+      - text: Work session closed
+      - time: 21:23:58
+      - text: Resumed; start a fresh turn with controls
+      - time: 21:23:58
+      - text: "State: Quiet"
+      - time: 21:23:53
+      - text: Paused; interrupted turn is discarded
+      - time: 21:23:53
+      - text: "State: Paused"
+      - time: 21:23:49
+      - text: No speech started in the response window
+      - time: 21:23:49
+      - text: "State: Quiet"
+      - time: 21:23:49
+      - text: "State: Listening"
+      - time: 21:23:49
+      - text: "State: Speaking"
+      - time: 21:23:49
+      - text: "State: Thinking"
+      - time: 21:23:49
+      - text: Transcript updated

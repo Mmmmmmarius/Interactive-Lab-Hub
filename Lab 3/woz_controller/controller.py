@@ -6,10 +6,13 @@ from copy import deepcopy
 from datetime import datetime, timezone
 import json
 import math
+import random
 from pathlib import Path
 import threading
 import time
 from typing import Any, Callable
+
+from daily_schedule import DailySchedule
 
 STATUSES = {"quiet", "listening", "thinking", "speaking", "paused"}
 
@@ -69,7 +72,11 @@ class ConversationState:
     def set_automatic_reply(self, enabled: bool) -> None:
         with self._lock:
             self._data["automatic_reply"] = enabled
-        self.log("Fixed replies enabled" if enabled else "Wizard replies enabled")
+        self.log("Random preset replies enabled" if enabled else "Wizard replies enabled")
+
+    def set_schedule(self, schedule: dict) -> None:
+        with self._lock:
+            self._data["schedule"] = schedule
 
     def start_work(self, minutes: float) -> None:
         if not math.isfinite(minutes) or minutes <= 0:
@@ -145,20 +152,44 @@ class ScriptLibrary:
     def __init__(self, path: Path) -> None:
         data = json.loads(path.read_text(encoding="utf-8"))
         self.timing = data["timing"]
+        self.schedule_settings = data.get("daily_schedule", {"enabled": False})
+        self.presets = data.get("presets", {})
+        for name in ("self_talk", "replies"):
+            pool = self.presets.get(name)
+            if (not isinstance(pool, list)
+                    or any(not isinstance(line, str) or not line.strip() or len(line) > 300 for line in pool)
+                    or len(set(pool)) < 2):
+                raise ValueError(f"Preset pool {name} needs at least two distinct lines, 1–300 characters each")
+        self._last_preset: dict[str, str] = {}
+        self._preset_lock = threading.Lock()
         self.lines: dict[str, str] = {}
         for scene in data["scenes"]:
             for panel in scene["panels"]:
                 if "box" in panel:
                     self.lines[f"panel_{panel['panel']}"] = panel["box"]
 
+    def choose(self, pool: str, rng: random.Random) -> str:
+        with self._preset_lock:
+            choices = [line for line in self.presets[pool] if line != self._last_preset.get(pool)]
+            selected = rng.choice(choices)
+            self._last_preset[pool] = selected
+            return selected
+
 
 class TalkingBoxController:
     def __init__(self, backend: Any, script: ScriptLibrary,
-                 scheduler_interval: float = 0.05) -> None:
+                 scheduler_interval: float = 0.05, *, clock=None, rng=None,
+                 schedule_enabled: bool | None = None) -> None:
         self.backend, self.script = backend, script
         backend_name = {"DryRunBackend": "dry-run", "PiAudioBackend": "pi"}.get(
             type(backend).__name__, "simulated events")
         self.state = ConversationState(backend_name)
+        self._rng = rng or random.Random()
+        settings = dict(script.schedule_settings)
+        if schedule_enabled is not None:
+            settings["enabled"] = schedule_enabled
+        self.daily = DailySchedule(settings, clock=clock)
+        self._publish_schedule()
         self._action_lock = threading.RLock()
         self._thread: threading.Thread | None = None
         self._cancel = threading.Event()
@@ -170,7 +201,30 @@ class TalkingBoxController:
 
     def _schedule(self, interval: float) -> None:
         while not self._closed.wait(max(interval, 0.01)):
+            self.maybe_trigger_daily()
             self.maybe_trigger_work_reminder()
+
+    def _publish_schedule(self) -> None:
+        self.state.set_schedule(self.daily.snapshot())
+
+    def maybe_trigger_daily(self) -> None:
+        with self._action_lock:
+            state = self.state.snapshot()
+            available = (not self._closed.is_set() and not self._paused
+                         and not (self._thread and self._thread.is_alive())
+                         and state["status"] == "quiet" and not state["last_error"])
+            event = self.daily.poll(available)
+            if event:
+                accepted = self.start_morning() if event == "morning" else self.start_self_talk()
+                if not accepted:
+                    self.daily.complete()
+            self._publish_schedule()
+
+    def set_daily_enabled(self, enabled: bool) -> None:
+        with self._action_lock:
+            self.daily.set_enabled(enabled)
+            self._publish_schedule()
+            self.state.log("Daily schedule enabled" if enabled else "Daily schedule disabled")
 
     def _current(self, cancel: threading.Event) -> bool:
         return self._cancel is cancel and not cancel.is_set() and not self._closed.is_set()
@@ -190,6 +244,8 @@ class TalkingBoxController:
             cancel = self._cancel = threading.Event()
             self.state.set_error("")
             self.state.set_active_action(name)
+            self.daily.begin()
+            self._publish_schedule()
 
             def run() -> None:
                 try:
@@ -206,6 +262,8 @@ class TalkingBoxController:
                     with self._action_lock:
                         if self._cancel is cancel:
                             self.state.set_active_action("")
+                            self.daily.complete()
+                            self._publish_schedule()
 
             self._thread = threading.Thread(target=run, name=name, daemon=True)
             self._thread.start()
@@ -242,7 +300,7 @@ class TalkingBoxController:
         while transcript and self._current(cancel):
             if not self.state.snapshot()["automatic_reply"]:
                 return
-            self._speak(reply or self.script.lines["panel_3"], cancel)
+            self._speak(reply or self.script.choose("replies", self._rng), cancel)
             transcript = self._listen(cancel)
             reply = None
 
@@ -264,6 +322,10 @@ class TalkingBoxController:
 
     def listen_once(self) -> bool:
         return self._start("listen", lambda cancel: self._listen(cancel))
+
+    def start_self_talk(self) -> bool:
+        return self._start("self talk", lambda cancel: self._utterance(
+            self.script.choose("self_talk", self._rng), cancel))
 
     def speak(self, text: str, return_to_quiet: bool = True) -> bool:
         # Legacy argument retained for callers; every output gets a response window.
@@ -344,14 +406,19 @@ class TalkingBoxController:
         with self._action_lock:
             self._cancel_action()
             self._paused = False
+            self.daily.set_enabled(False)
+            self.daily.set_paused(False)
+            self._publish_schedule()
             self.state.stop_work()
             self.state.set_status("quiet")
             self.state.set_phase("idle")
-            self.state.log("Stop pressed; timer cancelled")
+            self.state.log("Stopped; daily schedule disabled and work timer cancelled")
 
     def pause(self) -> None:
         with self._action_lock:
             self._paused = True
+            self.daily.set_paused(True)
+            self._publish_schedule()
             self._cancel_action()
             self.state.rearm_reminder()
             self.state.pause_work()
@@ -364,6 +431,8 @@ class TalkingBoxController:
             if not self._paused:
                 return
             self._paused = False
+            self.daily.set_paused(False)
+            self._publish_schedule()
             self.state.resume_work()
             self.state.set_status("quiet")
             self.state.set_phase("idle")
@@ -376,6 +445,8 @@ class TalkingBoxController:
             self.state.set_transcript("")
             self.state.set_last_spoken("")
             self.state.set_automatic_reply(True)
+            self.daily.set_enabled(bool(self.script.schedule_settings.get("enabled", False)))
+            self._publish_schedule()
             self.state.log("Reset to default Flower mode")
 
     def close(self) -> None:

@@ -1,14 +1,14 @@
 # Talking Box / Flower prototype
 
-A local speech interaction prototype for Lab 3 Part 2. The student chose the ordinary box, the humorous talking-flower character, and the morning/work scenarios. This checkpoint preserves the validated controller and dialogue. It is a technical baseline, not a completed participant study or final assignment submission.
+A local speech interaction prototype for Lab 3 Part 2. The student chose the ordinary box, the humorous talking-flower character, and the morning/work scenarios. The approved Part 2 direction is an interactive decoration: it occasionally talks to itself and playfully teases anyone who responds. It is a technical baseline, not a completed participant study or final assignment submission.
 
 ## Status
 
-Windows Python 3.13.5: **70 tests passed, 0 failures, 0 errors, 0 skips**. Silent console and browser checks also passed. Raspberry Pi deployment, real audio, participant trials, and the full 45-minute observation remain pending. See [validation](docs/VALIDATION.md), [Part 2 requirement review](docs/PART2_GAPS.md), and [AI assistance](docs/AI_ASSISTANCE.md).
+Windows Python 3.13.5: **93 tests passed, 0 failures, 0 errors, 0 skips**. Silent console and browser checks also passed. Raspberry Pi deployment, real audio, participant trials, and a real all-day schedule observation remain pending. See [daily ornament behavior and verification](docs/DAILY_ORNAMENT.md), [baseline validation](docs/VALIDATION.md), [Part 2 requirement review](docs/PART2_GAPS.md), and [AI assistance](docs/AI_ASSISTANCE.md).
 
 ## Silent demo on Windows, macOS, or Linux
 
-From this directory, use an existing Python 3.9+ installation. The silent backend uses the Python standard library and does not open audio devices or load models.
+From this directory, use an existing Python 3.9+ installation. The silent backend uses the Python standard library and does not open audio devices or load models. Daily scheduling also needs an existing IANA timezone database for `America/New_York`; startup reports a clear error if it is unavailable and never silently substitutes the host timezone.
 
 ```sh
 python -B -m unittest discover -s tests -v
@@ -19,19 +19,20 @@ python -B server.py --backend dry-run --port 18765
 
 Use `python3` if that is the Python command on your system. Open <http://127.0.0.1:18765/wizard> for controls and <http://127.0.0.1:18765/participant> for the participant display. The server binds only to 127.0.0.1. Ctrl+C exits; console users can type `quit`.
 
-Dry-run is silent and accelerated. Its initial queue contains one example transcript, followed by silence. `simulate TEXT` queues another response; empty `simulate` queues silence. Reset clears conversation state but does not clear queued simulated input. These are artificial inputs, not participant observations.
+Dry-run is silent and accelerated. Its initial queue contains one example transcript, followed by silence. `simulate TEXT` queues another response; empty `simulate` queues silence. Reset clears conversation state but does not clear queued simulated input. These are artificial inputs, not participant observations. Daily schedules still follow the wall clock in dry-run; use the manual “Say something now” button or `chatter` to preview without waiting. The tests use an injected clock instead of changing the system clock.
 
 ## Interaction
 
-- Start the morning scene from the controller. The box speaks to itself, then greets the participant. An answer to the first line is handled before continuing, avoiding an overlapping greeting.
-- After each spoken line, the participant has **2.0 seconds to begin speaking**. Once speech starts, capture continues until approximately **0.8 seconds of silence**. Two seconds is not the length limit for the whole answer.
-- Automatic mode uses a fixed scripted reply, then opens another response window. It does not interpret arbitrary questions or generate new answers. Disable automatic replies for a wizard to read/correct the transcript and choose a scripted or custom reply.
-- Work mode acknowledges the request, finishes its response window, and starts a 45-minute timer. A background scheduler issues one movement reminder. `work 0.05` uses a three-second test timer. Accept/defer are wizard controls, not recognized spoken intents.
-- Pause cancels the current turn and freezes the timer. Resume returns to Quiet and restores the remaining time. Stop cancels the turn and timer. Reset also clears transcript/output/errors and restores automatic fixed replies.
-- An interrupted native Whisper call may take time to return. Its result is discarded; wait until the audio worker has finished before starting another action. The controller reports Busy while cancellation completes.
-- Morning activation is manual. There is no enabled morning alarm or wake-word detector. Muse is an unavailable placeholder interface; no pairing or transport is implemented.
+- Keep the program running before **10:30 America/New_York** for the daily morning scene. It runs once per day; a startup after 10:30 does not replay it.
+- From 10:30 until **20:00**, choose a random **30–90 minute** wait after each completed interaction, then say a line from the 16-line self-talk pool. Do not start a new autonomous scene at or after 20:00; a conversation already in progress can finish. Manual controls remain available at night.
+- After every spoken line, allow **2.0 seconds to start speaking**. Once speech starts, keep the whole utterance until about **0.8 seconds of silence**. These settings are unchanged.
+- On a recognized response, choose one of **24 original playful replies**, avoiding the immediately previous line in that pool. Then open another response window. Silence ends the exchange. No general language understanding, semantic matching, advice, or language model is used.
+- The two preset pools and daily times live in `talking-box-dialogue.json`: `presets.self_talk`, `presets.replies`, and `daily_schedule`. Restart after editing. Each pool requires at least two distinct, nonempty lines up to 300 characters.
+- Pause cancels the current turn and suppresses automatic scenes; Resume starts a fresh daytime waiting interval. **Stop disables the daily schedule** and cancels any legacy work timer; re-enable it explicitly using the daily checkbox or `schedule on`. Reset clears conversation state and restores the configured schedule and random replies.
+- The old work reminder is a collapsed, manual-only demo; it is not the daily ornament behavior. The previous 45-minute reminder never starts by itself.
+- Native Whisper cancellation still waits for the in-flight computation to return and discards its result. Busy protects the audio devices during cancellation. No wake-word detector is installed; Muse remains an unavailable placeholder.
 
-Console commands: `help`, `status`, `morning`, `listen`, `say TEXT`, `simulate TEXT`, `work MINUTES`, `remind`, `accept`, `defer`, `auto on/off`, `pause`, `resume`, `stop`, `reset`, `quit`.
+Main console commands: `morning`, `chatter`, `schedule on/off`, `listen`, `say TEXT`, `simulate TEXT`, `auto on/off`, `pause`, `resume`, `stop`, `reset`, `status`, `help`, `quit`.
 
 ## Raspberry Pi setup and verification
 
@@ -58,7 +59,7 @@ Starting the entry point does not itself capture audio; interaction actions do. 
 
 ## Architecture and limits
 
-`controller.py` owns states, turn cancellation, fixed dialogue, and the timer. `audio_backend.py` provides the silent backend and the Pi Piper/aplay, Silero VAD, and Whisper adapter. `turn_capture.py` determines onset and end-of-turn from frames. `server.py` and `console.py` share action dispatch; `static/` contains wizard and participant pages.
+`daily_schedule.py` owns the New York wall-clock schedule with an injectable clock. `controller.py` owns states, turn cancellation, random preset selection, and the legacy manual timer. `audio_backend.py` provides the silent backend and the Pi Piper/aplay, Silero VAD, and Whisper adapter. `turn_capture.py` determines onset and end-of-turn from frames. `server.py` and `console.py` share action dispatch; `static/` contains wizard and participant pages.
 
 The participant page distinguishes Quiet, Listening, Thinking, Speaking, and Paused. Audio and transcripts remain in process memory; no participant recording or dataset export is implemented. Room echo, device-open latency, noisy input, and the exact onset boundary still need hardware testing. Persistent noise may prevent the silence endpoint; Stop is the manual escape.
 
@@ -66,7 +67,7 @@ The participant page distinguishes Quiet, Listening, Thinking, Speaking, and Pau
 
 These show **Windows silent simulation**, not a Pi or participant trial.
 
-![Wizard after reset](docs/images/wizard-final.png)
+![Daily ornament controller](docs/images/daily-ornament.png)
 ![Participant paused state](docs/images/participant-paused.png)
 
 ## Attribution

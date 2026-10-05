@@ -34,6 +34,13 @@ def dispatch_action(
     accepted = True
     if path == "/api/morning":
         accepted = controller.start_morning()
+    elif path == "/api/self-talk":
+        accepted = controller.start_self_talk()
+    elif path == "/api/schedule":
+        enabled = data.get("enabled")
+        if not isinstance(enabled, bool):
+            raise ValueError("enabled must be true or false")
+        controller.set_daily_enabled(enabled)
     elif path == "/api/listen":
         accepted = controller.listen_once()
     elif path == "/api/transcript":

@@ -1,0 +1,543 @@
+Talking Box console; backend=dry-run
+morning | chatter | listen | say TEXT | simulate TEXT (empty = silence)
+schedule on/off | auto on/off
+pause | resume | stop | reset | status | help | quit
+Legacy manual work demo: work MINUTES | remind | accept | defer
+Daily ornament: 10:30 morning, random 30-90 minute chatter before 20:00 New York.
+Stop disables the daily schedule; 'schedule on' enables it. Reset restores defaults.
+Commands use the same controller as the web view. Status lists busy/cancelling
+actions; retry after they finish. 'simulate' queues input only in dry-run mode.
+
+flower> {
+  "status": "quiet",
+  "phase": "idle",
+  "mode": "flower",
+  "backend": "dry-run",
+  "automatic_reply": true,
+  "muse": {
+    "available": false,
+    "wake_interface": "reserved"
+  },
+  "transcript": "",
+  "last_spoken": "",
+  "last_error": "",
+  "active_action": "",
+  "work": {
+    "running": false,
+    "deadline": null,
+    "reminder_sent": false,
+    "reminder_spoken": false,
+    "paused_remaining": null,
+    "remaining_seconds": null
+  },
+  "events": [
+    {
+      "time": "2026-10-05T01:27:24+00:00",
+      "message": "Controller ready in Flower mode"
+    }
+  ],
+  "schedule": {
+    "enabled": true,
+    "paused": false,
+    "busy": false,
+    "timezone": "America/New_York",
+    "morning_time": "10:30",
+    "quiet_time": "20:00",
+    "min_interval_minutes": 30,
+    "max_interval_minutes": 90,
+    "next_at": "2026-10-05T10:30:00-04:00",
+    "next_kind": "morning"
+  }
+}
+flower> Accepted
+flower> {
+  "status": "listening",
+  "phase": "waiting_for_start",
+  "mode": "flower",
+  "backend": "dry-run",
+  "automatic_reply": true,
+  "muse": {
+    "available": false,
+    "wake_interface": "reserved"
+  },
+  "transcript": "It is too early for this much confidence.",
+  "last_spoken": "Careful. Keep talking to me and I'll expect a tiny name tag.",
+  "last_error": "",
+  "active_action": "self talk",
+  "work": {
+    "running": false,
+    "deadline": null,
+    "reminder_sent": false,
+    "reminder_spoken": false,
+    "paused_remaining": null,
+    "remaining_seconds": null
+  },
+  "events": [
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Listening"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Speaking"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Thinking"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "Transcript updated"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Thinking"
+    },
+    {
+      "time": "2026-10-05T01:27:24+00:00",
+      "message": "State: Listening"
+    },
+    {
+      "time": "2026-10-05T01:27:24+00:00",
+      "message": "State: Speaking"
+    },
+    {
+      "time": "2026-10-05T01:27:24+00:00",
+      "message": "Controller ready in Flower mode"
+    }
+  ],
+  "schedule": {
+    "enabled": true,
+    "paused": false,
+    "busy": true,
+    "timezone": "America/New_York",
+    "morning_time": "10:30",
+    "quiet_time": "20:00",
+    "min_interval_minutes": 30,
+    "max_interval_minutes": 90,
+    "next_at": null,
+    "next_kind": null
+  }
+}
+flower> Accepted
+flower> {
+  "status": "paused",
+  "phase": "paused",
+  "mode": "flower",
+  "backend": "dry-run",
+  "automatic_reply": true,
+  "muse": {
+    "available": false,
+    "wake_interface": "reserved"
+  },
+  "transcript": "It is too early for this much confidence.",
+  "last_spoken": "Careful. Keep talking to me and I'll expect a tiny name tag.",
+  "last_error": "",
+  "active_action": "",
+  "work": {
+    "running": false,
+    "deadline": null,
+    "reminder_sent": false,
+    "reminder_spoken": false,
+    "paused_remaining": null,
+    "remaining_seconds": null
+  },
+  "events": [
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "Paused; interrupted turn is discarded"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Paused"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "No speech started in the response window"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Quiet"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Listening"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Speaking"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Thinking"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "Transcript updated"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Thinking"
+    },
+    {
+      "time": "2026-10-05T01:27:24+00:00",
+      "message": "State: Listening"
+    },
+    {
+      "time": "2026-10-05T01:27:24+00:00",
+      "message": "State: Speaking"
+    },
+    {
+      "time": "2026-10-05T01:27:24+00:00",
+      "message": "Controller ready in Flower mode"
+    }
+  ],
+  "schedule": {
+    "enabled": true,
+    "paused": true,
+    "busy": false,
+    "timezone": "America/New_York",
+    "morning_time": "10:30",
+    "quiet_time": "20:00",
+    "min_interval_minutes": 30,
+    "max_interval_minutes": 90,
+    "next_at": null,
+    "next_kind": null
+  }
+}
+flower> Accepted
+flower> Accepted
+flower> {
+  "status": "quiet",
+  "phase": "idle",
+  "mode": "flower",
+  "backend": "dry-run",
+  "automatic_reply": true,
+  "muse": {
+    "available": false,
+    "wake_interface": "reserved"
+  },
+  "transcript": "It is too early for this much confidence.",
+  "last_spoken": "Careful. Keep talking to me and I'll expect a tiny name tag.",
+  "last_error": "",
+  "active_action": "",
+  "work": {
+    "running": false,
+    "deadline": null,
+    "reminder_sent": false,
+    "reminder_spoken": false,
+    "paused_remaining": null,
+    "remaining_seconds": null
+  },
+  "events": [
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "Stopped; daily schedule disabled and work timer cancelled"
+    },
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "State: Quiet"
+    },
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "Work session closed"
+    },
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "Resumed; start a fresh turn with controls"
+    },
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "State: Quiet"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "Paused; interrupted turn is discarded"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Paused"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "No speech started in the response window"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Quiet"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Listening"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Speaking"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Thinking"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "Transcript updated"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Thinking"
+    },
+    {
+      "time": "2026-10-05T01:27:24+00:00",
+      "message": "State: Listening"
+    },
+    {
+      "time": "2026-10-05T01:27:24+00:00",
+      "message": "State: Speaking"
+    },
+    {
+      "time": "2026-10-05T01:27:24+00:00",
+      "message": "Controller ready in Flower mode"
+    }
+  ],
+  "schedule": {
+    "enabled": false,
+    "paused": false,
+    "busy": false,
+    "timezone": "America/New_York",
+    "morning_time": "10:30",
+    "quiet_time": "20:00",
+    "min_interval_minutes": 30,
+    "max_interval_minutes": 90,
+    "next_at": null,
+    "next_kind": null
+  }
+}
+flower> Accepted
+flower> {
+  "status": "quiet",
+  "phase": "idle",
+  "mode": "flower",
+  "backend": "dry-run",
+  "automatic_reply": true,
+  "muse": {
+    "available": false,
+    "wake_interface": "reserved"
+  },
+  "transcript": "It is too early for this much confidence.",
+  "last_spoken": "Careful. Keep talking to me and I'll expect a tiny name tag.",
+  "last_error": "",
+  "active_action": "",
+  "work": {
+    "running": false,
+    "deadline": null,
+    "reminder_sent": false,
+    "reminder_spoken": false,
+    "paused_remaining": null,
+    "remaining_seconds": null
+  },
+  "events": [
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "Daily schedule enabled"
+    },
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "Stopped; daily schedule disabled and work timer cancelled"
+    },
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "State: Quiet"
+    },
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "Work session closed"
+    },
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "Resumed; start a fresh turn with controls"
+    },
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "State: Quiet"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "Paused; interrupted turn is discarded"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Paused"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "No speech started in the response window"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Quiet"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Listening"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Speaking"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Thinking"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "Transcript updated"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Thinking"
+    },
+    {
+      "time": "2026-10-05T01:27:24+00:00",
+      "message": "State: Listening"
+    },
+    {
+      "time": "2026-10-05T01:27:24+00:00",
+      "message": "State: Speaking"
+    },
+    {
+      "time": "2026-10-05T01:27:24+00:00",
+      "message": "Controller ready in Flower mode"
+    }
+  ],
+  "schedule": {
+    "enabled": true,
+    "paused": false,
+    "busy": false,
+    "timezone": "America/New_York",
+    "morning_time": "10:30",
+    "quiet_time": "20:00",
+    "min_interval_minutes": 30,
+    "max_interval_minutes": 90,
+    "next_at": "2026-10-05T10:30:00-04:00",
+    "next_kind": "morning"
+  }
+}
+flower> Accepted
+flower> {
+  "status": "quiet",
+  "phase": "idle",
+  "mode": "flower",
+  "backend": "dry-run",
+  "automatic_reply": true,
+  "muse": {
+    "available": false,
+    "wake_interface": "reserved"
+  },
+  "transcript": "",
+  "last_spoken": "",
+  "last_error": "",
+  "active_action": "",
+  "work": {
+    "running": false,
+    "deadline": null,
+    "reminder_sent": false,
+    "reminder_spoken": false,
+    "paused_remaining": null,
+    "remaining_seconds": null
+  },
+  "events": [
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "Reset to default Flower mode"
+    },
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "Random preset replies enabled"
+    },
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "Transcript cleared"
+    },
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "Stopped; daily schedule disabled and work timer cancelled"
+    },
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "State: Quiet"
+    },
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "Work session closed"
+    },
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "Daily schedule enabled"
+    },
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "Stopped; daily schedule disabled and work timer cancelled"
+    },
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "State: Quiet"
+    },
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "Work session closed"
+    },
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "Resumed; start a fresh turn with controls"
+    },
+    {
+      "time": "2026-10-05T01:27:27+00:00",
+      "message": "State: Quiet"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "Paused; interrupted turn is discarded"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Paused"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "No speech started in the response window"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Quiet"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Listening"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Speaking"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "State: Thinking"
+    },
+    {
+      "time": "2026-10-05T01:27:25+00:00",
+      "message": "Transcript updated"
+    }
+  ],
+  "schedule": {
+    "enabled": true,
+    "paused": false,
+    "busy": false,
+    "timezone": "America/New_York",
+    "morning_time": "10:30",
+    "quiet_time": "20:00",
+    "min_interval_minutes": 30,
+    "max_interval_minutes": 90,
+    "next_at": "2026-10-05T10:30:00-04:00",
+    "next_kind": "morning"
+  }
+}
+flower> 

@@ -39,6 +39,14 @@ function render(state) {
   statusEl.textContent = state.status;
   document.querySelector("#phase").textContent = state.phase;
   document.querySelector("#automatic").checked = state.automatic_reply;
+  const schedule = state.schedule;
+  document.querySelector("#daily-enabled").checked = schedule.enabled;
+  document.querySelector("#daily-next").textContent = !schedule.enabled
+    ? "Schedule off. Manual controls still work."
+    : schedule.paused ? "Paused. Resume starts a fresh waiting interval."
+    : schedule.busy ? "Conversation in progress. The next interval starts when it ends."
+    : schedule.next_at ? `Next ${schedule.next_kind === "morning" ? "morning scene" : "self-talk"}: ${new Date(schedule.next_at).toLocaleString("en-US", {timeZone: schedule.timezone, month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", timeZoneName: "short"})}`
+    : "Waiting for the next active window.";
   document.querySelector("#backend").textContent = state.backend === "dry-run"
     ? "Silent simulation; no audio devices" : "Pi audio; real microphone and speaker";
   statusEl.dataset.status = state.status;
@@ -70,6 +78,8 @@ async function refresh() {
 }
 
 document.querySelector("#morning").addEventListener("click", () => act("/api/morning"));
+document.querySelector("#self-talk").addEventListener("click", () => act("/api/self-talk"));
+document.querySelector("#daily-enabled").addEventListener("change", (event) => act("/api/schedule", {enabled: event.target.checked}));
 document.querySelector("#listen").addEventListener("click", () => act("/api/listen"));
 document.querySelector("#quiet").addEventListener("click", () => act("/api/quiet"));
 document.querySelector("#stop").addEventListener("click", () => act("/api/stop"));

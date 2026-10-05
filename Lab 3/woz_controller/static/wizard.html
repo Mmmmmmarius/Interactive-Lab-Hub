@@ -11,13 +11,21 @@
     <header class="topbar">
       <div>
         <h1>Talking Box Controller</h1>
-        <p>Flower mode · automatic fixed replies or wizard replies</p>
+        <p>A chatty desk ornament · original playful presets</p>
       </div>
       <div id="status" class="status-chip" data-status="quiet">Quiet</div>
     </header>
 
     <div class="workspace">
       <section>
+        <div class="panel">
+          <h2>Daily ornament</h2>
+          <p>10:30 morning scene · random chatter every 30–90 minutes until 20:00 · New York time</p>
+          <label><input id="daily-enabled" type="checkbox"> Enable daily schedule</label>
+          <p id="daily-next" class="readout">Checking schedule…</p>
+          <button id="self-talk" class="primary">Say something now</button>
+          <p>Keep the program running. Missed scenes are not replayed. Stop disables scheduling; Reset restores defaults.</p>
+        </div>
         <div class="panel">
           <h2>Scene controls</h2>
           <div class="button-row">
@@ -35,7 +43,7 @@
 
         <div class="panel">
           <h2>Transcript and response</h2>
-          <label><input id="automatic" type="checkbox" checked> Use automatic fixed replies</label>
+          <label><input id="automatic" type="checkbox" checked> Use random preset replies</label>
           <p>After every spoken line, start within 2 seconds. Once started, speak until your sentence ends.</p>
           <label class="field-label" for="transcript">Recognized participant speech</label>
           <textarea id="transcript" maxlength="10000" placeholder="Transcript appears here"></textarea>
@@ -58,8 +66,8 @@
           </div>
         </div>
 
-        <div class="panel">
-          <h2>Work reminder</h2>
+        <details class="panel">
+          <summary>Legacy work reminder demo (manual only)</summary>
           <div class="timer-row">
             <label>
               <span class="field-label">Minutes</span>
@@ -75,7 +83,7 @@
             <button id="work-accept">Accept break</button>
             <button id="work-defer">Defer and return to quiet</button>
           </div>
-        </div>
+        </details>
       </section>
 
       <aside>
