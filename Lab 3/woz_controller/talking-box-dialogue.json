@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "title": "The Talking Box",
+  "stage": "local implementation; Mac simulated tests only; Pi and participant tests pending",
+  "timing": {
+    "morning_time": "07:30",
+    "morning_schedule_enabled": false,
+    "self_talk_pause_seconds": 1.0,
+    "min_silence_seconds": 0.8,
+    "speech_start_timeout_seconds": 2.0,
+    "work_timer_minutes": 45,
+    "reminders_per_work_session": 1
+  },
+  "speech": {
+    "voice": "en_US-lessac-medium",
+    "initial_model": "tiny.en",
+    "alternative_model": "base.en"
+  },
+  "scenes": [
+    {
+      "id": "morning",
+      "panels": [
+        {
+          "panel": 1,
+          "box": "Another sunrise. Still no leaves. Terrible benefits."
+        },
+        {
+          "panel": 2,
+          "box": "Morning, sleepyhead! Your daily dose of fabulous has arrived."
+        },
+        {
+          "panel": 3,
+          "person": "It's too early for this much confidence.",
+          "box": "Modesty? Sorry, this box is full of talent."
+        }
+      ]
+    },
+    {
+      "id": "working",
+      "panels": [
+        {
+          "panel": 4,
+          "person": "I'm starting work. Try to behave.",
+          "box": "Fine. I'll be quietly magnificent."
+        },
+        {
+          "panel": 5,
+          "box": "How about a walk? You're growing roots. That's MY job."
+        },
+        {
+          "panel": 6,
+          "person": "All right, botanist. One lap.",
+          "box": "Go on. I'll guard the desk. Heroically."
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "core_scenarios": "student supplied and approved",
+    "dialogue_and_visual_assistance": "Codex; built-in image generation",
+    "reference_commit": "5fac8c241850c7d59b2b3dfecea38fe978713f6c",
+    "reference": "https://github.com/manaporkun/talking-flower/blob/5fac8c241850c7d59b2b3dfecea38fe978713f6c/character/SOUL.md"
+  },
+  "interaction": {
+    "default_mode": "flower",
+    "automatic_fixed_reply": true,
+    "after_each_utterance": "2 seconds to start; VAD ends the whole turn",
+    "muse_wake_interface": "reserved, unavailable, no pairing or transport"
+  }
+}

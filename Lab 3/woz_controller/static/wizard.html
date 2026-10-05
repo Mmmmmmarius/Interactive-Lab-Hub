@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Talking Box Controller</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <h1>Talking Box Controller</h1>
+        <p>Flower mode · automatic fixed replies or wizard replies</p>
+      </div>
+      <div id="status" class="status-chip" data-status="quiet">Quiet</div>
+    </header>
+
+    <div class="workspace">
+      <section>
+        <div class="panel">
+          <h2>Scene controls</h2>
+          <div class="button-row">
+            <button id="morning" class="primary">Start morning scene</button>
+            <button id="listen">Listen for one turn</button>
+            <button id="quiet">Return to quiet</button>
+            <button id="pause">Pause</button>
+            <button id="resume">Resume</button>
+            <button id="reset">Reset</button>
+            <button id="stop" class="danger">Stop now</button>
+          </div>
+          <p id="phase" class="readout">Ready</p>
+          <p id="error" class="error" role="alert"></p>
+        </div>
+
+        <div class="panel">
+          <h2>Transcript and response</h2>
+          <label><input id="automatic" type="checkbox" checked> Use automatic fixed replies</label>
+          <p>After every spoken line, start within 2 seconds. Once started, speak until your sentence ends.</p>
+          <label class="field-label" for="transcript">Recognized participant speech</label>
+          <textarea id="transcript" maxlength="10000" placeholder="Transcript appears here"></textarea>
+          <div class="button-row">
+            <button id="save-transcript">Save correction</button>
+          </div>
+
+          <h3>Scripted replies</h3>
+          <div class="reply-grid">
+            <button class="scripted" data-text="Modesty? Sorry, this box is full of talent.">Modesty? Sorry, this box is full of talent.</button>
+            <button class="scripted" data-text="Fine. I'll be quietly magnificent.">Fine. I'll be quietly magnificent.</button>
+            <button class="scripted" data-text="Go on. I'll guard the desk. Heroically.">Go on. I'll guard the desk. Heroically.</button>
+          </div>
+
+          <h3>Custom reply</h3>
+          <label class="field-label" for="custom-reply">Short reply for the box</label>
+          <textarea id="custom-reply" maxlength="300" placeholder="Type what the box should say"></textarea>
+          <div class="button-row">
+            <button id="speak-custom" class="primary">Speak custom reply</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Work reminder</h2>
+          <div class="timer-row">
+            <label>
+              <span class="field-label">Minutes</span>
+              <input id="minutes" type="number" min="0.05" max="180" step="0.05" value="45">
+            </label>
+            <div class="button-row">
+              <button id="work-start" class="primary">Start work session</button>
+              <button id="work-expire">Simulate timer expiry</button>
+            </div>
+          </div>
+          <p id="timer" class="readout">No work timer running</p>
+          <div class="button-row">
+            <button id="work-accept">Accept break</button>
+            <button id="work-defer">Defer and return to quiet</button>
+          </div>
+        </div>
+      </section>
+
+      <aside>
+        <div class="panel">
+          <h2>Current output</h2>
+          <p id="backend" class="readout"></p>
+          <p id="last-spoken" class="readout">Nothing spoken yet</p>
+        </div>
+        <div class="panel">
+          <h2>Silent simulation input</h2>
+          <textarea id="simulated-input" maxlength="10000" placeholder="Queue the next simulated transcript, or leave empty for silence"></textarea>
+          <button id="simulate">Queue simulated turn</button>
+          <p>Available only with the dry-run backend. Timing is accelerated.</p>
+        </div>
+        <div class="panel">
+          <h2>Session log</h2>
+          <ol id="events" class="event-list"></ol>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <script src="/static/wizard.js"></script>
+</body>
+</html>

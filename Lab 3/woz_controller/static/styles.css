@@ -1,0 +1,186 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f4f6f3;
+  color: #17211b;
+  letter-spacing: 0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #f4f6f3;
+}
+
+button, input, textarea, select { font: inherit; }
+
+button {
+  min-height: 40px;
+  border: 1px solid #56645b;
+  border-radius: 6px;
+  padding: 8px 12px;
+  background: #ffffff;
+  color: #17211b;
+  cursor: pointer;
+}
+
+button:hover { background: #e8ede9; }
+button:disabled { cursor: not-allowed; opacity: 0.5; }
+button.primary { background: #176b43; border-color: #176b43; color: #ffffff; }
+button.primary:hover { background: #125535; }
+button.danger { background: #a72e2e; border-color: #a72e2e; color: #ffffff; }
+button.danger:hover { background: #842323; }
+
+input, textarea, select {
+  width: 100%;
+  border: 1px solid #9da8a0;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #17211b;
+  padding: 9px 10px;
+}
+
+textarea { min-height: 88px; resize: vertical; }
+
+.app-shell {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 18px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.topbar h1 { margin: 0; font-size: 24px; line-height: 1.2; }
+.topbar p { margin: 4px 0 0; color: #536058; }
+
+.status-chip {
+  flex: 0 0 auto;
+  min-width: 124px;
+  border: 1px solid #17211b;
+  border-radius: 6px;
+  padding: 9px 12px;
+  background: #ffffff;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.status-chip[data-status="listening"] { background: #d7f1e3; border-color: #176b43; }
+.status-chip[data-status="thinking"] { background: #fff0c2; border-color: #8e6d09; }
+.status-chip[data-status="speaking"] { background: #dceaf8; border-color: #2c5f8d; }
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: 16px;
+}
+
+.panel {
+  border: 1px solid #c8d0ca;
+  border-radius: 6px;
+  background: #ffffff;
+  padding: 16px;
+}
+
+.panel + .panel { margin-top: 16px; }
+.panel h2 { margin: 0 0 12px; font-size: 17px; }
+.panel h3 { margin: 16px 0 8px; font-size: 14px; }
+.field-label { display: block; margin-bottom: 6px; color: #48534c; font-size: 13px; font-weight: 700; }
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.reply-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.reply-grid button {
+  min-height: 76px;
+  text-align: left;
+  line-height: 1.35;
+}
+
+.timer-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: end;
+  gap: 8px;
+}
+
+.readout {
+  margin: 0;
+  min-height: 24px;
+  color: #3f4b44;
+}
+
+.event-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-height: 310px;
+  overflow: auto;
+}
+
+.event-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #edf0ed;
+  font-size: 13px;
+}
+
+.event-list time { display: block; color: #68736c; font-size: 11px; }
+.error { min-height: 20px; color: #9a2424; font-weight: 700; }
+
+.participant-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #111713;
+  color: #ffffff;
+}
+
+.participant-state {
+  width: min(740px, 100%);
+  text-align: center;
+}
+
+.state-mark {
+  width: 104px;
+  height: 104px;
+  margin: 0 auto 28px;
+  border: 5px solid #ffffff;
+  border-radius: 50%;
+  background: #79827c;
+}
+
+.participant-state[data-status="listening"] .state-mark { background: #3ecc7f; }
+.participant-state[data-status="thinking"] .state-mark { background: #e5b93f; }
+.participant-state[data-status="speaking"] .state-mark { background: #5597d4; }
+.participant-state h1 { margin: 0; font-size: clamp(44px, 9vw, 92px); line-height: 1; }
+.participant-state p { margin: 18px 0 0; color: #c9d0cb; font-size: 20px; }
+
+@media (max-width: 760px) {
+  .app-shell { padding: 12px; }
+  .topbar { align-items: flex-start; }
+  .workspace { grid-template-columns: 1fr; }
+  .reply-grid { grid-template-columns: 1fr; }
+  .timer-row { grid-template-columns: 86px 1fr; }
+  .status-chip { min-width: 108px; }
+}
+
+
+input[type="checkbox"] { width: auto; }
+.status-chip[data-status="paused"] { background: #eee; }
