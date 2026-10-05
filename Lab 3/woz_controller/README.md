@@ -4,7 +4,7 @@ A local speech interaction prototype for Lab 3 Part 2. The student chose the ord
 
 ## Status
 
-Windows Python 3.13.5: **70 tests passed, 0 failures, 0 errors, 0 skips**. Silent console and browser checks also passed. Raspberry Pi deployment, real audio, participant trials, and the full 45-minute observation remain pending. See [validation](docs/VALIDATION.md), [Part 2 requirement review](docs/PART2_GAPS.md), and [AI assistance](docs/AI_ASSISTANCE.md).
+Windows Python 3.13.5: **70 tests passed, 0 failures, 0 errors, 0 skips**. Silent console and browser checks also passed. Raspberry Pi deployment, real audio, participant trials, and the full 45-minute observation remain pending. See [validation](docs/VALIDATION.md) and [Part 2 requirement review](docs/PART2_GAPS.md).
 
 ## Silent demo on Windows, macOS, or Linux
 
@@ -71,4 +71,4 @@ These show **Windows silent simulation**, not a Pi or participant trial.
 
 ## Attribution
 
-The dialogue JSON retains the original scenario and reference provenance. See [AI assistance](docs/AI_ASSISTANCE.md) for the technical work and its evidence limits. Personal reflection and participant findings have not been generated or filled in.
+The dialogue JSON retains the original scenario and reference provenance. Personal reflection and participant findings have not been generated or filled in.
