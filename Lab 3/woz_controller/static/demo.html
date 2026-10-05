@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Talking Box · 一天的陪伴</title><link rel="stylesheet" href="/demo.css"></head>
+<body><main>
+<header><p class="eyebrow">LAB 3.2 / THE TALKING BOX</p><h1>一只没打算帮忙的盒子。</h1><p>放在桌上，偶尔开口。你搭句话，它便顺势调侃一句。</p><span class="badge">无声互动演示 · 不使用麦克风</span></header>
+<section class="stage" aria-label="装饰品演示"><div class="clock"><span>演示时钟 · NEW YORK</span><strong id="clock">10:29:59</strong><small id="day"></small></div><div class="scene"><div class="bubble" id="line">在 10:30 之前，安静也是一种才华。</div><div class="cube" aria-hidden="true"></div><div class="desk"></div></div><div class="status"><span id="dot"></span><strong id="status">Quiet</strong><span id="phase">等待开场</span></div><p id="heard" class="heard"></p></section>
+<section class="controls"><div><p class="eyebrow">用三步走完一天</p><h2>把等待交给演示时钟</h2><p>按钮只推进演示时间，调度和随机台词来自现有控制器。</p></div><div class="buttons"><button id="next">到 10:30，开始早晨</button><button id="quiet" class="secondary">跳到 20:00</button><button id="reset" class="plain">重新演示</button></div><label class="toggle"><input id="respond" type="checkbox"> 这次模拟用户搭话</label><label for="reply">模拟语句（在本次发言后的聆听窗口送入）</label><input id="reply" maxlength="300" value="You're very proud of doing nothing."><p id="next-event"></p><p id="error" role="alert"></p></section>
+<section class="timeline"><div><b>10:30</b><span>早晨开场</span></div><div><b>30–90 min</b><span>对话结束后随机等待</span></div><div><b>2 s / 0.8 s</b><span>开始搭话 / 句尾静音</span></div><div><b>20:00</b><span>停止新的主动发言</span></div></section>
+<details><summary>演示说明与事件记录</summary><p>文本输入代替语音，发言和 Thinking 时长为演示节奏，不代表 Pi 的实际延迟。每次可排入一条回应；之后保持沉默。自动回应从 24 条 preset 中随机选择，不理解问题，也不提供帮助。20:00 后正在进行的对话可以结束，新的主动发言等到次日 10:30。</p><p><a href="/wizard" target="_blank" rel="noopener">打开完整控制器</a> · <a href="/participant" target="_blank" rel="noopener">打开参与者状态屏</a></p><ul id="events"></ul></details>
+<footer>本地软件演示 · 不是 Pi 实测或参与者研究记录</footer>
+</main><script src="/demo.js"></script></body></html>

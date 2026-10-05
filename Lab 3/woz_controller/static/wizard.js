@@ -47,8 +47,11 @@ function render(state) {
     : schedule.busy ? "Conversation in progress. The next interval starts when it ends."
     : schedule.next_at ? `Next ${schedule.next_kind === "morning" ? "morning scene" : "self-talk"}: ${new Date(schedule.next_at).toLocaleString("en-US", {timeZone: schedule.timezone, month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", timeZoneName: "short"})}`
     : "Waiting for the next active window.";
-  document.querySelector("#backend").textContent = state.backend === "dry-run"
-    ? "Silent simulation; no audio devices" : "Pi audio; real microphone and speaker";
+  document.querySelector("#backend").textContent = {
+    "dry-run": "Silent simulation; no audio devices",
+    "pi": "Pi audio; real microphone and speaker",
+    "simulated events": "Simulated events; this view is not connected to Pi audio",
+  }[state.backend] || `Backend: ${state.backend}`;
   statusEl.dataset.status = state.status;
   if (!transcriptFocused) transcriptEl.value = state.transcript || "";
   errorEl.textContent = requestError || state.last_error || "";

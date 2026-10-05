@@ -4,7 +4,11 @@ A local speech interaction prototype for Lab 3 Part 2. The student chose the ord
 
 ## Status
 
-Windows Python 3.13.5: **93 tests passed, 0 failures, 0 errors, 0 skips**. Silent console and browser checks also passed. Raspberry Pi deployment, real audio, participant trials, and a real all-day schedule observation remain pending. See [daily ornament behavior and verification](docs/DAILY_ORNAMENT.md), [baseline validation](docs/VALIDATION.md), [Part 2 requirement review](docs/PART2_GAPS.md), and [AI assistance](docs/AI_ASSISTANCE.md).
+Windows Python 3.13.5: **98 tests passed, 0 failures, 0 errors, 0 skips**, including five interactive-demo integration tests. Silent console and browser checks also passed. Raspberry Pi deployment, real audio, participant trials, and a real all-day schedule observation remain pending. See [daily ornament behavior and verification](docs/DAILY_ORNAMENT.md), [baseline validation](docs/VALIDATION.md), [Part 2 requirement review](docs/PART2_GAPS.md), and [AI assistance](docs/AI_ASSISTANCE.md).
+
+## Interactive daily walkthrough
+
+Run `python demo.py` and open <http://127.0.0.1:18766/demo>. Jump to 10:30, the next random event, or 20:00; optionally queue a typed response. This uses the real controller with a separate silent backend and virtual clock. See [demo instructions and the revised storyboard](docs/DEMO.md). Keep the terminal open while demonstrating; Ctrl+C stops it.
 
 ## Silent demo on Windows, macOS, or Linux
 
