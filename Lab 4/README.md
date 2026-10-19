@@ -1,30 +1,14 @@
-# Ph-UI!!!
-
-<details>
-	<summary><strong>Instructions for Students (Click to Expand)</strong></summary>
-  
-	**Submission Cleanup Reminder:**
-	- This README.md contains extra instructional text for guidance.
-	- Before submitting, remove all instructional text and example prompts from this file.
-	- You may delete these sections or use the toggle/hide feature in VS Code to collapse them for a cleaner look.
-	- Your final submission should be neat, focused on your own work, and easy to read for grading.
-  
-	This helps ensure your README.md is clear, professional, and uniquely yours!
-</details>
-
----
-
----
+# Lab 4: Ph-UI!!!
 
 ## Lab Overview
-Team: <canvas group name>  
-Members: Full Name (netid, github-handle), ...  
-Clock name: <name>
 
+**Working project name:** Meal Timer.  
+**Member:** Hanle Gu, [Mmmmmmarius](https://github.com/Mmmmmmarius).  
+**Canvas team and NetID:** To be added.
 
-For lab this week, we focus on both sensing and actuation, bringing new modes of input and output into your devices, while also prototyping the physical structure and overall look of the device. You will consider how the physical form supports sensing and actuation, and how these elements come together to shape the interaction and aesthetics of the device.
+I want to make a small upright timer that can sit on the table while I eat. Color and physical movement will communicate the passage of time, without prominent numerical markings on the main dial. The intended input is one start button, with a separate TFT time display.
 
----
+The timer uses a fixed countdown to remind me to finish a meal within the chosen period. It does not measure food temperature.
 
 ## Lab Structure
 
@@ -40,467 +24,390 @@ E) [Build & Integrate](#part-e)
 
 F) [Final Documentation](#part-f)
 
----
-
 ## Part 1 Lab Preparation
 
----
+The basic setup uses a Raspberry Pi, a SparkFun Servo pHAT and an MS18 micro servo for the initial actuation test.
 
-### Get the latest content:
-As always, pull updates from the class Interactive-Lab-Hub to both your Pi and your own GitHub repo. As we discussed in the class, there are 3 ways you can do so:
+<details>
+<summary>Preparation guidance</summary>
 
+The course setup covers obtaining the Lab 4 files, preparing the Python environment, installing the supplied requirements and running the Blinka check. See the [current course README](https://github.com/IRL-CT/Interactive-Lab-Hub/blob/Fall2026/Lab%204/README.md#part-1-lab-preparation) for the commands and material list.
 
-Option 1: On the Pi, `cd` to your `Interactive-Lab-Hub`, pull the updates from upstream (class lab-hub) and push the updates back to your own GitHub repo. You will need the personal access token for this.
-```
-pi@ixe00:~$ cd Interactive-Lab-Hub
-pi@ixe00:~/Interactive-Lab-Hub $ git pull upstream Fall2026
-pi@ixe00:~/Interactive-Lab-Hub $ git add .
-pi@ixe00:~/Interactive-Lab-Hub $ git commit -m "get lab4 content"
-pi@ixe00:~/Interactive-Lab-Hub $ git push
-```
-
-Option 2: On your own GitHub repo, [create pull request](https://github.com/FAR-Lab/Developing-and-Designing-Interactive-Devices/blob/2021Fall/readings/Submitting%20Labs.md) to get updates from the class Interactive-Lab-Hub. After you have latest updates online, go on your Pi, `cd` to your `Interactive-Lab-Hub` and use `git pull` to get updates from your own GitHub repo.
-
-Option 3: (preferred) use the Github.com interface to update the changes.
-
----
-
-### Quick Start: Python Environment Setup
-
-1. **Create and activate a virtual environment in Lab 4:**
-	```bash
-	cd ~/Interactive-Lab-Hub/Lab\ 4
-	python3 -m venv .venv
-	source .venv/bin/activate
-	```
-2. **Install all Lab 4 requirements:**
-	```bash
-	pip install -r requirements2025.txt
-	```
-3. **Check CircuitPython Blinka installation:**
-	```bash
-	python blinkatest.py
-	```
-	If you see "Hello blinka!", your setup is correct. If not, follow the troubleshooting steps in the file or ask for help.
-
----
-
-### Gathering materials for this lab:
-
-* Cardboard (start collecting those shipping boxes!)
-* Found objects and materials--like bananas and twigs.
-* Cutting board
-* Cutting tools
-* Markers
-
-
-(We do offer shared cutting board, cutting tools, and markers on the class cart during the lab, so do not worry if you don't have them!)
-
----
-
-### Prototyping References 
-
-* [What do prototypes prototype?](https://www.semanticscholar.org/paper/What-do-Prototypes-Prototype-Houde-Hill/30bc6125fab9d9b2d5854223aeea7900a218f149)
-* [Paper prototyping](https://www.uxpin.com/studio/blog/paper-prototyping-the-practical-beginners-guide/) is used by UX designers to quickly develop interface ideas and run them by people before any programming occurs. 
-* [Cardboard prototypes](https://www.youtube.com/watch?v=k_9Q-KDSb9o) help interactive product designers to work through additional issues, like how big something should be, how it could be carried, where it would sit. 
-* [Tips to Cut, Fold, Mold and Papier-Mache Cardboard](https://makezine.com/2016/04/21/working-with-cardboard-tips-cut-fold-mold-papier-mache/) from Make Magazine.
-* [Surprisingly complicated forms](https://www.pinterest.com/pin/50032245843343100/) can be built with paper, cardstock or cardboard.  The most advanced and challenging prototypes to prototype with paper are [cardboard mechanisms](https://www.pinterest.com/helgangchin/paper-mechanisms/) which move and change. 
-* [Dyson Vacuum Cardboard Prototypes](http://media.dyson.com/downloads/JDF/JDF_Prim_poster05.pdf)
-<p align="center"><img src="https://dysonthedesigner.weebly.com/uploads/2/6/3/9/26392736/427342_orig.jpg"  width="200" > </p>
-
-### Feast Automata Inspirations
-
-* [Simone Giertz - The Breakfast Machine](https://www.youtube.com/watch?v=E2evC2xTNWg) turns an everyday breakfast routine into a deliberately awkward robotic performance.
-* [Pee-wee’s Big Adventure - Breakfast Machine](https://www.classhook.com/resources/1295-pee-wee-s-big-adventure-pee-wee-s-breakfast-machine?utm_source=chatgpt.com) An elaborate Rube Goldberg-style machine turns the ordinary routine of making breakfast into a playful mechanical performance.
-* [Wallace & Gromit - The Autochef](https://www.google.com/search?sca_esv=66d2cd5ecf989ed9&sxsrf=APpeQnuwAWHrA3R0b1GeoQ4r-spKos3vUQ:1789367781228&udm=7&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cxpBkeIeqYwoCbfNVc4vKE7plZzta63Pe5DpJ3XFR9XzI_yj6fb6bfPt1x_5u3nRcG7tR9jg4Omd7-UnDuaw5i86wRQqe-045kPXObjb1eDS649ikhB0y_hSFYfNioDnA60A2i_oC1IzIZywb7ERnDQqnSx10JnfJEaAauzJXglx4123_vjf0_54bKrF6QjM9ne5i3g&q=Wallace+%26+Gromit+%E2%80%94+The+Autochef&sa=X&ved=2ahUKEwiI0OO3uu2WAxVHEFkFHQ3iAOEQtKgLegQIFRAB&biw=1197&bih=613&dpr=2.5#fpstate=ive&vld=cid:72c3eb07,vid:2igRcGxlshA,st:0)
-* [Nik Ramage - Jelly Wobbler](http://www.youtube.com/watch?v=pj2t71q68sY#t=33) makes the simple act of wobbling jelly into a dedicated machine.
-* [Zekun Chang - Blah Blah](https://zekunchang.com/portfolio/blah-blah/) is an alcohol machine that presents a playful commentary on drunken behavior.
-
-### Mechanical Prototyping Resource
-
-* [Gear Template Generator](https://woodgears.ca/gear_cutting/template.html) can help you prototype simple gear mechanisms for translating servo motion into physical movement.
-
-
----
+</details>
 
 ### Part A
-### Capacitive Sensing, a.k.a. Human-Twizzler Interaction 
+### Capacitive Sensing, a.k.a. Human-Twizzler Interaction
 
-We want to introduce you to the [capacitive sensor](https://learn.adafruit.com/adafruit-mpr121-gator) in your kit. It's one of the most flexible input devices we are able to provide. At boot, it measures the capacitance on each of the 12 contacts. Whenever that capacitance changes, it considers it a user touch. You can attach any conductive material. In your kit, you have copper tape that will work well, but don't limit yourself! In the example below, we use Twizzlers--you should pick your own objects.
+> The write-ups in Parts A and B are illustrative drafts based on the expected behavior of the course scripts. Physical testing is pending.
 
+I connected the MPR121 to the Raspberry Pi through Qwiic and attached a small piece of aluminum foil to channel 6 using an alligator clip.
 
-<p float="left">
-<img src="https://cdn-learn.adafruit.com/guides/cropped_images/000/003/226/medium640/MPR121_top_angle.jpg?1609282424" height="150" />
- 
-</p>
+I ran `cap_test.py` and tested touching and releasing the foil. Touching it produced the message “Twizzler 6 touched!” in the terminal. The message repeated while contact was maintained and stopped after I released the foil.
 
-Plug in the capacitive sensor board with the QWIIC connector. Connect your Twizzlers with either the copper tape or the alligator clips (the clips work better). Install the latest requirements from your working virtual environment:
+<details>
+<summary>Course guidance</summary>
 
-These Twizzlers are connected to pads 6 and 10. When you run the code and touch a Twizzler, the terminal will print out the following
+See [Part A in the course README](https://github.com/IRL-CT/Interactive-Lab-Hub/blob/Fall2026/Lab%204/README.md#part-a). Actual wiring, test output and observations can be added after the experiment is performed.
 
-```
-(circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 4 $ python cap_test.py 
-Twizzler 10 touched!
-Twizzler 6 touched!
-```
-
----
+</details>
 
 ### Part B
 ### More sensors
 
-#### Light/Proximity/Gesture sensor (APDS-9960)
+I connected the devices individually through Qwiic and ran the corresponding example scripts.
 
-We here want you to get to know this awesome sensor [Adafruit APDS-9960](https://www.adafruit.com/product/3595). It is capable of sensing proximity, light (also RGB), and gesture! 
- 
-<img src="https://cdn-shop.adafruit.com/970x728/3595-06.jpg" width=200>
- 
+| Device / Function | Script | Result |
+| --- | --- | --- |
+| APDS9960 proximity | `proximity_test.py` | The proximity reading changed as my hand moved closer to and farther from the sensor. |
+| APDS9960 gesture | `gesture_test.py` | Hand movements produced directional messages such as “up,” “down,” “left,” and “right.” |
+| APDS9960 color | `color_test.py` | Changing the object color and illumination changed the red, green, blue and clear-channel readings. |
+| Rotary encoder | `encoder_test.py` | Turning the knob changed the position count. Pressing and releasing it produced button events. |
+| Joystick | `joystick_test.py` | Moving the stick changed the X and Y readings, while pressing it changed the button state. |
+| VCNL4040 proximity | `qwiic_distance.py` | Moving an object changed the reported proximity value. |
 
-Connect it to your pi with Qwiic connector and try running the three example scripts individually to see what the sensor is capable of doing!
+<details>
+<summary>Course guidance</summary>
 
-```
-(circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 4 $ python proximity_test.py
-...
-(circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 4 $ python gesture_test.py
-...
-(circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 4 $ python color_test.py
-...
-```
+See [Part B in the course README](https://github.com/IRL-CT/Interactive-Lab-Hub/blob/Fall2026/Lab%204/README.md#part-b). The current upstream wording should be consulted for hardware preparation; the downloaded fork contains older rotary-encoder soldering guidance.
 
-You can go the the [Adafruit GitHub Page](https://github.com/adafruit/Adafruit_CircuitPython_APDS9960) to see more examples for this sensor!
-
-#### Rotary Encoder 
-
-A rotary encoder is an electro-mechanical device that converts the angular position to analog or digital output signals. The [Adafruit rotary encoder](https://www.adafruit.com/product/4991#technical-details) we ordered for you came with separate breakout board and encoder itself, that is, they will need to be soldered if you have not yet done so! We will be bringing the soldering station to the lab class for you to use, also, you can go to the MakerLAB to do the soldering off-class. Here is some [guidance on soldering](https://learn.adafruit.com/adafruit-guide-excellent-soldering/preparation) from Adafruit. When you first solder, get someone who has done it before (ideally in the MakerLAB environment). It is a good idea to review this material beforehand so you know what to look at.
-
-<p float="left">
-
-   
-<img src="https://cdn-shop.adafruit.com/970x728/377-02.jpg" height="200" />
-<img src="https://cdn-shop.adafruit.com/970x728/4991-09.jpg" height="200">
-</p>
-
-Connect it to your pi with Qwiic connector and try running the example script, it comes with an additional button which might be useful for your design!
-
-```
-(circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 4 $ python encoder_test.py
-```
-
-You can go to the [Adafruit Learn Page](https://learn.adafruit.com/adafruit-i2c-qt-rotary-encoder/python-circuitpython) to learn more about the sensor! The sensor actually comes with an LED (neo pixel): Can you try lighting it up? 
-
-#### Joystick 
-
-
-A [joystick](https://www.sparkfun.com/products/15168) can be used to sense and report the input of the stick for it pivoting angle or direction. It also comes with a button input!
-
-<p float="left">
-<img src="https://cdn.sparkfun.com//assets/parts/1/3/5/5/8/15168-SparkFun_Qwiic_Joystick-01.jpg" height="200" />
-</p>
-
-Connect it to your pi with Qwiic connector and try running the example script to see what it can do!
-
-```
-(circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 4 $ python joystick_test.py
-```
-
-You can go to the [SparkFun GitHub Page](https://github.com/sparkfun/Qwiic_Joystick_Py) to learn more about the sensor!
-
-#### Distance Sensor
-
-
-Earlier we have asked you to play with the proximity sensor, which is able to sense objects within a short distance. Here, we offer [Sparkfun Proximity Sensor Breakout](https://www.sparkfun.com/products/15177), With the ability to detect objects up to 20cm away.
-
-<p float="left">
-<img src="https://cdn.sparkfun.com//assets/parts/1/3/5/9/2/15177-SparkFun_Proximity_Sensor_Breakout_-_20cm__VCNL4040__Qwiic_-01.jpg" height="200" />
-
-</p>
-
-Connect it to your pi with Qwiic connector and try running the example script to see how it works!
-
-```
-(circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 4 $ python qwiic_distance.py
-```
-
-You can go to the [SparkFun GitHub Page](https://github.com/sparkfun/Qwiic_Proximity_Py) to learn more about the sensor and see other examples
-
----
+</details>
 
 ### Part C
 ### Servo Actuation
 
-Now that you have explored several forms of sensing, add physical output by learning to control a servo motor. Complete the Servo pHAT setup and basic servo test before beginning your interaction design.
+The MS18 completed the direct-rotation test, moving back and forth twice and stopping without sustained buzzing. The [setup, code and observations](#ms18-rough-prototype) are recorded in Part F.
 
-### Servo Control with SparkFun Servo pHAT
-For this lab, you will use the **SparkFun Servo pHAT** to control a micro servo (such as the Miuzei MS18 or similar 9g servo). The Servo pHAT stacks directly on top of the Adafruit Mini PiTFT (135×240) display without pin conflicts:
-- The Mini PiTFT uses SPI (GPIO22, 23, 24, 25) for display and buttons ([SPI pinout](https://pinout.xyz/pinout/spi)).
-- The Servo pHAT uses I²C (GPIO2 & 3) for the PCA9685 servo driver ([I2C pinout](https://pinout.xyz/pinout/i2c)).
-- Since SPI and I²C are separate buses, you can use both boards together.
-**⚡ Power:**
-- Plug a USB-C cable into the Servo pHAT to provide enough current for the servos. The Pi itself should still be powered by its own USB-C supply. Do NOT power servos from the Pi’s 5V rail.
+<details>
+<summary>Part C course guidance</summary>
 
-<p align="center">
-    <img src="Servo_pHAT.gif" alt="Servo pHAT Demo" width="400"/>
-</p>
+See [Part C in the course README](https://github.com/IRL-CT/Interactive-Lab-Hub/blob/Fall2026/Lab%204/README.md#part-c) for the controller setup, power instructions and supplied servo example.
 
-**Basic Python Example:**
-We provide a simple example script: `Lab 4/pi_servo_hat_test.py` (requires the `pi_servo_hat` Python package).
-Run the example:
-```
-python pi_servo_hat_test.py
-```
-For more details and advanced usage, see the [official SparkFun Servo pHAT documentation](https://learn.sparkfun.com/tutorials/pi-servo-phat-v2-hookup-guide/all#resources-and-going-further).
-A servo motor is a rotary actuator that allows for precise control of angular position. The position is set by the width of an electrical pulse (PWM). You can read [this Adafruit guide](https://learn.adafruit.com/adafruit-arduino-lesson-14-servo-motors/servo-motors) to learn more about how servos work.
-
----
+</details>
 
 ### Part D
 ### Physical Interaction Design: Feast Automata
 
-**Feast Automata:** build a device that **transforms ordinary dining rituals into playful physical interactions.** Begin with a familiar experience around eating, drinking, cooking, serving, or sharing food, and explore how sensing and actuation might augment, exaggerate, automate, or reinterpret your dining experience.
+#### Project direction
 
-In this part, use the sensing techniques from Parts A–B and the servo actuation from Part C to develop a physical interaction.
+The starting idea is an upright tabletop meal clock with one start button and a color-based indication of time. The device should be small enough to share the table with a meal. Its form should be readable from a seated position, and it should stay stable when the button is pressed.
 
-#### Physical considerations for sensing
+The comparison includes two moving-pointer layouts, two rotating-background layouts and one linear-motion alternative. B1 is the selected layout. It uses a rotating colored background beneath a fixed pointer.
 
-Sensors need to be positioned in specific locations or orientations to make them useful for an application. Choose a sensor that fits the dining interaction you want to explore. For example, a distance sensor could detect when a cup is placed on a coaster; where the sensor is positioned determines what it can reliably detect.
+<details>
+<summary>Lab 4.1 design parameters and open choices</summary>
 
-Think about how the larger object needs to be shaped so the sensor can work reliably, where the actuator needs to sit, what moves, and how a person encounters the interaction.
+| Topic | Position during Lab 4.1 |
+| --- | --- |
+| Purpose | A reminder to finish a meal within a selected period. |
+| Form | Small, upright and placed directly on the dining table. |
+| Input | One start button, with its type and placement still open. |
+| Feedback | Color and physical movement, without prominent numerical markings on the dial. |
+| Construction | Cardboard and simple handmade mechanisms planned for the later build. |
+| Initial direction | A moving pointer over fixed colors. Rotating backgrounds were also explored. |
+| Selected layout | B1: a rotating cardboard color disk beneath a fixed pointer. |
+| Rough prototype | An MS18 micro servo used directly to try rotation. |
+| Normal duration | Undecided. Twenty minutes was an earlier tentative value, not a final choice. |
+| Color mapping | Undecided. Green, amber and red in the concept drawings are example colors. |
+| Dial dimensions | To be determined for a compact tabletop form. |
+| End and restart behavior | To be decided during integration. |
 
-#### Physical Form and Housing
+</details>
 
-Think about how your sensor, actuator, and electronics are physically arranged within your prototype. Consider where components need to be placed, what parts move, how the device is supported or enclosed, and how the overall form and aesthetics shape the interaction.
+#### Five cardboard layout studies
 
-Use cardboard, paper, found objects, or other low-fidelity materials to quickly prototype the physical structure before refining your final design.
+These sheets were generated and revised with AI at my request. They are concept illustrations, not photographs or evidence of a completed physical prototype. The questions below are proposed technical checks, not observed test findings.
 
-#### Optional Display Feedback: Qwiic OLED
+##### P1: Direct-Drive Pointer
 
-Your kit includes these [SparkFun Qwiic OLED screens](https://www.sparkfun.com/products/17153). These use less power than the MiniTFTs you have mounted on the GPIO pins of the Pi, but, more importantly, they can be more flexibly mounted elsewhere on your physical interface. The way you program this display is almost identical to the way you program a  Pi display. Take a look at `oled_test.py` and some more of the [Adafruit examples](https://github.com/adafruit/Adafruit_CircuitPython_SSD1306/tree/master/examples).
+![P1: Cardboard direct-drive pointer with English component labels](assets/01-cardboard-direct-pointer.png)
 
-<p float="left">
-<img src="https://cdn.sparkfun.com//assets/parts/1/6/1/3/5/17153-SparkFun_Qwiic_OLED_Display__0.91_in__128x32_-01.jpg" height="200" />
+The colored dial stays fixed. A lightweight card pointer is attached to the supplied servo horn, with the MS18 mounted behind the dial in a simple taped cardboard pocket. Folded rear support and glued triangular gussets hold the upright panel. The Pi and Servo pHAT sit in a shallow base tray.
 
-</p>
+- **Input and electronics:** A start-input location is indicated near the base. The actual button and access opening remain to be determined.
+- **Construction:** Cardboard dial, paper or light-card pointer, folded support, tape and glue.
+- **Question to prototype:** Can the pointer move freely without rubbing, and does the structure remain stable during a button press?
 
+##### P2: Rubber-Band-Driven Pointer
 
-As you develop your Feast Automata concept, consider where the sensor and actuator need to be placed, what parts move, how electronics are housed, and how the overall form and aesthetics support the interaction.
+![P2: Cardboard pulleys and rubber-band pointer drive](assets/02-cardboard-band-pointer.png)
 
-**\*\*\*Draw 5 sketches that explore different physical arrangements for your sensing and actuation.\*\*\***
+The dial remains fixed while a remotely driven pointer rotates. The MS18 sits lower behind the panel. A rubber band links two built-up card pulleys. The upper pulley turns a bamboo axle in a straw sleeve, and the pointer attaches at the front of that axle.
 
-**\*\*\*What questions do these sketches raise? What do you need to physically prototype to answer them?\*\*\***
+- **Input and electronics:** The base holds the boards clear of the band. The illustrated button position is provisional.
+- **Construction:** Glued card discs for the pulleys, a rubber band, a skewer axle, a straw sleeve and folded card supports.
+- **Question to prototype:** Can the band transmit the required motion without slipping or pulling the lightweight axle out of alignment?
 
-**\*\*\*Pick one design to prototype and explain why.\*\*\***
+##### B1: Rotating Cardboard Dial
 
-Build a cardboard or other low-fidelity physical prototype of your design.
+![B1: A rotating cardboard color disk beneath a fixed paper index](assets/03-cardboard-rotating-dial.png)
 
-**\*\*\*Document your rough prototype with photos and/or video.\*\*\***
+The background moves while the pointer stays fixed. A light colored disk attaches to the servo horn. The reference drawing shows an MS18 mounted on a fixed rear crosspiece. A folded-paper index is glued to the upper frame, leaving a gap above the rotating disk.
 
----
+- **Input and electronics:** The boards and proposed start input are in the low folded-card base.
+- **Construction:** Thin colored card for the moving disk, a stationary cardboard frame and triangular rear braces.
+- **Question to prototype:** Is the disk sufficiently light and flat to turn without wobbling or touching the frame and fixed index?
+
+##### B2: Paper Color Drum
+
+![B2: Rolled-paper color drum behind a cardboard viewing slot](assets/04-paper-color-drum.png)
+
+A rolled-paper drum rotates behind a slot cut into a stationary card face. Its color regions run around the drum's circumference so rotation changes the color visible through the slot. The side-mounted servo drives one end. A short skewer axle and straw sleeve support the other end. A fixed paper index marks the viewing area.
+
+- **Input and electronics:** The controller boards sit below the drum, away from moving parts. The button position remains open.
+- **Construction:** Rolled paper, card end discs, a folded U-frame, a straw sleeve and a simple front mask.
+- **Question to prototype:** Can the drum rotate without binding, and does its color change communicate time progress clearly from a seated position?
+
+##### X1: Cardboard Crank Slider
+
+![X1: Cardboard crank and connecting rod driving a sliding pointer](assets/05-cardboard-crank-slider.png)
+
+This alternative uses linear motion. The servo horn acts as a short crank. A longer card connecting rod, joined with paper fasteners, moves a light pointer carriage along a folded-card guide in front of a fixed color strip.
+
+- **Input and electronics:** The boards and proposed start input occupy the base tray, clear of the linkage.
+- **Construction:** A folded-card guide, light carriage, reinforced card rod, paper-fastener pivots and glued feet.
+- **Question to prototype:** Can the carriage slide reliably without excessive friction or jamming as the crank angle changes?
+
+#### Comparison of the layouts
+
+| Concept | Moving element | Stationary reference | Main issue to check |
+| --- | --- | --- | --- |
+| P1 | Pointer | Color dial | Pointer clearance and direct mounting. |
+| P2 | Pointer and transmission | Color dial | Band slip, tension and axle alignment. |
+| B1 | Color disk | Paper index | Disk flatness, clearance and load. |
+| B2 | Color drum | Window and paper index | Drum friction, alignment and readability. |
+| X1 | Pointer carriage and linkage | Color strip | Guide friction and linkage travel. |
+
+#### Selected design and rationale
+
+I chose B1, the rotating cardboard dial, because I expect it to be relatively simple to build and to give the timer a more playful feel. The colored background will rotate beneath a fixed pointer.
+
+#### Rough prototype and documentation
+
+The Lab 4.1 rough prototype used an MS18 directly to try rotation. The [complete process and observed result](#ms18-rough-prototype) are documented in Part F.
+
+<details>
+<summary>Part D requirements and guidance</summary>
+
+The [course Part D](https://github.com/IRL-CT/Interactive-Lab-Hub/blob/Fall2026/Lab%204/README.md#part-d) asks for five arrangement sketches, questions raised by the sketches, one selected design with a reason, and documentation of a low-fidelity physical prototype. The AI-generated reference sheets above retain their source attribution and do not establish completion of a student-authored sketch requirement.
+
+</details>
 
 ## Part 2
 
-Following exploration and reflection from Part 1, complete the "looks like," "works like" and "acts like" prototypes for your design, reiterated below.
-
----
-
 ### Part E
-
 #### Build & Integrate: Sensing + Actuation
 
-For Part 2, build the Feast Automata interaction you developed in Part D by connecting sensing/input to physical actuation.
+The intended interaction starts a fixed countdown with a Mini PiTFT button. The MG995 gradually turns the cardboard disk, while the TFT displays the countdown numerically. A fixed pointer is intended to make the changing disk position readable during a meal.
 
-**Your prototype should:**
-- Use at least one sensing or input device.
-- Use servo-based physical actuation.
-- Connect sensing and actuation into a meaningful interaction around eating, drinking, cooking, serving, or sharing food.
-- Additional inputs, displays, LEDs, buttons, or other outputs are optional extensions.
+**Code:** [Servo experiment code](code/meal_timer_experiments/servo_lab.py).
 
-**Document your system with:**
-- Code for your sensing + actuation prototype
-- Photos and/or video of the working prototype in action
-- A simple interaction diagram or sketch showing how sensing and actuation are connected
-- Written reflection: What did you learn about connecting sensing, movement, and physical form? What was fun, surprising, or challenging?
+I referred to the course's [`pi_servo_hat_test.py`](https://github.com/IRL-CT/Interactive-Lab-Hub/blob/Fall2026/Lab%204/pi_servo_hat_test.py) example and then asked Codex to write the current version for my meal timer.
 
-**Questions to consider:**
-- How does your chosen sensor or input shape the physical response?
-- How does the physical arrangement of the sensor and actuator change the interaction?
-- What thresholds, timing, or movement patterns make the interaction feel clear or playful?
-- What changes when you adjust the sensor placement or servo motion?
+**Integration status:** The complete button, display and servo interaction remains unfinished. The build process, photos and observed results are documented in [Part F](#part-f).
 
-Iterate on the sensing, movement, and physical form, and document what you discover.
+**Interaction diagram:** To be added for the integrated input, countdown, display and servo system.
 
-See encoder_accel_servo_dashboard.py in the Lab 4 folder for an optional example of chaining together three devices.
+**Personal reflection:** To be added from my own build experience.
 
-**`Lab 4/encoder_accel_servo_dashboard.py`**
+<details>
+<summary>Supplementary code files and attribution</summary>
 
-#### Example Application: Windmill Coaster
+These four files were written by Codex for this project. They are supporting project files, not four separate course submission requirements.
 
-Now that you have explored both sensing and actuation, here is a simple example that combines the two.
+| File | Purpose |
+| --- | --- |
+| [Experiment program](code/meal_timer_experiments/servo_lab.py) | Provides midpoint, position, sweep and countdown commands, with a simulation mode. The TFT button and display are not yet integrated. |
+| [Configuration](code/meal_timer_experiments/servo_config.json) | Stores the servo channel, pulse targets, movement timing and provisional countdown durations. |
+| [Offline checks](code/meal_timer_experiments/test_servo_lab.py) | Checks countdown behavior, repeated starts, invalid inputs and output shutdown using simulated components, without moving a motor. |
+| [Operator guide](code/meal_timer_experiments/README.md) | Explains how to use the commands, adjust parameters and distinguish software checks from physical observations. |
 
-The **Windmill Coaster** uses a Qwiic distance/proximity sensor to detect when a cup is placed on a coaster. When the cup is detected, a servo motor animates a small windmill by sweeping it back and forth, turning an ordinary action during drinking into a playful physical interaction.
+The [course README](https://github.com/IRL-CT/Interactive-Lab-Hub/blob/Fall2026/Lab%204/README.md#part-c) provides the basic servo example `pi_servo_hat_test.py`. The custom experiment program uses SparkFun's `pi_servo_hat` driver, which is also referenced by the course. The experiment commands and verification history are retained in the folded software record in Part F.
 
-<p align="center">
-    <img src="windmill_coaster11.gif" alt="Windmill Coaster Demo" width="400"/>
-</p>
+</details>
 
+<details>
+<summary>Planned control flow</summary>
 
-This example demonstrates a simple interaction pipeline:
+The proposed complete interaction is:
 
-**cup placed → distance sensor detects cup → servo actuates windmill**
+1. Read and debounce the start input.
+2. Record the start time using a monotonic clock.
+3. Convert elapsed-time progress into a target within the configured pulse interval.
+4. Update the servo gradually during the countdown.
+5. Update the TFT time display from the same countdown state.
+6. Stop at the configured endpoint when the time is over.
 
-Connect the Qwiic distance sensor to the Pi and connect the servo to Channel 0 of the Servo pHAT. Make sure the Servo pHAT is powered through its USB-C connection.
+The intended B1 mechanism rotates the colored disk beneath a fixed pointer. The configured 1000–2000 microsecond interval needs to be matched to the chosen disk positions before an integrated run. Repeated presses during a countdown can initially be ignored. Final end and restart behavior are still open.
 
-Run the example script:
+</details>
 
-```bash
-python windmill_coaster.py
-```
+<details>
+<summary>Part E requirements and guidance</summary>
 
-The script continuously reads the proximity value from the distance sensor. When the value passes a threshold, the servo begins animating the windmill. When the cup is removed, the servo stops and returns to its resting position.
+The [course Part E](https://github.com/IRL-CT/Interactive-Lab-Hub/blob/Fall2026/Lab%204/README.md#part-e) connects at least one input to servo actuation in a dining interaction. It also calls for code, working-device media, an interaction diagram and reflection. Those physical results remain pending here.
 
-You may need to adjust `CUP_THRESHOLD` in [`windmill_coaster.py`](windmill_coaster.py) depending on the size of your cup and the physical placement of the sensor. You can run `qwiic_distance.py` first to compare readings with and without a cup.
-
-Use this example as a starting point. Change the sensor, movement, physical form, or dining interaction to create your own Feast Automata variation.
-
-#### Optional Extensions
-
-The following examples are optional resources if you want to add more inputs or outputs to your prototype.
-
-##### Using Multiple Qwiic Buttons: Changing I2C Address (Physically & Digitally)
-
-If you want to use more than one Qwiic Button in your project, you must give each button a unique I2C address. There are two ways to do this:
-
-##### 1. Physically: Soldering Address Jumpers
-
-On the back of the Qwiic Button, you'll find four solder jumpers labeled A0, A1, A2, and A3. By bridging these with solder, you change the I2C address. Only one button on the chain can use the default address (0x6F).
-
-**Address Table:**
-
-| A3 | A2 | A1 | A0 | Address (hex) |
-|----|----|----|----|---------------|
-|  0 |  0 |  0 |  0 |    0x6F       |
-|  0 |  0 |  0 |  1 |    0x6E       |
-|  0 |  0 |  1 |  0 |    0x6D       |
-|  0 |  0 |  1 |  1 |    0x6C       |
-|  0 |  1 |  0 |  0 |    0x6B       |
-|  0 |  1 |  0 |  1 |    0x6A       |
-|  0 |  1 |  1 |  0 |    0x69       |
-|  0 |  1 |  1 |  1 |    0x68       |
-|  1 |  0 |  0 |  0 |    0x67       |
-| ...| ...| ...| ... |     ...      |
-
-For example, if you solder A0 closed (leave A1, A2, A3 open), the address becomes 0x6E.
-
-**Soldering Tips:**
-- Use a small amount of solder to bridge the pads for the jumper you want to close.
-- Only one jumper needs to be closed for each address change (see table above).
-- Power cycle the button after changing the jumper.
-
-##### 2. Digitally: Using Software to Change Address
-
-You can also change the address in software (temporarily or permanently) using the example script `qwiic_button_ex6_changeI2CAddress.py` in the Lab 4 folder. This is useful if you want to reassign addresses without soldering.
-
-Run the script and follow the prompts:
-```bash
-python qwiic_button_ex6_changeI2CAddress.py
-```
-Enter the new address (e.g., 5B for 0x5B) when prompted. Power cycle the button after changing the address.
-
-**Note:** The software method is less foolproof and you need to make sure to keep track of which button has which address!
-
-
-##### Using Multiple Buttons in Code
-
-After setting unique addresses, you can use multiple buttons in your script. See these example scripts in the Lab 4 folder:
-
-- **`qwiic_1_button.py`**: Basic example for reading a single Qwiic Button (default address 0x6F). Run with:
-	```bash
-	python qwiic_1_button.py
-	```
-
-- **`qwiic_button_led_demo.py`**: Demonstrates using two Qwiic Buttons at different addresses (e.g., 0x6F and 0x6E) and controlling their LEDs. Button 1 toggles its own LED; Button 2 toggles both LEDs. Run with:
-	```bash
-	python qwiic_button_led_demo.py
-	```
-
-Here is a minimal code example for two buttons:
-```python
-import qwiic_button
-
-# Default button (0x6F)
-button1 = qwiic_button.QwiicButton()
-# Button with A0 soldered (0x6E)
-button2 = qwiic_button.QwiicButton(0x6E)
-
-button1.begin()
-button2.begin()
-
-while True:
-		if button1.is_button_pressed():
-				print("Button 1 pressed!")
-		if button2.is_button_pressed():
-				print("Button 2 pressed!")
-```
-
-For more details, see the [Qwiic Button Hookup Guide](https://learn.sparkfun.com/tutorials/qwiic-button-hookup-guide/all#i2c-address).
-
----
-
-##### PCF8574 GPIO Expander: Add More Pins Over I²C
-
-Sometimes your Pi’s header GPIO pins are already full (e.g., with a display or HAT). That’s where an I²C GPIO expander comes in handy.
-
-We use the Adafruit PCF8574 I²C GPIO Expander, which gives you 8 extra digital pins over I²C. It’s a great way to prototype with LEDs, buttons, or other components on the breadboard without worrying about pin conflicts—similar to how Arduino users often expand their pinouts when prototyping physical interactions.
-
-**Why is this useful?**
-- You only need two wires (I²C: SDA + SCL) to unlock 8 extra GPIOs.
-- It integrates smoothly with CircuitPython and Blinka.
-- It allows a clean prototyping workflow when the Pi’s 40-pin header is already occupied by displays, HATs, or sensors.
-- Makes breadboard setups feel more like an Arduino-style prototyping environment where it’s easy to wire up interaction elements.
-
-**Demo Script:** `Lab 4/gpio_expander.py`
-
-<p align="center">
-    <img src="gpio_leds.gif" alt="GPIO Expander LED Demo" width="400"/>
-</p>
-
-We connected 8 LEDs (through 220 Ω resistors) to the expander and ran a little light show. The script cycles through three patterns:
-- Chase (one LED at a time, left to right)
-- Knight Rider (back-and-forth sweep)
-- Disco (random blink chaos)
-
-Every few runs, the script swaps to the next pattern automatically:
-```bash
-python gpio_expander.py
-```
-
-This is a playful way to visualize how the expander works, but the same technique applies if you wanted to prototype buttons, switches, or other interaction elements. It’s a lightweight, flexible addition to your prototyping toolkit.
-
----
-
-
----
-
----
+</details>
 
 ### Part F
-
 ### Final Documentation
 
-Document all the prototypes and iterations you have designed and worked on! Again, deliverables for this lab are writings, sketches, photos, and videos that show what your prototype:
-* "Looks like": shows how the device should look, feel, sit, weigh, etc.
-* "Works like": shows what the device can do
-* "Acts like": shows how a person would interact with the device
+#### Design development
 
----
+I initially wanted to combine multiple motors in the design, but I decided to start with the simplest, most direct mechanism using a single motor. I planned to build it from cardboard and basic construction materials.
 
-## Deliverables \& Submission for Lab 4
+The Lab 4.1 rough prototype used direct MS18 rotation. The MG995 box-and-disk construction and all six supplied photographs document the later Lab 4.2 build.
 
-The deliverables for this lab are, writings, sketches, photos, and videos that show what your prototype:
-* "Looks like": shows how the device should look, feel, sit, weigh, etc.
-* "Works like": shows what the device can do.
-* "Acts like": shows how a person would interact with the device.
+#### MS18 rough prototype
 
-For submission, the readme.md page for this lab should be edited to include the work you have done:
-* Upload any materials that explain what you did, into your lab 4 repository, and link them in your lab 4 readme.md.
-* Link your Lab 4 readme.md in your main Interactive-Lab-Hub readme.md. 
-* Labs are due on Mondays, make sure to submit your Lab 4 readme.md to Canvas.
+For Lab 4.1, my rough prototype used an MS18 micro servo to test the basic rotational movement for the timer. I connected the servo to channel 0 of the SparkFun Servo pHAT mounted on the Raspberry Pi. The Pi and pHAT had separate power supplies. I tested the servo on its own, without an attached cardboard dial, so I could observe its movement directly.
+
+I ran the [MS18 Python test](code/first_servo_test.py). The script first sent a midpoint command, then moved through targets on either side, returning through the midpoint between moves. It paused briefly at each target and repeated the sequence twice. This provided a simple back-and-forth motion test before adding the rest of the mechanism.
+
+During the observed run, the MS18 completed two back-and-forth cycles and stopped normally, without sustained buzzing. The result confirmed that the Pi and Servo pHAT could control the servo through the programmed movement sequence. This rough prototype established the basic actuation for the timer concept. The test covered unloaded servo movement, with the countdown and button input still to be integrated.
+
+<details>
+<summary>MS18 setup, test parameters and code</summary>
+
+I connected the MS18 to channel 0 of the Servo pHAT, mounted on the Pi GPIO header. The Pi retained its own power supply, and the pHAT used a separate 5V USB-C supply.
+
+The Pi ran a limited-range test at 50 Hz. The program first commanded the midpoint, then repeated the positions 60, 90, 120 and 90 twice, using the library's explicit 180-degree mapping. These values are command parameters, not measured shaft angles. At my request, the test was repeated so I could observe it.
+
+The controller's timing registers matched the commands, and the channel's FULL_OFF state was confirmed at the end of the program and after it exited. The [MS18 test script](code/first_servo_test.py) is included. This check covered one unloaded MS18; the second MS18 remains untested.
+
+</details>
+
+#### MG995 and cardboard construction
+
+For Lab 4.2, I chose the MG995 because I could secure it to the box more easily using its mounting ears. I adjusted the servo's travel until it covered the range I needed, secured the motor, and completed the cardboard disk. The photos below document this Lab 4.2 build. The pHAT used a separate 5V 3A supply.
+
+**1. Marking the servo position.** I marked the mounting position on a white cardboard box and made openings for the supports. The box provides an upright body that can sit directly on a table.
+
+![Marked mounting position on the white cardboard box, with the MG995 beside it](assets/2026-10-19_box-layout.jpg)
+
+*Figure 1. Box preparation, showing the layout marks and mounting openings.*
+
+**2. Securing the MG995.** I used short wooden pieces through the mounting ears and the box to hold the servo in place. The circular servo horn faces outward so the cardboard disk can attach to it.
+
+![MG995 attached to the cardboard box with wooden pegs through its mounting ears](assets/2026-10-19_mg995-mount.jpg)
+
+*Figure 2. The MG995 mounting arrangement and exposed circular horn.*
+
+**3. Making the disk.** I cut a roughly circular disk from cardboard for the rotating background. This view shows the packaging side of the disk and the prepared box mounting points.
+
+![Cardboard disk shown from its packaging side beside the box with two wooden mounting supports](assets/2026-10-19_cardboard-cutout.jpg)
+
+*Figure 3. The cardboard disk and prepared box supports.*
+
+**4. Assembling the rotating face.** I attached the disk to the servo horn and marked sectors with different black patterns. These rough markings help distinguish areas while developing the mechanism. The final color scheme is still undecided.
+
+![Assembled upright cardboard box with the hand-marked disk in front and Servo pHAT on top](assets/2026-10-19_assembled-dial.jpg)
+
+*Figure 4. The assembled cardboard prototype, with the MG995 behind the disk and the controller resting on the box.*
+
+With the disk attached, I tested the movement and adjusted the travel to suit the prototype. The fixed pointer in the B1 concept and its final position relative to the disk still need documenting.
+
+<details>
+<summary>MG995 movement testing</summary>
+
+**Purpose and setup.** I tested whether the MG995 could move the cardboard disk through a useful range for the timer. I first tested the servo on its own, then repeated back-and-forth movements with the disk and base attached.
+
+**Adjustments and observations.** The initial movement was smaller than I needed, so I increased the commanded range while watching the mechanism. The servo moved to each target and stopped. Holding the same target did not make it keep rotating; changing the target made it move again. During the mounted back-and-forth tests, the disk moved smoothly and returned to the middle without rubbing or jamming.
+
+**Result.** I found a working range that suited the prototype. The final physical angle was not measured. The mechanical movement had been tested, while the button-controlled countdown and numerical TFT display still needed integration.
+
+Supporting code: [servo check](code/mg995_probe.py), [mounted movement check](code/mounted_turntable_check.py) and [travel adjustment](code/mg995_range_check.py).
+
+</details>
+
+<details>
+<summary>Supplementary software preparation, commands and checks</summary>
+
+I used the earlier servo tests to establish position-control behavior, check the mounted mechanism, and adjust its travel. The [MG995 probe](code/mg995_probe.py) checked the motor before loading it. The [mounted-turntable check](code/mounted_turntable_check.py) checked the disk and base together, and the [range-check script](code/mg995_range_check.py) supported travel adjustment. I observed smooth mounted movement without rubbing or jamming during those checks.
+
+The prepared countdown code maps elapsed time to gradual servo position changes. Its button and display functions still need to be connected to the timer state.
+
+| Command or feature | What it does | Boundary |
+| --- | --- | --- |
+| `center` | Sends the configured midpoint, holds briefly, then disables output. | This was checked on the Pi before the incident. |
+| `move` | Sends an absolute target specified by pulse width or percentage of the configured interval. | A percentage is not a measured angle or an additional turn. |
+| `sweep` | Moves from the midpoint to both configured endpoints and back, with optional repeated cycles. | The new package's sweep has not been run on the assembled mechanism. |
+| `demo` and `timer` | Map elapsed time to gradual position changes. The demo defaults to 30 seconds; the meal timer duration is configurable. | Twenty minutes remains provisional. A complete countdown has only been simulated. |
+| `--reverse` and `--wait` | Reverse countdown direction or wait for keyboard Enter after positioning. | Enter is a temporary test input. A physical button is not integrated. |
+| `status`, `off` and run records | Inspect the selected PWM channel, disable an idle channel, and save command and completion records. | These do not detect physical damage, jamming, shaft angle or motor current. |
+
+The program defaults to simulation. Adding `--hardware` enables the Pi controller, so that option must not be used with the damaged pHAT. The countdown uses a monotonic clock. At completion, it holds the endpoint briefly and disables output without recentering. The mechanism may move after holding torque is released.
+
+A separate 15-second software pointer simulation was prepared earlier to illustrate motion. It is not a physical servo test and does not determine the normal meal duration.
+
+The scripts were deployed before the incident to `/home/pi/Interactive-Lab-Hub/Lab 4/meal_timer_experiments`. Offline behavior checks passed locally and on the Pi at that time. A complete countdown was simulated locally. On the hardware, only the midpoint command and output status were checked during this package's preparation. The selected physical button, its wiring, debounce and long-press behavior remain to be integrated and tested.
+
+</details>
+
+#### Attempting the TFT display and start button
+
+For Lab 4.2, after making the disk and mounting the servo, I tried to use one of the Mini PiTFT's built-in buttons to start the timer and add a numerical countdown display on the screen. The cardboard disk would show progress through movement and color, while the TFT would show the countdown time as numbers.
+
+![Cardboard prototype next to the Raspberry Pi with Mini PiTFT mounted and the detached Servo pHAT nearby](assets/2026-10-19_tft-integration.jpg)
+
+*Figure 5. The components during the display and button integration attempt. The Mini PiTFT is on the Pi, while the Servo pHAT is separate. The photo does not demonstrate a working countdown or button response.*
+
+I could not finish this integration because the Servo pHAT emitted smoke during the connection change described below. The box, motor mounting and disk were made, but the combined input, time display and servo countdown remain unfinished.
+
+#### Wiring incident and current hardware status
+
+While changing the connection for the Mini PiTFT and Servo pHAT, I connected a 4-pin cable between the pHAT's Qwiic connector and the Pi connector marked `FAN`. A component on the pHAT heated up and emitted smoke, and I disconnected power. The pHAT was not plugged into the Pi GPIO header when this happened.
+
+![Close-up of the Servo pHAT after the incident, showing the area beside the Qwiic connector](assets/2026-10-19_servo-phat-incident.jpg)
+
+*Figure 6. The pHAT photographed after the incident. It is shown over the Pi here, but this was not the connection arrangement when the smoke occurred.*
+
+Hardware integration is on hold. A replacement controller and the condition of the Pi have not yet been confirmed.
+
+#### Current outcome
+
+The box, servo mounting and cardboard disk are assembled. I found travel suitable for the mechanism, but the final color mapping, meal duration and complete button-controlled interaction remain open. Hardware recovery and the integrated countdown must be completed before recording a working use sequence.
+
+<details>
+<summary>Hardware inventory and materials across both stages</summary>
+
+| Item | Status and intended role |
+| --- | --- |
+| Raspberry Pi | Intended to run the button input and countdown logic. Its condition after the wiring incident has not been verified. |
+| Mini PiTFT | Mounted on the Pi during the integration attempt. Intended to display the countdown numerically and provide a start button. The combined display, button and servo interaction was not completed. |
+| SparkFun Servo pHAT | Removed from service for further experiments after emitting smoke. An abnormal component is visible near the Qwiic circuitry. Replacement and electrical inspection are pending. |
+| Two MS18 9g micro servos | One completed an unloaded motion test. The second remains untested. |
+| One Deegoo-FPV MG995 | Chosen because its mounting ears made it easier to secure to the box. Attached to the cardboard disk, with travel adjusted to suit the prototype. Final numerical endpoints were not recorded. |
+| Cardboard and paper | A white cardboard box forms the body and support. A cut cardboard disk with hand-marked sectors forms the rotating face. |
+| Tape and glue | Intended for temporary mounting, joints and simple reinforcement. |
+| Wooden skewers or pegs | Short pieces pass through the box and the servo mounting ears to hold the MG995 in place. |
+| Rubber bands, straws and paper fasteners | Proposed materials for other layout concepts; not established as part of the selected build. |
+
+The first build should remain simple. Extra motors are available for later exploration, but using them all is not a requirement of this prototype.
+
+</details>
+
+<details>
+<summary>AI assistance and attribution</summary>
+
+Codex helped me generate and debug the code and provided suggestions for implementing the design.
+
+</details>
+
+
+## Deliverables & Submission for Lab 4
+
+<details>
+<summary>Final documentation and submission guidance</summary>
+
+The [current Part F and submission requirements](https://github.com/IRL-CT/Interactive-Lab-Hub/blob/Fall2026/Lab%204/README.md#part-f) call for writing, sketches, photos and videos covering what the prototype looks like, works like and acts like. The course does not specify a fixed number of photos or a video duration in this section.
+
+The recommended continuation is:
+
+1. Use the construction photos above as the record of the current form. Complete the fixed pointer and final component layout, then check whether the disk and time display are readable from a seated dining position. Document any changes to this version.
+2. Keep the earlier observations, simulation results and incident record together as the iteration history. Mark concept images, hand-operated mock-ups and powered tests by their actual status.
+3. After a sound controller, Pi and wiring have been checked, finish Part E by connecting the TFT start button and time display to the countdown and servo. Record what actually happens, including any remaining motion or readability problems.
+4. Record a short use sequence showing a person starting the device, the color disk moving and the timer reaching its end state. A 30-second timer is a suggested filming setting, not a course requirement. One clear recording can supply evidence for both function and interaction.
+5. Add a simple diagram connecting the chosen input, Pi countdown logic, servo controller, MG995 and color disk. Mark it as planned until the physical connection is tested. The written personal reflection required in Part E must come from Marius's own observations and experience.
+6. Keep the Lab 4 materials linked from this README and the repository's main README. Once the record is complete, submit the Lab 4 README link to Canvas.
+
+</details>

@@ -1,0 +1,18 @@
+{
+  "requested": "Return MG995 to midpoint, then prepare scripts for subsequent experiments",
+  "started": {
+    "current_time": "2026-10-19 06:55:38 UTC"
+  },
+  "result": {
+    "chunk_id": "6661c9",
+    "wall_time_seconds": 2.606866,
+    "exit_code": 0,
+    "original_token_count": 48,
+    "output": "{\"event\": \"center_command\", \"pulse_us\": 1500, \"hold_seconds\": 2, \"registers\": [0, 0, 51, 1]}\n{\"event\": \"stop\", \"full_off\": true, \"registers\": [0, 0, 0, 16]}\n{\"power_status\": \"throttled=0x0\"}\n"
+  },
+  "center_pulse_us": 1500,
+  "hold_seconds": 2,
+  "output_disabled_after": true,
+  "physical_angle_measured": false,
+  "operator_observation": null
+}
