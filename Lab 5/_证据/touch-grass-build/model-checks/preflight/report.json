@@ -1,0 +1,15 @@
+{
+  "model": "qwen3.5:0.8b",
+  "request_seconds": 33.73,
+  "generated_at": "2026-11-01T21:10:44.872358-05:00",
+  "raw": "{\n  \"estimated_desk_minutes\": 10,\n  \"score\": 75,\n  \"summary\": \"The sample shows a clear pattern of P readings at 21:00:59 and 21:01:01, suggesting the user was active during this window. The U readings indicate missing data or failed attempts, which limits our precision but doesn't negate the presence of activity.\",\n  \"uncertainty\": \"Uncertainty is low due to the coarse nature of the sample (one slot = 2 seconds). However, the lack of P at 21:00:53 and 21:00:57 suggests a brief gap where no one was detected. The short-test limitation means we cannot confirm if this activity lasted longer than the recorded window.\"\n}",
+  "kind": "setup_test",
+  "score_scale": "Qwen estimates the score. 0 desk hours = 0; 8 or more hours = 100.",
+  "answer": {
+    "estimated_desk_minutes": 10,
+    "score": 75,
+    "summary": "The sample shows a clear pattern of P readings at 21:00:59 and 21:01:01, suggesting the user was active during this window. The U readings indicate missing data or failed attempts, which limits our precision but doesn't negate the presence of activity.",
+    "uncertainty": "Uncertainty is low due to the coarse nature of the sample (one slot = 2 seconds). However, the lack of P at 21:00:53 and 21:00:57 suggests a brief gap where no one was detected. The short-test limitation means we cannot confirm if this activity lasted longer than the recorded window."
+  },
+  "valid": true
+}

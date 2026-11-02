@@ -1,0 +1,23 @@
+{
+  "versions": {
+    "mediapipe": "0.10.18",
+    "opencv-python": "4.11.0.86",
+    "opencv-contrib-python": "4.11.0.86",
+    "ultralytics": "8.4.188",
+    "ncnn": "1.0.20261020",
+    "numpy": "1.26.4",
+    "torch": "2.14.1+cpu",
+    "torchvision": "0.29.1+cpu",
+    "requests": "2.34.2",
+    "jax": "0.7.1",
+    "jaxlib": "0.7.1"
+  },
+  "torch_cpu_only": true,
+  "torch_tensor_operation": "passed",
+  "mediapipe_graph_smoke_test": "passed on a blank synthetic frame; not a gesture experiment",
+  "opencv_version": "4.11.0",
+  "pip_check": "No broken requirements found.",
+  "python": "3.11.2 (main, Nov 30 2024, 21:22:50) [GCC 12.2.0]",
+  "lab_directory": "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5",
+  "webcam_test_performed": false
+}

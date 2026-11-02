@@ -1,0 +1,1 @@
+{ "estimated_desk_minutes": 24, "score": 50, "summary": "The estimated desk time is 24 minutes, resulting in a score of 50.", "uncertainty": "Unknown slots are present, possible missed detections, and the short-test limitation." }

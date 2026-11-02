@@ -1,0 +1,797 @@
+{
+  "batch_id": "express-20261101-224820-867740",
+  "date": "2026-11-01",
+  "kind": "express_demo",
+  "status": "complete",
+  "armed_at": "2026-11-01T22:48:20.867740-05:00",
+  "window_start": "2026-11-01T22:54:58.305111-05:00",
+  "window_end": "2026-11-01T23:09:58.305111-05:00",
+  "collection_started_at": "2026-11-01T22:54:58.305111-05:00",
+  "duration_seconds": 900,
+  "interval_seconds": 30,
+  "samples": [
+    {
+      "captured_at": "2026-11-01T22:54:59.779059-05:00",
+      "file": "photos/225458-460344.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T22:55:30.276894-05:00",
+      "file": "photos/225528-948565.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T22:55:59.750772-05:00",
+      "file": "photos/225558-445706.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T22:56:30.247678-05:00",
+      "file": "photos/225628-931650.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T22:56:59.753025-05:00",
+      "file": "photos/225658-428902.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T22:57:30.218088-05:00",
+      "file": "photos/225728-921729.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T22:57:59.723398-05:00",
+      "file": "photos/225758-388279.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T22:58:30.220771-05:00",
+      "file": "photos/225828-892994.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T22:58:59.726111-05:00",
+      "file": "photos/225858-429271.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T22:59:30.255559-05:00",
+      "file": "photos/225928-935648.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T22:59:59.763679-05:00",
+      "file": "photos/225958-433771.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T23:00:30.258541-05:00",
+      "file": "photos/230028-941657.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T23:00:59.764106-05:00",
+      "file": "photos/230058-437110.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T23:01:30.229390-05:00",
+      "file": "photos/230128-933334.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T23:01:59.735070-05:00",
+      "file": "photos/230158-410207.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T23:02:30.232465-05:00",
+      "file": "photos/230228-904738.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T23:02:59.705978-05:00",
+      "file": "photos/230258-401663.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T23:03:30.235560-05:00",
+      "file": "photos/230328-915613.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T23:03:59.773128-05:00",
+      "file": "photos/230358-445644.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T23:04:30.270751-05:00",
+      "file": "photos/230428-944101.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T23:04:59.744458-05:00",
+      "file": "photos/230458-443922.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T23:05:30.273972-05:00",
+      "file": "photos/230528-925430.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T23:05:59.779431-05:00",
+      "file": "photos/230558-444632.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T23:06:30.277317-05:00",
+      "file": "photos/230628-951397.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T23:06:59.782912-05:00",
+      "file": "photos/230658-448562.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T23:07:30.312756-05:00",
+      "file": "photos/230728-955714.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T23:07:59.849925-05:00",
+      "file": "photos/230758-524182.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T23:08:30.411622-05:00",
+      "file": "photos/230829-059751.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T23:08:59.885408-05:00",
+      "file": "photos/230858-581486.jpg"
+    },
+    {
+      "captured_at": "2026-11-01T23:09:30.415091-05:00",
+      "file": "photos/230929-064438.jpg"
+    }
+  ],
+  "last_slot": 29,
+  "progress": {
+    "stage": "finished",
+    "valid": true
+  },
+  "report": {
+    "model": "qwen3:0.6b",
+    "request_seconds": 28.58,
+    "raw": "{\n\n\"present_samples\": 23,\n\"absent_samples\": 7,\n\"unknown_samples\": 0,\n\"is_simulation\": true,\n\"estimated_desk_minutes\": 552,\n\"score\": 100,\n\"summary\": \"Simulated day: 552 minutes, score 100.\",\n\"uncertainty\": \"Simulation: unknown slots: 0, possible missed detections and that presence does not prove computer use.\"\n}",
+    "prompt_version": "counted-evidence-v3",
+    "evidence": {
+      "present_samples": 23,
+      "absent_samples": 7,
+      "unknown_samples": 0,
+      "total_samples": 30,
+      "seconds_per_sample": 1440,
+      "is_simulation": true
+    },
+    "attempts": [
+      {
+        "attempt": 1,
+        "seconds": 28.58,
+        "valid": true,
+        "error": null
+      }
+    ],
+    "valid": true,
+    "validation": "Counts, arithmetic, bounds and simulation labels checked; model numbers are never replaced.",
+    "answer": {
+      "present_samples": 23,
+      "absent_samples": 7,
+      "unknown_samples": 0,
+      "is_simulation": true,
+      "estimated_desk_minutes": 552,
+      "score": 100,
+      "summary": "Simulated day: 552 minutes, score 100.",
+      "uncertainty": "Simulation: unknown slots: 0, possible missed detections and that presence does not prove computer use."
+    },
+    "generated_at": "2026-11-01T23:33:23.214468-05:00",
+    "kind": "express_demo",
+    "score_scale": "Qwen estimates the score. 0 desk hours = 0; 8 or more hours = 100.",
+    "simulation": {
+      "label": "Simulated day 08:00-20:00; captured during a real 15-minute demo",
+      "start": "2026-11-01T08:00:00-05:00",
+      "end": "2026-11-01T20:00:00-05:00",
+      "interval_seconds": 1440
+    },
+    "actual_capture_window": {
+      "start": "2026-11-01T22:54:58.305111-05:00",
+      "end": "2026-11-01T23:09:58.305111-05:00"
+    }
+  },
+  "resume_daily_at": "2026-11-02T08:00:00-05:00",
+  "simulation": {
+    "label": "Simulated day 08:00-20:00; captured during a real 15-minute demo",
+    "start": "2026-11-01T08:00:00-05:00",
+    "end": "2026-11-01T20:00:00-05:00",
+    "interval_seconds": 1440
+  },
+  "job": "233249-174790",
+  "remaining_seconds": 0,
+  "sample_count": 30,
+  "missing_count": 0,
+  "next_start": "2026-11-02T08:00:00-05:00",
+  "first_day": "2026-11-02",
+  "timezone": "America/New_York",
+  "last_button": {
+    "at": "2026-11-01T23:32:49.174765-05:00",
+    "result": "Processing started.",
+    "source": "software-check",
+    "batch_id": "express-20261101-224820-867740"
+  },
+  "hardware": {
+    "connected": true,
+    "display": "active",
+    "updated_at": "2026-11-01T23:36:32.417605-05:00",
+    "button_presses": 3
+  },
+  "days": [
+    "2026-11-01"
+  ],
+  "batches": [
+    {
+      "id": "express-20261101-224820-867740",
+      "date": "2026-11-01",
+      "kind": "express_demo"
+    },
+    {
+      "id": "express-20261101-215722-412583",
+      "date": "2026-11-01",
+      "kind": "express_demo"
+    },
+    {
+      "id": "2026-11-01",
+      "date": "2026-11-01",
+      "kind": "setup_test"
+    }
+  ],
+  "detections": [
+    {
+      "t": "2026-11-01T22:54:59.779059-05:00",
+      "file": "photos/225458-460344.jpg",
+      "state": "absent",
+      "boxes": []
+    },
+    {
+      "t": "2026-11-01T22:55:30.276894-05:00",
+      "file": "photos/225528-948565.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            305.5,
+            189.0,
+            527.5,
+            468.0
+          ],
+          "confidence": 0.50830078125
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T22:55:59.750772-05:00",
+      "file": "photos/225558-445706.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            301.5,
+            170.8125,
+            535.0,
+            401.6875
+          ],
+          "confidence": 0.50146484375
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T22:56:30.247678-05:00",
+      "file": "photos/225628-931650.jpg",
+      "state": "absent",
+      "boxes": []
+    },
+    {
+      "t": "2026-11-01T22:56:59.753025-05:00",
+      "file": "photos/225658-428902.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            274.5,
+            220.5,
+            540.0,
+            475.5
+          ],
+          "confidence": 0.491455078125
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T22:57:30.218088-05:00",
+      "file": "photos/225728-921729.jpg",
+      "state": "absent",
+      "boxes": []
+    },
+    {
+      "t": "2026-11-01T22:57:59.723398-05:00",
+      "file": "photos/225758-388279.jpg",
+      "state": "absent",
+      "boxes": []
+    },
+    {
+      "t": "2026-11-01T22:58:30.220771-05:00",
+      "file": "photos/225828-892994.jpg",
+      "state": "absent",
+      "boxes": []
+    },
+    {
+      "t": "2026-11-01T22:58:59.726111-05:00",
+      "file": "photos/225858-429271.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            279.5,
+            223.125,
+            542.5,
+            475.875
+          ],
+          "confidence": 0.46044921875
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T22:59:30.255559-05:00",
+      "file": "photos/225928-935648.jpg",
+      "state": "absent",
+      "boxes": []
+    },
+    {
+      "t": "2026-11-01T22:59:59.763679-05:00",
+      "file": "photos/225958-433771.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            314.0,
+            162.0,
+            536.0,
+            470.5
+          ],
+          "confidence": 0.66650390625
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T23:00:30.258541-05:00",
+      "file": "photos/230028-941657.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            328.5,
+            165.875,
+            537.0,
+            465.125
+          ],
+          "confidence": 0.73388671875
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T23:00:59.764106-05:00",
+      "file": "photos/230058-437110.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            328.0,
+            160.875,
+            549.5,
+            471.125
+          ],
+          "confidence": 0.7880859375
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T23:01:30.229390-05:00",
+      "file": "photos/230128-933334.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            326.0,
+            159.0,
+            541.5,
+            472.5
+          ],
+          "confidence": 0.81640625
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T23:01:59.735070-05:00",
+      "file": "photos/230158-410207.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            326.5,
+            160.0,
+            542.0,
+            472.0
+          ],
+          "confidence": 0.8134765625
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T23:02:30.232465-05:00",
+      "file": "photos/230228-904738.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            326.5,
+            151.375,
+            531.5,
+            471.625
+          ],
+          "confidence": 0.77294921875
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T23:02:59.705978-05:00",
+      "file": "photos/230258-401663.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            315.5,
+            149.5,
+            544.0,
+            471.5
+          ],
+          "confidence": 0.6728515625
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T23:03:30.235560-05:00",
+      "file": "photos/230328-915613.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            328.875,
+            157.0,
+            540.125,
+            473.0
+          ],
+          "confidence": 0.82470703125
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T23:03:59.773128-05:00",
+      "file": "photos/230358-445644.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            330.0,
+            162.0,
+            543.5,
+            474.0
+          ],
+          "confidence": 0.80712890625
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T23:04:30.270751-05:00",
+      "file": "photos/230428-944101.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            328.5,
+            161.0,
+            535.5,
+            473.0
+          ],
+          "confidence": 0.837890625
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T23:04:59.744458-05:00",
+      "file": "photos/230458-443922.jpg",
+      "state": "absent",
+      "boxes": []
+    },
+    {
+      "t": "2026-11-01T23:05:30.273972-05:00",
+      "file": "photos/230528-925430.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            329.5,
+            156.5,
+            546.0,
+            475.0
+          ],
+          "confidence": 0.82470703125
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T23:05:59.779431-05:00",
+      "file": "photos/230558-444632.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            332.375,
+            160.375,
+            546.625,
+            474.625
+          ],
+          "confidence": 0.84765625
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T23:06:30.277317-05:00",
+      "file": "photos/230628-951397.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            331.125,
+            159.625,
+            544.875,
+            475.375
+          ],
+          "confidence": 0.82861328125
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T23:06:59.782912-05:00",
+      "file": "photos/230658-448562.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            333.625,
+            160.5,
+            528.375,
+            473.0
+          ],
+          "confidence": 0.5810546875
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T23:07:30.312756-05:00",
+      "file": "photos/230728-955714.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            328.0,
+            160.5,
+            549.0,
+            471.5
+          ],
+          "confidence": 0.79736328125
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T23:07:59.849925-05:00",
+      "file": "photos/230758-524182.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            331.5,
+            153.0,
+            545.5,
+            475.0
+          ],
+          "confidence": 0.849609375
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T23:08:30.411622-05:00",
+      "file": "photos/230829-059751.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            326.5,
+            162.0,
+            533.0,
+            475.0
+          ],
+          "confidence": 0.845703125
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T23:08:59.885408-05:00",
+      "file": "photos/230858-581486.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            329.375,
+            162.875,
+            541.625,
+            475.125
+          ],
+          "confidence": 0.88037109375
+        }
+      ]
+    },
+    {
+      "t": "2026-11-01T23:09:30.415091-05:00",
+      "file": "photos/230929-064438.jpg",
+      "state": "present",
+      "boxes": [
+        {
+          "xyxy": [
+            330.625,
+            159.0,
+            548.375,
+            477.0
+          ],
+          "confidence": 0.82861328125
+        }
+      ]
+    }
+  ],
+  "sampling_slots": [
+    {
+      "t": "2026-11-01T22:54:58.305111-05:00",
+      "state": "absent",
+      "simulated_at": "2026-11-01T08:00:00-05:00"
+    },
+    {
+      "t": "2026-11-01T22:55:28.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T08:24:00-05:00"
+    },
+    {
+      "t": "2026-11-01T22:55:58.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T08:48:00-05:00"
+    },
+    {
+      "t": "2026-11-01T22:56:28.305111-05:00",
+      "state": "absent",
+      "simulated_at": "2026-11-01T09:12:00-05:00"
+    },
+    {
+      "t": "2026-11-01T22:56:58.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T09:36:00-05:00"
+    },
+    {
+      "t": "2026-11-01T22:57:28.305111-05:00",
+      "state": "absent",
+      "simulated_at": "2026-11-01T10:00:00-05:00"
+    },
+    {
+      "t": "2026-11-01T22:57:58.305111-05:00",
+      "state": "absent",
+      "simulated_at": "2026-11-01T10:24:00-05:00"
+    },
+    {
+      "t": "2026-11-01T22:58:28.305111-05:00",
+      "state": "absent",
+      "simulated_at": "2026-11-01T10:48:00-05:00"
+    },
+    {
+      "t": "2026-11-01T22:58:58.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T11:12:00-05:00"
+    },
+    {
+      "t": "2026-11-01T22:59:28.305111-05:00",
+      "state": "absent",
+      "simulated_at": "2026-11-01T11:36:00-05:00"
+    },
+    {
+      "t": "2026-11-01T22:59:58.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T12:00:00-05:00"
+    },
+    {
+      "t": "2026-11-01T23:00:28.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T12:24:00-05:00"
+    },
+    {
+      "t": "2026-11-01T23:00:58.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T12:48:00-05:00"
+    },
+    {
+      "t": "2026-11-01T23:01:28.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T13:12:00-05:00"
+    },
+    {
+      "t": "2026-11-01T23:01:58.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T13:36:00-05:00"
+    },
+    {
+      "t": "2026-11-01T23:02:28.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T14:00:00-05:00"
+    },
+    {
+      "t": "2026-11-01T23:02:58.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T14:24:00-05:00"
+    },
+    {
+      "t": "2026-11-01T23:03:28.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T14:48:00-05:00"
+    },
+    {
+      "t": "2026-11-01T23:03:58.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T15:12:00-05:00"
+    },
+    {
+      "t": "2026-11-01T23:04:28.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T15:36:00-05:00"
+    },
+    {
+      "t": "2026-11-01T23:04:58.305111-05:00",
+      "state": "absent",
+      "simulated_at": "2026-11-01T16:00:00-05:00"
+    },
+    {
+      "t": "2026-11-01T23:05:28.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T16:24:00-05:00"
+    },
+    {
+      "t": "2026-11-01T23:05:58.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T16:48:00-05:00"
+    },
+    {
+      "t": "2026-11-01T23:06:28.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T17:12:00-05:00"
+    },
+    {
+      "t": "2026-11-01T23:06:58.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T17:36:00-05:00"
+    },
+    {
+      "t": "2026-11-01T23:07:28.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T18:00:00-05:00"
+    },
+    {
+      "t": "2026-11-01T23:07:58.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T18:24:00-05:00"
+    },
+    {
+      "t": "2026-11-01T23:08:28.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T18:48:00-05:00"
+    },
+    {
+      "t": "2026-11-01T23:08:58.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T19:12:00-05:00"
+    },
+    {
+      "t": "2026-11-01T23:09:28.305111-05:00",
+      "state": "present",
+      "simulated_at": "2026-11-01T19:36:00-05:00"
+    }
+  ],
+  "local_time": "2026-11-01T23:36:33.234110-05:00"
+}

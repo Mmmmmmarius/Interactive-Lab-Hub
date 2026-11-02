@@ -1,0 +1,20 @@
+{
+  "model": "qwen3:0.6b",
+  "request_seconds": 84.72,
+  "generated_at": "2026-11-01T23:16:41.500333-05:00",
+  "raw": "{\n\n\"estimated_desk_minutes\": 672,\n\"score\": 140,\n\"summary\": \"The estimated desk time is 672 minutes, resulting in a score of 140, with some uncertainty due to the sampling.\",\n\"uncertainty\": \"Unknown slots (28 P's) may indicate missed detections, and the short-test limitation limits the accuracy of the estimate.\"}",
+  "kind": "express_demo",
+  "score_scale": "Qwen estimates the score. 0 desk hours = 0; 8 or more hours = 100.",
+  "simulation": {
+    "label": "Simulated day 08:00-20:00; captured during a real 15-minute demo",
+    "start": "2026-11-01T08:00:00-05:00",
+    "end": "2026-11-01T20:00:00-05:00",
+    "interval_seconds": 1440
+  },
+  "actual_capture_window": {
+    "start": "2026-11-01T22:54:58.305111-05:00",
+    "end": "2026-11-01T23:09:58.305111-05:00"
+  },
+  "valid": false,
+  "error": "The model score must be an integer from 0 to 100."
+}

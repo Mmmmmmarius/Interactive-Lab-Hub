@@ -1,0 +1,48 @@
+{
+  "desktop": {
+    "clientWidth": 1265,
+    "columns": "577.537px 544.862px",
+    "minutes": "552 min",
+    "score": "100",
+    "scrollWidth": 1265,
+    "width": 1280
+  },
+  "mobile": {
+    "clientWidth": 345,
+    "minutes": "552 min",
+    "mood": "cooked",
+    "score": "100",
+    "scrollWidth": 345,
+    "width": 360
+  },
+  "history": {
+    "label": "Setup test · not a full day",
+    "minutes": "0.1 min",
+    "score": "0"
+  },
+  "click": {
+    "animation": "none",
+    "quote": "the chair won.",
+    "score": "100"
+  },
+  "keyboard_quote": "touch some grass, brother. seriously.",
+  "polling_kept_quote": "the chair won.",
+  "timeline_click": "10:55 PM actual · 8:24 AM simulated: person detected.",
+  "receipt_photo_elements": 30,
+  "visible_photo_loads_confirmed": true,
+  "raw_qwen_matches_saved": true,
+  "console": [],
+  "boundaries_and_runtime": "Node tests; no new physical capture or report generated",
+  "reduced_motion": "Browser reports prefers-reduced-motion: reduce. Click reaction class is applied but computed animation is none and 0s; captions still change.",
+  "smallPhone": {
+    "clientWidth": 360,
+    "scrollWidth": 360,
+    "width": 375
+  },
+  "tablet": {
+    "clientWidth": 753,
+    "columns": "350.6px 350.6px",
+    "scrollWidth": 753,
+    "width": 768
+  }
+}

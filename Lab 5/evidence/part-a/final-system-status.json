@@ -1,0 +1,13 @@
+{
+  "ollama_service_active": "active",
+  "ollama_service_enabled": "enabled",
+  "listener": "State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess\nLISTEN 0      4096       127.0.0.1:11434      0.0.0.0:*",
+  "disk": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/mmcblk0p2   58G   21G   35G  37% /\n",
+  "power": "throttled=0x0",
+  "temperature": "temp=60.9'C",
+  "old_repo_status": " M \"Lab 3/README.md\"\n?? \"Lab 3/images/\"\n?? \"Lab 3/part2-preparation.md\"\n?? \"Lab 3/speech-scripts/greet_flower.sh\"\n?? \"Lab 3/speech-scripts/numeric_input.py\"\n?? \"Lab 3/talking-box-dialogue.json\"\n?? \"Lab 3/woz_controller/\"\n?? \"Lab 4/\"\n",
+  "new_worktree_status": "?? \"Lab 5/part-a-bus.jpg\"\n?? \"Lab 5/snap.jpg\"\n",
+  "pip_check": "No broken requirements found.",
+  "memory": "               total        used        free      shared  buff/cache   available\nMem:            8063         680        2451          35        5055        7383\nSwap:            511           0         511\n",
+  "ollama_running_models": "NAME    ID    SIZE    PROCESSOR    CONTEXT    RUNNER    UNTIL \n"
+}

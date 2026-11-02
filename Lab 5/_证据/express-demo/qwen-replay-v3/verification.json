@@ -1,0 +1,198 @@
+{
+  "checked_at": "2026-11-01T23:36:33.247890-05:00",
+  "source_photo_count": 30,
+  "photos_unchanged": true,
+  "detector_output_unchanged": true,
+  "sampling_slots_unchanged": true,
+  "prior_failed_job_unchanged": true,
+  "replay_files_match_pi": true,
+  "code_matches_pi": true,
+  "model_raw_matches_displayed_answer": true,
+  "model_attempts": [
+    {
+      "attempt": 1,
+      "seconds": 28.58,
+      "valid": true,
+      "error": null
+    }
+  ],
+  "replay_trigger": {
+    "at": "2026-11-01T23:32:49.174765-05:00",
+    "result": "Processing started.",
+    "source": "software-check",
+    "batch_id": "express-20261101-224820-867740"
+  },
+  "replay_total_seconds": 34.04,
+  "services": {
+    "touch-grass.service": "active",
+    "touch-grass-screen.service": "active"
+  },
+  "unit_tests": {
+    "windows": 19,
+    "pi": 19,
+    "result": "passed"
+  },
+  "live_model_checks": [
+    {
+      "case": "diagnostic-one-present",
+      "source": "Synthetic diagnostic fixture; not captured data.",
+      "answer": {
+        "present_samples": 1,
+        "absent_samples": 29,
+        "unknown_samples": 0,
+        "is_simulation": true,
+        "estimated_desk_minutes": 24,
+        "score": 5,
+        "summary": "Simulated day: 24 minutes, score 5.",
+        "uncertainty": "Simulation: unknown slots: 0, possible missed detections and that presence does not prove computer use."
+      },
+      "seconds": 26.98
+    },
+    {
+      "case": "diagnostic-zero-with-unknown",
+      "source": "Synthetic diagnostic fixture; not captured data.",
+      "answer": {
+        "present_samples": 0,
+        "absent_samples": 3,
+        "unknown_samples": 2,
+        "is_simulation": false,
+        "estimated_desk_minutes": 0,
+        "score": 0,
+        "summary": "Estimated desk time: 0 minutes. Score: 0. Uncertainty: unknown slots: 2, possible missed detections, presence does not prove computer use.",
+        "uncertainty": "unknown slots: 2, possible missed detections, presence does not prove computer use."
+      },
+      "seconds": 25.67
+    },
+    {
+      "case": "second-run-saved-data",
+      "source": "/home/pi/touch-grass/store/demos/express-20261101-224820-867740/jobs/231511-490646/sampling-slots.json",
+      "answer": {
+        "present_samples": 23,
+        "absent_samples": 7,
+        "unknown_samples": 0,
+        "is_simulation": true,
+        "estimated_desk_minutes": 552,
+        "score": 100,
+        "summary": "Simulated day: 552 minutes, score 100.",
+        "uncertainty": "Simulation: unknown slots: 0, possible missed detections and that presence does not prove computer use."
+      },
+      "seconds": 26.61
+    }
+  ],
+  "browser_verified": true,
+  "browser_errors_and_warnings": [],
+  "screenshots": {
+    "ui-report.jpg": [
+      2777,
+      1532
+    ],
+    "ui-report-detail.jpg": [
+      1180,
+      1110
+    ]
+  },
+  "remote_hashes": {
+    "photo_hashes": {
+      "230128-933334.jpg": "ec9ea718adc1cb8cd581301ed98434458d35a2e3cf554adef78f934efc8b16bd",
+      "230058-437110.jpg": "1e45060e30a0deffd8bbd344a726bebef8d602461fa0e3c21a6c905b60955ddb",
+      "230158-410207.jpg": "f3f3b8a4d8f86a2a56e34e28c07d6e89c5c5a6f3cfc678a4d3b1271823fe739e",
+      "225928-935648.jpg": "7d28dbeaa560e36eee1594addc2a714de5c5cb2a2c71df0b4023a94ad9ed651e",
+      "225728-921729.jpg": "a94104abdd76dff4f44ca7cf6d3ef9f29d59b3efb64c865f0c34d64aa0c4cc58",
+      "225858-429271.jpg": "1e48553a4bb63d6596b7f5487a09367ed32f90a8dcd425e1a74cb0c66dad0ad0",
+      "230428-944101.jpg": "24d732754d8ce7f8ef2e1f22e43097934e79d7337b0a45756fc5db9fa95fe54c",
+      "230228-904738.jpg": "340f1c773813b979d3e2b78de280f59173e4af2464969bab63cf353c420757f9",
+      "230358-445644.jpg": "9a792429f316f6de5cc5b8d9ab4728f1aaf61fc02e98b10cbfd2f167bb0b3a0f",
+      "225628-931650.jpg": "84058624accc44e897ea7edebbd5b7b86b0711c41e9c981d250e2631582d9f3b",
+      "225758-388279.jpg": "17a33d8fcbdafa626628f8911ba8cd511597ded76c349b2e50bbf83cf1ad9013",
+      "230829-059751.jpg": "44d320fccd1b08a41b2cda9bf88ea817d3b6eab445d39bafc72dceceec162949",
+      "230658-448562.jpg": "dd5e8fe5df47b35686803e30a993542970fd0e2b7d945e7679cde7274704312c",
+      "225528-948565.jpg": "477244c314e1a92caf58eca6e501c24d2bafc94db142f59d54d37b1789ba317d",
+      "230328-915613.jpg": "be901f3071a4fbcf301b2192e73e1ee434fd503ecf6b8cb901b3bb532174f249",
+      "230758-524182.jpg": "a74952d953db3aa7626fd28bfc4df150ec9909d2625bfb8897b935aeb1123572",
+      "225658-428902.jpg": "34a3c8610d69e742b1e343a1ae23f9a2233636896dc6cdea9a77507da91bdeed",
+      "225828-892994.jpg": "55c47f9bb95a9da19c7ec1873196983e7f89ef887c7db968b2a80b67c784ae37",
+      "225558-445706.jpg": "79e879feb0837e01f6e3a7a63e09457417584e0ec3a67e88d0cf8643c14fcc50",
+      "230628-951397.jpg": "79d4bd4bbda62829f739c250a31b0209b0a046ccc017fe50ee30790d36e8ed50",
+      "230558-444632.jpg": "50c0df50709fe301c97b625ea5d13ef5bd7f6c61bd553a99556c1c3264e856fa",
+      "225958-433771.jpg": "de18a2c7b353e953c5562e6286462605d232b361b6bcdc2fbaab6b393e7fe957",
+      "230028-941657.jpg": "6fa8fc40f63cf9515cc27acc08fcd0c96023ecf54f0edb4732c0d2942d0e9dd6",
+      "230929-064438.jpg": "27ff291580943c0265fb479ab6d2bc64fef063cea4e8715ab8ea7a932353aa64",
+      "225458-460344.jpg": "6de52f6edb31587d3263b7f1dbb8972fe7ca3270db38cd8252df610d928e9b37",
+      "230258-401663.jpg": "ee73fab07e44ad53d815f25b9e0c1f975fdb8dbf131d686c2a8b52aeb34ba64c",
+      "230728-955714.jpg": "caca30067d0bf14d61ea45e28c76c6d7bc0908052b65cf17932c2dcc0e3a34d4",
+      "230528-925430.jpg": "f9cc90a054a27e0d5ab419a21179e7149260162f353d52d61b26f5826ddc1535",
+      "230858-581486.jpg": "1b1a535141b01b38429c28f70e391768ffe0be514118f4e6dd73ebdbc886bb64",
+      "230458-443922.jpg": "9e465e2df67ba07bd9372f55ccd69531a59f537f3c3995e48782d89ec4785733"
+    },
+    "job_hashes": {
+      "sampling-slots.json": "42363eee1ada06d97feaee998882af2e7b84ac160c92340d57c00f79a0cd3e5c",
+      "model-input.txt": "b85a7c6eb9e7c580edcc58056af50815f9be743b0e6913bf280758b671c5b6bd",
+      "night_log.jsonl": "f9a753e29b3a5c5996e2b431106e0336bfb3526b30c4200d589e82eedf081d3a",
+      "detections.json": "bf9d025598f09c3cc4615660e0ac9abfb0dde4cee75cd2af31d7bbc2910bc965",
+      "console.txt": "5aed2423cd8b8bc009cd5ff5896e0a40786246175a4da5191f713ad894361100",
+      "report.json": "29c9cf2b1bdac573c80e342a626bc7d4979383e71c966b5c99502f2b89e66326",
+      "ollama-response.json": "45568fbc2d0c3a30e717f29fab97db0aa02695f909e123ecb9012770798ba943",
+      "raw-response.txt": "20757e3fd275ebccfa15b3dfc2c0ad244359a4d407552e3ff966334a678384fd",
+      "prompt.txt": "cc9e9e3c50c11556fa5c3ba490e08f80b225be81ff102e15d60b194430b4eeae",
+      "evidence.json": "f6216732b676b6e5e055653fabc421ae6749f0257fb98fa9917ba767f16f1a73",
+      "attempt-1/validation.json": "f27a2bd755a8f7b35b0be6399d8502444a1365d7a265c1858c597dcc0a8f2595",
+      "attempt-1/ollama-response.json": "45568fbc2d0c3a30e717f29fab97db0aa02695f909e123ecb9012770798ba943",
+      "attempt-1/request.json": "a23926c675376c279617fc553385b8aa9f9bfc8c3371578b39f07ccb8abbdb47",
+      "attempt-1/raw-response.txt": "20757e3fd275ebccfa15b3dfc2c0ad244359a4d407552e3ff966334a678384fd",
+      "attempt-1/prompt.txt": "cc9e9e3c50c11556fa5c3ba490e08f80b225be81ff102e15d60b194430b4eeae"
+    },
+    "old_job_hashes": {
+      "sampling-slots.json": "42363eee1ada06d97feaee998882af2e7b84ac160c92340d57c00f79a0cd3e5c",
+      "model-input.txt": "b85a7c6eb9e7c580edcc58056af50815f9be743b0e6913bf280758b671c5b6bd",
+      "night_log.jsonl": "f9a753e29b3a5c5996e2b431106e0336bfb3526b30c4200d589e82eedf081d3a",
+      "detections.json": "bf9d025598f09c3cc4615660e0ac9abfb0dde4cee75cd2af31d7bbc2910bc965",
+      "console.txt": "703338181a22c45f30a91da3c5caa6f9e3d88cb0f2fb20d8c77d7c085c413c91",
+      "report.json": "23627226091b9ccd2e4c1db1a10111373361147aa0eb6fb479b015c694e2ed5b",
+      "ollama-response.json": "94cb35354679cbe01be7bdb3030b9057dd45cff8600e1d98c859d2712c02217c",
+      "raw-response.txt": "a3e6c9ab8315b58f75a5377cf9055ec34ee8096758310396a4a1b7c88d9eb21b",
+      "prompt.txt": "9377414b9f27c41d3238731d7c8b2ac77f28575ced665b07a518961078e9c885"
+    },
+    "code_hashes": {
+      "worker.py": "1ad5d76fbfd56ec505444ac2c7a1db9ea5c8aa81465eed84b628fc9aceec7a61",
+      "reasoning.py": "247042d817808350f200647f615f2ff75b4a0e1bc3eb95f90f1c9ddaa963964b",
+      "test_reasoning.py": "85b1aa86bf1406cc48e24a0b1611fc1d6b342812402b35f7329aadf1d54c2ceb"
+    },
+    "events": [
+      {
+        "at": "2026-11-01T22:54:58.305271-05:00",
+        "result": "15-minute capture started.",
+        "source": "physical-button",
+        "batch_id": "express-20261101-224820-867740"
+      },
+      {
+        "at": "2026-11-01T23:15:11.490623-05:00",
+        "result": "Processing started.",
+        "source": "physical-button",
+        "batch_id": "express-20261101-224820-867740"
+      },
+      {
+        "at": "2026-11-01T23:32:49.174765-05:00",
+        "result": "Processing started.",
+        "source": "software-check",
+        "batch_id": "express-20261101-224820-867740"
+      }
+    ],
+    "services": {
+      "touch-grass.service": "active",
+      "touch-grass-screen.service": "active"
+    }
+  },
+  "documentation_check": {
+    "local_links_checked": 68,
+    "missing_links": [],
+    "original_part_headings_preserved": true,
+    "latest_model_answer_quoted_exactly": true
+  },
+  "live_preview": {
+    "reopened": true,
+    "process_checked": true,
+    "visually_verified_in_tigervnc": true,
+    "screenshot": "yolo-reopened.jpg",
+    "camera_release_before_next_capture": "Press q in the YOLO window."
+  }
+}

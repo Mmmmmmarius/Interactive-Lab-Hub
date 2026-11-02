@@ -1,0 +1,6 @@
+{
+
+"estimated_desk_minutes": 0.1,
+"score": 0,
+"summary": "The estimated desk time is 0.1 minutes, resulting in a score of 0.0. The test is limited to 6 slots, and unknown slots (3) may affect the estimate.",
+"uncertainty": "Unknown slots (3) and possible missed detections, as the test is limited to 6 slots. The short-test limitation may impact the accuracy of the estimate."}

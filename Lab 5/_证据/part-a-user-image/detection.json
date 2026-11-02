@@ -1,0 +1,112 @@
+{
+  "verified_at": "2026-10-28T17:40:08.032501-04:00",
+  "hostname": "hg542-pi",
+  "input": "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5/user-street-input.png",
+  "input_sha256": "237cddcfc5758f0d315637f5c0bffd8296a835232561801f6c75398b0ed2f5a9",
+  "input_dimensions": {
+    "width": 2880,
+    "height": 2160
+  },
+  "model": "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5/yolo26n_ncnn_model",
+  "settings": {
+    "imgsz": 640,
+    "conf": 0.25,
+    "torch_num_threads": 4
+  },
+  "counts": {
+    "person": 6,
+    "bus": 1,
+    "traffic light": 1
+  },
+  "detections": [
+    {
+      "class": "person",
+      "confidence": 0.79004,
+      "xyxy": [
+        1787.06,
+        236.25,
+        2316.94,
+        1004.62
+      ]
+    },
+    {
+      "class": "person",
+      "confidence": 0.78809,
+      "xyxy": [
+        1036.97,
+        1759.5,
+        1584.28,
+        2160.0
+      ]
+    },
+    {
+      "class": "person",
+      "confidence": 0.7373,
+      "xyxy": [
+        316.69,
+        1634.06,
+        813.38,
+        2154.94
+      ]
+    },
+    {
+      "class": "person",
+      "confidence": 0.71729,
+      "xyxy": [
+        1613.25,
+        1217.25,
+        2875.5,
+        2151.0
+      ]
+    },
+    {
+      "class": "bus",
+      "confidence": 0.61377,
+      "xyxy": [
+        855.0,
+        1457.44,
+        1282.5,
+        1760.06
+      ]
+    },
+    {
+      "class": "person",
+      "confidence": 0.54346,
+      "xyxy": [
+        698.62,
+        1771.31,
+        1078.88,
+        2157.19
+      ]
+    },
+    {
+      "class": "traffic light",
+      "confidence": 0.47095,
+      "xyxy": [
+        1074.66,
+        1014.19,
+        1137.09,
+        1186.31
+      ]
+    },
+    {
+      "class": "person",
+      "confidence": 0.44751,
+      "xyxy": [
+        14.06,
+        1784.25,
+        388.69,
+        2157.75
+      ]
+    }
+  ],
+  "speed_ms": {
+    "preprocess": 8.809170000006361,
+    "inference": 125.83319800000936,
+    "postprocess": 2.3576109999794426
+  },
+  "predict_call_seconds": 1.554,
+  "output": "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5/runs/part-a-user-street-2/user-street-input.jpg",
+  "save_directory": "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5/runs/part-a-user-street-2",
+  "webcam_used": false
+}

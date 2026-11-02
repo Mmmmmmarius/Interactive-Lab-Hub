@@ -1,0 +1,17 @@
+Calculate a Touch grass report. This is a express_demo recording.
+This is a SIMULATION: 15 minutes of real capture are mapped to a fictional 08:00-20:00 day. The desk minutes and score MUST describe that simulated day only, not actual hours spent at the desk. Call the result simulated in your summary and uncertainty.
+There are 30 sampling slots. Every slot represents 1440 SECONDS.
+P = person detected. A = no person detected. U = unknown or missing.
+Here is the full sequence, one letter per slot:
+A P P A P A A A P A P P P P P P P P P P A P P P P P P P P P
+
+You must do the arithmetic:
+1. Count P slots.
+2. estimated_desk_minutes = P count * 1440 / 60. Keep fractional minutes.
+3. score = round(estimated_desk_minutes / 4.8), capped at 100. Round to the nearest whole number.
+This is a 0 to 100 score: longer desk time means a higher score; 480 minutes gives 100.
+Do not infer any time outside these slots. Use only the explicitly specified slot duration.
+Return JSON with estimated_desk_minutes, score, summary and uncertainty.
+Summary: one short sentence about the estimate, with light teasing if appropriate.
+Uncertainty: mention unknown slots, possible missed detections and the short-test limitation if relevant.
+Unknown is not confirmed absence. Repeated detections are not different people. A person in view does not prove computer use.

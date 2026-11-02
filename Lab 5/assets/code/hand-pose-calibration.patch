@@ -1,0 +1,18 @@
+--- hand_pose.py
++++ hand_pose_calibrated.py
+@@ -23,2 +23,6 @@
+ #     )
++
++# Calibrated with Codex for the observed camera distance; course original retained.
++PINCH_MIN_PX = 50
++PINCH_MAX_PX = 120
+ 
+@@ -90,5 +94,5 @@
+  
+-            vol = np.interp(length, [50, 300], [minVol, maxVol])
+-            volBar = np.interp(length, [50, 300], [400, 150])
+-            volPer = np.interp(length, [50, 300], [0, 100])
++            vol = np.interp(length, [PINCH_MIN_PX, PINCH_MAX_PX], [minVol, maxVol])
++            volBar = np.interp(length, [PINCH_MIN_PX, PINCH_MAX_PX], [400, 150])
++            volPer = np.interp(length, [PINCH_MIN_PX, PINCH_MAX_PX], [0, 100])
+             set_volume(int(vol))

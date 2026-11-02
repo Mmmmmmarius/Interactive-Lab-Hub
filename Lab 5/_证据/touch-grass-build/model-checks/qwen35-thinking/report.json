@@ -1,0 +1,10 @@
+{
+  "model": "qwen3.5:0.8b",
+  "request_seconds": 573.54,
+  "generated_at": "2026-11-01T21:33:07.074354-05:00",
+  "raw": "",
+  "kind": "setup_test",
+  "score_scale": "Qwen estimates the score. 0 desk hours = 0; 8 or more hours = 100.",
+  "valid": false,
+  "error": "Qwen returned no final report. Press the Pi button to retry."
+}

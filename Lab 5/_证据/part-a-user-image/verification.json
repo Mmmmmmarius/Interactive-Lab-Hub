@@ -1,0 +1,19 @@
+{
+  "verified_on": "2026-10-28",
+  "checks": {
+    "input_hash_matches_pi": true,
+    "output_hash_matches_pi": true,
+    "script_hash_matches_pi": true,
+    "counts_match_boxes": true,
+    "expected_counts": true,
+    "label_count_matches_boxes": true,
+    "readme_inference_time_matches": true,
+    "all_readme_local_links_exist": true,
+    "parts_b_through_end_unchanged": true,
+    "no_webcam_used": true
+  },
+  "local_links_checked": 11,
+  "missing_links": [],
+  "input_sha256": "237cddcfc5758f0d315637f5c0bffd8296a835232561801f6c75398b0ed2f5a9",
+  "output_sha256": "a1a9eecefc46d15ff4a42ff963cb9eb2648078b5b1aede68ff684df34e745552"
+}

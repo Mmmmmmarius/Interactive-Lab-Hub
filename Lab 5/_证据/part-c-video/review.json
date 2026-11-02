@@ -1,0 +1,106 @@
+{
+  "source_file": "F:\\Captures\\WayVNC - TigerVNC 2026-11-01 19-18-22.mp4",
+  "source_sha256": "474227a7e54cae51e961b0cf0f18ae20fc7d45d33fada6e2b73403eb7f863952",
+  "archival_copy_matches_source": true,
+  "source_media": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1344,
+        "height": 904,
+        "r_frame_rate": "59/1"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "27.825783",
+      "size": "84415902"
+    }
+  },
+  "preview_media": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1344,
+        "height": 904,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "27.866667",
+      "size": "3498918"
+    }
+  },
+  "preview_sha256": "4d7a30fe07dc32d515d8514a3b24324482d4482069ee80ff07d3f091353787d0",
+  "preview_full_decode": "pass",
+  "audio_decoded_pcm_all_zero": true,
+  "review_sampling": "one-second timeline overview plus exact full-resolution extracted frames",
+  "frames": [
+    {
+      "file": "assets/part-c/hand-volume-intermediate.png",
+      "source_time_seconds": 9.5,
+      "visible_percent": 71,
+      "crop_xywh": [
+        216,
+        96,
+        644,
+        568
+      ],
+      "sha256": "78a68ceb3c1b27e06084a3df2a3597d0a58b5e20a2f2620e33eb5e3e3e4ffa32",
+      "visually_reviewed": true
+    },
+    {
+      "file": "assets/part-c/hand-volume-100.png",
+      "source_time_seconds": 10.5,
+      "visible_percent": 100,
+      "crop_xywh": [
+        216,
+        96,
+        644,
+        568
+      ],
+      "sha256": "8434c78094eb6b8a6fc8ae9c47e61563202a94446ce6f8c8631dc5819c031494",
+      "visually_reviewed": true
+    },
+    {
+      "file": "assets/part-c/hand-volume-0.png",
+      "source_time_seconds": 13.5,
+      "visible_percent": 0,
+      "crop_xywh": [
+        216,
+        96,
+        644,
+        568
+      ],
+      "sha256": "f3b66f748f69a8a59b2b36c52eb0f7427dadc2695870f017758b3c4bd3f73871",
+      "visually_reviewed": true
+    }
+  ],
+  "other_readme_sections_unchanged": true,
+  "personal_idea_left_for_user": true,
+  "quiet_coyote": "not shown in reviewed sequence; zero-percent screenshot is a pinch",
+  "audio_stereo_peak_amplitude": [
+    0.0,
+    0.0
+  ],
+  "audio_stereo_pcm_all_zero": true
+}

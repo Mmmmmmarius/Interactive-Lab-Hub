@@ -1,0 +1,10 @@
+{
+  "model": "qwen3.5:0.8b",
+  "request_seconds": 30.68,
+  "generated_at": "2026-11-01T21:18:32.130814-05:00",
+  "raw": "{\n  \"estimated_desk_minutes\": 0.3333333333333333,\n  \"score\": 100,\n  \"summary\": \"The test recorded a very short duration of approximately 2 minutes and 4 seconds, resulting in a maximum possible score of 100 due to the limited sampling slots.\",\n  \"uncertainty\": \"This is a setup_test recording with only 6 sampling slots. The estimated desk time is based strictly on the P count (3) multiplied by 2 seconds per slot divided by 60 minutes, capped at 480 minutes for the score calculation. Since no other letters were observed in these specific slots, there is no evidence of longer usage or missed detections within this short window. The uncertainty reflects the inherent limitation of a setup_test where only a subset of time is captured.\"\n}",
+  "kind": "setup_test",
+  "score_scale": "Qwen estimates the score. 0 desk hours = 0; 8 or more hours = 100.",
+  "valid": false,
+  "error": "The model estimated more desk time than this recording could contain. Review the original answer."
+}

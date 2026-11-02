@@ -1,0 +1,10 @@
+{
+  "model": "qwen3.5:0.8b",
+  "request_seconds": 158.33,
+  "generated_at": "2026-11-01T21:15:12.478085-05:00",
+  "raw": "",
+  "kind": "setup_test",
+  "score_scale": "Qwen estimates the score. 0 desk hours = 0; 8 or more hours = 100.",
+  "valid": false,
+  "error": "Expecting value: line 1 column 1 (char 0)"
+}

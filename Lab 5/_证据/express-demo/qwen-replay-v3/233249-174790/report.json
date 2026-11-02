@@ -1,0 +1,47 @@
+{
+  "model": "qwen3:0.6b",
+  "request_seconds": 28.58,
+  "raw": "{\n\n\"present_samples\": 23,\n\"absent_samples\": 7,\n\"unknown_samples\": 0,\n\"is_simulation\": true,\n\"estimated_desk_minutes\": 552,\n\"score\": 100,\n\"summary\": \"Simulated day: 552 minutes, score 100.\",\n\"uncertainty\": \"Simulation: unknown slots: 0, possible missed detections and that presence does not prove computer use.\"\n}",
+  "prompt_version": "counted-evidence-v3",
+  "evidence": {
+    "present_samples": 23,
+    "absent_samples": 7,
+    "unknown_samples": 0,
+    "total_samples": 30,
+    "seconds_per_sample": 1440,
+    "is_simulation": true
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seconds": 28.58,
+      "valid": true,
+      "error": null
+    }
+  ],
+  "valid": true,
+  "validation": "Counts, arithmetic, bounds and simulation labels checked; model numbers are never replaced.",
+  "answer": {
+    "present_samples": 23,
+    "absent_samples": 7,
+    "unknown_samples": 0,
+    "is_simulation": true,
+    "estimated_desk_minutes": 552,
+    "score": 100,
+    "summary": "Simulated day: 552 minutes, score 100.",
+    "uncertainty": "Simulation: unknown slots: 0, possible missed detections and that presence does not prove computer use."
+  },
+  "generated_at": "2026-11-01T23:33:23.214468-05:00",
+  "kind": "express_demo",
+  "score_scale": "Qwen estimates the score. 0 desk hours = 0; 8 or more hours = 100.",
+  "simulation": {
+    "label": "Simulated day 08:00-20:00; captured during a real 15-minute demo",
+    "start": "2026-11-01T08:00:00-05:00",
+    "end": "2026-11-01T20:00:00-05:00",
+    "interval_seconds": 1440
+  },
+  "actual_capture_window": {
+    "start": "2026-11-01T22:54:58.305111-05:00",
+    "end": "2026-11-01T23:09:58.305111-05:00"
+  }
+}

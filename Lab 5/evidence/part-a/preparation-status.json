@@ -1,0 +1,334 @@
+{
+  "date": "2026-10-25",
+  "status": "part_a_completed_with_screenshots",
+  "ssh_alias": "cornell-pi",
+  "configured_address": "192.168.1.39",
+  "connection_result": "SSH connected after user powered Pi on",
+  "local_network": "192.168.1.0/24",
+  "pi_inspection_completed": true,
+  "pi_modified": true,
+  "course_dependencies": [
+    "mediapipe==0.10.18",
+    "opencv-python==4.11.0.86",
+    "ultralytics",
+    "ncnn",
+    "requests"
+  ],
+  "models_to_prepare": [
+    "yolo26n.pt",
+    "yolo26n_ncnn_model",
+    "qwen3.5:0.8b",
+    "qwen3:0.6b"
+  ],
+  "compatibility_precheck": {
+    "mediapipe_arm64_wheels": [
+      "CPython 3.9",
+      "CPython 3.10",
+      "CPython 3.11",
+      "CPython 3.12"
+    ],
+    "opencv_arm64_wheel": "cp37 abi3"
+  },
+  "sources": [
+    "https://github.com/IRL-CT/Interactive-Lab-Hub/blob/Fall2026/Lab%205/README.md",
+    "https://pypi.org/project/mediapipe/0.10.18/#files",
+    "https://pypi.org/project/opencv-python/4.11.0.86/#files",
+    "https://docs.ollama.com/linux",
+    "https://docs.ultralytics.com/guides/raspberry-pi/"
+  ],
+  "next_step": "Part A is complete. Connect a webcam for the later live person and hand experiments in Parts B and C.",
+  "user_confirmed_phat_disconnected": true,
+  "pi_hostname": "hg542-pi",
+  "pi_model": "Raspberry Pi 5 Model B Rev 1.1",
+  "pi_memory_mb": 8063,
+  "pi_os": "Debian GNU/Linux 12 bookworm",
+  "pi_architecture": "aarch64",
+  "system_python": "3.11.2",
+  "available_disk_gb_before_install": 45,
+  "temperature_c_before_install": 34,
+  "power_throttled_before_install": "0x0",
+  "lab_directory": "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5",
+  "git_source_commit": "7fd308c4685faed76d6173ff2c7c2264fda5555d",
+  "checkout_type": "separate detached Git worktree, existing Lab 3 and Lab 4 changes untouched",
+  "remote_setup_records": "/home/pi/lab5-setup-records",
+  "usb_webcam_detected": false,
+  "environment": {
+    "versions": {
+      "mediapipe": "0.10.18",
+      "opencv-python": "4.11.0.86",
+      "opencv-contrib-python": "4.11.0.86",
+      "ultralytics": "8.4.188",
+      "ncnn": "1.0.20261020",
+      "numpy": "1.26.4",
+      "torch": "2.14.1+cpu",
+      "torchvision": "0.29.1+cpu",
+      "requests": "2.34.2",
+      "jax": "0.7.1",
+      "jaxlib": "0.7.1"
+    },
+    "torch_cpu_only": true,
+    "torch_tensor_operation": "passed",
+    "mediapipe_graph_smoke_test": "passed on a blank synthetic frame; not a gesture experiment",
+    "opencv_version": "4.11.0",
+    "pip_check": "No broken requirements found.",
+    "python": "3.11.2 (main, Nov 30 2024, 21:22:50) [GCC 12.2.0]",
+    "lab_directory": "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5",
+    "webcam_test_performed": false
+  },
+  "yolo": {
+    "weights": "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5/yolo26n.pt",
+    "ncnn_directory": "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5/yolo26n_ncnn_model",
+    "export_seconds": 11.23,
+    "test_source": "https://ultralytics.com/images/bus.jpg",
+    "detections": [
+      {
+        "class": "bus",
+        "confidence": 0.9038,
+        "xyxy": [
+          11.8125,
+          230.34375,
+          800.71875,
+          747.5625
+        ]
+      },
+      {
+        "class": "person",
+        "confidence": 0.856,
+        "xyxy": [
+          46.828125,
+          399.09375,
+          238.359375,
+          901.125
+        ]
+      },
+      {
+        "class": "person",
+        "confidence": 0.8447,
+        "xyxy": [
+          222.75,
+          406.0546875,
+          345.9375,
+          862.9453125
+        ]
+      },
+      {
+        "class": "person",
+        "confidence": 0.8398,
+        "xyxy": [
+          669.515625,
+          388.125,
+          810.0,
+          880.03125
+        ]
+      },
+      {
+        "class": "person",
+        "confidence": 0.5615,
+        "xyxy": [
+          0.0,
+          552.65625,
+          59.484375,
+          872.4375
+        ]
+      }
+    ],
+    "speed_ms": {
+      "preprocess": 7.442685999990317,
+      "inference": 65.87699900001098,
+      "postprocess": 2.0611809999309116
+    },
+    "output_image": "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5/runs/part-a-bus/part-a-bus.jpg",
+    "second_image_test": {
+      "source": "Ultralytics packaged zidane.jpg sample; not a webcam photo",
+      "detected_classes": [
+        "person",
+        "person",
+        "tie"
+      ],
+      "speed_ms": {
+        "preprocess": 4.086028000074293,
+        "inference": 87.4819480000042,
+        "postprocess": 1.575817000002644
+      },
+      "output_image": "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5/runs/part-a-second-image/snap.jpg"
+    },
+    "webcam_used": false
+  },
+  "ollama": {
+    "server": {
+      "version": "0.40.11"
+    },
+    "models": [
+      {
+        "name": "qwen3:0.6b",
+        "model": "qwen3:0.6b",
+        "modified_at": "2026-10-25T01:32:04.744387741-04:00",
+        "size": 522653767,
+        "digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "751.63M",
+          "quantization_level": "Q4_K_M",
+          "context_length": 40960,
+          "embedding_length": 1024,
+          "runner": "ggml"
+        },
+        "capabilities": [
+          "completion",
+          "tools",
+          "thinking"
+        ]
+      },
+      {
+        "name": "qwen3.5:0.8b",
+        "model": "qwen3.5:0.8b",
+        "modified_at": "2026-10-25T01:31:33.692747553-04:00",
+        "size": 1322069277,
+        "digest": "de63045f29755d4721c09d54c9b45c2dadb644f4fd7d604d4cac90d96049971c",
+        "details": {
+          "parent_model": "qwen35-validation-20260930:0.8b-stock-q8_0-q8draft2",
+          "format": "gguf",
+          "family": "qwen35",
+          "families": [
+            "qwen35"
+          ],
+          "parameter_size": "752.39M",
+          "quantization_level": "Q8_0",
+          "context_length": 262144,
+          "embedding_length": 1024,
+          "runner": "llamacpp"
+        },
+        "capabilities": [
+          "completion",
+          "vision",
+          "tools",
+          "thinking"
+        ]
+      }
+    ],
+    "tests": [
+      {
+        "model": "qwen3:0.6b",
+        "prompt": "What is 2 + 2? Reply with the number only.",
+        "image_input": false,
+        "response": "2",
+        "wall_seconds": 2.36,
+        "load_seconds": 2.14,
+        "eval_tokens": 2,
+        "eval_seconds": 0.04,
+        "done_reason": "stop"
+      },
+      {
+        "model": "qwen3.5:0.8b",
+        "prompt": "What is 2 + 2? Reply with the number only.",
+        "image_input": false,
+        "response": "4",
+        "wall_seconds": 8.87,
+        "load_seconds": 7.79,
+        "eval_tokens": 2,
+        "eval_seconds": 0.35,
+        "done_reason": "stop"
+      },
+      {
+        "model": "qwen3.5:0.8b",
+        "prompt": "Name the main vehicle in this picture. Answer with one word.",
+        "image_input": true,
+        "response": "bus",
+        "wall_seconds": 20.76,
+        "load_seconds": 10.21,
+        "eval_tokens": 2,
+        "eval_seconds": 0.34,
+        "done_reason": "stop"
+      }
+    ],
+    "verification_scope": "installation smoke tests, not the student Part D question experiment",
+    "all_requests_completed": true,
+    "sanity_recheck": {
+      "purpose": "Repeat the arithmetic sanity check after the first incorrect answer",
+      "model": "qwen3:0.6b",
+      "prompt": "Compute the sum of two and two. Give only the final number.",
+      "response": "The final number is 4.",
+      "wall_seconds": 3.11,
+      "done": true,
+      "done_reason": "stop"
+    },
+    "accuracy_observation": "qwen3:0.6b initially answered 2 to 2+2; it answered 4 on a rephrased prompt. Runtime completion does not establish answer correctness."
+  },
+  "final_system": {
+    "ollama_service_active": "active",
+    "ollama_service_enabled": "enabled",
+    "listener": "State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess\nLISTEN 0      4096       127.0.0.1:11434      0.0.0.0:*",
+    "disk": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/mmcblk0p2   58G   21G   35G  37% /\n",
+    "power": "throttled=0x0",
+    "temperature": "temp=60.9'C",
+    "old_repo_status": " M \"Lab 3/README.md\"\n?? \"Lab 3/images/\"\n?? \"Lab 3/part2-preparation.md\"\n?? \"Lab 3/speech-scripts/greet_flower.sh\"\n?? \"Lab 3/speech-scripts/numeric_input.py\"\n?? \"Lab 3/talking-box-dialogue.json\"\n?? \"Lab 3/woz_controller/\"\n?? \"Lab 4/\"\n",
+    "new_worktree_status": "?? \"Lab 5/part-a-bus.jpg\"\n?? \"Lab 5/snap.jpg\"\n",
+    "pip_check": "No broken requirements found.",
+    "memory": "               total        used        free      shared  buff/cache   available\nMem:            8063         680        2451          35        5055        7383\nSwap:            511           0         511\n",
+    "ollama_running_models": "NAME    ID    SIZE    PROCESSOR    CONTEXT    RUNNER    UNTIL \n"
+  },
+  "configuration_changes": [
+    "Created a detached worktree at /home/pi/Interactive-Lab-Hub-Lab5",
+    "Created Lab 5/.venv and installed course requirements with CPU-only PyTorch",
+    "Installed official Ollama ARM64 distribution and enabled its local service",
+    "Added a UTF-8 block to /home/pi/.bashrc",
+    "Downloaded YOLO26n, exported NCNN, and pulled both Qwen models"
+  ],
+  "notes": [
+    "Initial PyPI resolution attempted CUDA dependencies and was stopped before installation; CPU wheels were installed from the official PyTorch index.",
+    "OpenCV and OpenCV-contrib were aligned to 4.11.0.86, with numpy<2 for MediaPipe compatibility.",
+    "A transient model download error was recovered by resuming the download.",
+    "MediaPipe processed a synthetic blank frame; no live hand or camera experiment was performed.",
+    "The installed shell environment had a latin-1 logging issue; UTF-8 configuration was applied and verification rerun."
+  ],
+  "evidence_files": {
+    "environment-verification.json": "d456ded10ee0cc1e210a43546e9eb25c3f0fc187515e559a97c5361028bcc67e",
+    "environment-verification.log": "6f3eb8f0bcff6226a4a63244a81ee0e5f8c78a7e5e36db319b4fe40795436717",
+    "final-system-status.json": "3b97c7ff0bc7916d9542c9f228eeb0a5486f29456a1a195e24be075bece4e705",
+    "ollama-list.txt": "f8a17a95d6006c27bad30c8a65cc6807be863ff90d37b90aa2320fecf8283196",
+    "ollama-verification.json": "d9f3c35315747ba732228d9c2c93290690be08b2957af4a76a8c0a6e39f2ab40",
+    "part-a-evidence.zip": "3c7d58baefb49f2caeda4cba0ccd7aa6d8cc8d505f7426d4fc2f5c6b25b6909a",
+    "pi-constraints.txt": "a2ce25259a7650701fd1236d74491e93a78777c097b2f1754a40ea6da7f3b293",
+    "pip-install-report.json": "9a5028d54aac30ee1b2f23d492d1abd3b5db309f6a7968c53bcd32a931867f9a",
+    "pytorch-cpu-report.json": "6467bf8ebd24998ac423383b02c8821534b0cd5a7d9c2262c95b7db128abd4df",
+    "qwen06-sanity-recheck.json": "b98cbc0bb9a296532f2f40bb7ebb9048a77ef293ef8b01a4ccd7010f57ce9b43",
+    "requirements-installed.txt": "83d09b0f678ad1dbf7303a57f9a0cc7cc896582a7fab9fdf6c03b732fd748fd4",
+    "verify_environment.py": "7b336b94aabf74702e6423c0c45a537ce680d3c5edb93c75005c96e32440665d",
+    "verify_ollama.py": "8ee9503416774e729095804816d838937d94bc5d87230ab5986d9440ed24ab23",
+    "verify_yolo.py": "b34cc5da1f3eee7795d99b0674fc9681564e6797d0ed5409776102b0ccc8cc55",
+    "yolo-bus-result.jpg": "73b0f859e2fbae214a10e9a7ea02b934f8954adbddfed0271a9a9fe8a379a42a",
+    "yolo-second-image-result.jpg": "dcd19a46eee6de5998c059e448a8abf514bc7f77c5b36f2d38157d92a023007e",
+    "yolo-verification.json": "91690d9562b6114eacc311924cd2c23fb632915145292d4cc4ec6406f002d25e",
+    "yolo-verification.log": "629042e86158e1dd4c7c24388afc6d37a2d7188ed7cb25b760f6bc72882eefd5",
+    "capture_part_a_models.sh": "8c6b8113e1f8812cc0a0f07f5883fb76278d9f70c152480fb869f7d3d418b730",
+    "capture_part_a_yolo.sh": "a623a7f414ebaff6ad7d2ac40edc77b0ecec6e78f121659d049fd13db9d07413",
+    "completion-verification.json": "b1aff008aca6b4f6d1b4d38db362248a0ce1f74445076b0915b56ea68e568da6",
+    "ollama-list-current.txt": "5c8d5490e8e964a17c8af8f47ba32bc6bc4a79023812524bbd490e73b0ef102b",
+    "ollama-list-desktop.png": "a783a771bc4c7fcffa42ac85f44d06cbc2c445e614f3903616002f800fccfc87",
+    "part-a-cli-yolo-local.txt": "c14a1f80a00e5a55c4b549c20fd1fe43aee6fa2bd643b00161b6ca654edad98e",
+    "part-a-cli-yolo.txt": "25204aea08a9a97bc5cec1b2f4ab0224007ff800d3eba08d457d4d5469dab8f4",
+    "yolo-cli-desktop.png": "017c94d25c8ab573590d0be72a485039b62e9e45faac59c88d624c3b20a98ca1"
+  },
+  "local_documentation": {
+    "note": "Files/学习/Cornell/Y1S1/INFO5345_交互设备开发与设计/作业/Lab5/README.md",
+    "note_sha256": "abc3f170ca4494f6b3aae806dffda463b164272738a90824f0a9d5507d8804ee",
+    "reference": "Files/学习/Cornell/Y1S1/INFO5345_交互设备开发与设计/作业/Lab5/evidence/part-a/README.md",
+    "verification": "A-I structure, unchanged B-I content, four embedded evidence images, local links and current Pi state verified"
+  },
+  "completion_verified_at": "2026-10-26T02:06:51.439047-04:00",
+  "initial_offline_attempt": {
+    "neighbor_state": "Unreachable",
+    "raspberrypi_local_resolved": false,
+    "superseded_by": "Successful authenticated SSH verification recorded in completion-verification.json"
+  },
+  "completion_verification": "completion-verification.json",
+  "screenshot_assets": [
+    "../../assets/part-a/ollama-list.png",
+    "../../assets/part-a/yolo-cli.png"
+  ]
+}

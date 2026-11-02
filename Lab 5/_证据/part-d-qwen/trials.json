@@ -1,0 +1,103 @@
+{
+  "started_at": "2026-11-01T19:29:59.276891-05:00",
+  "script": "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5/ask_qwen.py",
+  "script_unchanged": true,
+  "script_sha256": "d19038130f94fc049cbbe7392d1be94e0d973b4ceb622fc1f66ff88845619c6c",
+  "settings": {
+    "think": false,
+    "temperature": 0.3,
+    "num_predict": 120,
+    "keep_alive": "5m"
+  },
+  "system_prompt": "You are a small bedside device. Answer in at most three short sentences.",
+  "model_list": "NAME            ID              SIZE      MODIFIED   \nqwen3:0.6b      7df6b6e09427    522 MB    7 days ago    \nqwen3.5:0.8b    de63045f2975    1.3 GB    7 days ago    \n",
+  "initial_loaded_models": "NAME    ID    SIZE    PROCESSOR    CONTEXT    RUNNER    UNTIL \n",
+  "trial_3_input": "Synthetic example log supplied in the prompt, not a measured overnight log.",
+  "results": [
+    {
+      "trial": "1-history",
+      "model": "qwen3.5:0.8b",
+      "question": "Tell me a bit about the history of Roosevelt Island.",
+      "command": [
+        "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5/.venv/bin/python",
+        "ask_qwen.py",
+        "--model",
+        "qwen3.5:0.8b",
+        "Tell me a bit about the history of Roosevelt Island."
+      ],
+      "started_at": "2026-11-01T19:29:59.320588-05:00",
+      "models_loaded_before": "NAME    ID    SIZE    PROCESSOR    CONTEXT    RUNNER    UNTIL \n",
+      "exit_code": 0,
+      "process_elapsed_seconds": 36.197,
+      "reported_request_seconds": 35.9,
+      "cut_off": false,
+      "answer": "Roosevelt Island is the largest island in Manhattan, originally built as a military reserve during World War II to house troops stationed on Staten Island. The name was chosen by President Franklin D. Roosevelt after his wife Eleanor Roosevelt, who had been born there. Today, it serves as a major tourist destination and home to the famous Roosevelt Island Zoo.",
+      "stdout_file": "1-history.txt",
+      "stderr_file": "1-history-stderr.txt"
+    },
+    {
+      "trial": "2-timer",
+      "model": "qwen3.5:0.8b",
+      "question": "A timer starts at 20 minutes. After 7 minutes and 30 seconds, how much time remains? Answer in minutes and seconds.",
+      "command": [
+        "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5/.venv/bin/python",
+        "ask_qwen.py",
+        "--model",
+        "qwen3.5:0.8b",
+        "A timer starts at 20 minutes. After 7 minutes and 30 seconds, how much time remains? Answer in minutes and seconds."
+      ],
+      "started_at": "2026-11-01T19:30:35.528161-05:00",
+      "models_loaded_before": "NAME            ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              \nqwen3.5:0.8b    de63045f2975    844 MB    100% CPU     4096       llamacpp    4 minutes from now    \n",
+      "exit_code": 0,
+      "process_elapsed_seconds": 7.141,
+      "reported_request_seconds": 6.9,
+      "cut_off": false,
+      "answer": "The timer has started for 20 minutes and the elapsed time is 7 minutes and 30 seconds, so the remaining time is 12 minutes and 30 seconds.",
+      "stdout_file": "2-timer.txt",
+      "stderr_file": "2-timer-stderr.txt"
+    },
+    {
+      "trial": "3-example-log",
+      "model": "qwen3.5:0.8b",
+      "question": "Use only this example log: 22:00 no person detected; 22:05 one person detected; 22:06 no person detected. When was a person detected, and can this log tell us why they were there?",
+      "command": [
+        "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5/.venv/bin/python",
+        "ask_qwen.py",
+        "--model",
+        "qwen3.5:0.8b",
+        "Use only this example log: 22:00 no person detected; 22:05 one person detected; 22:06 no person detected. When was a person detected, and can this log tell us why they were there?"
+      ],
+      "started_at": "2026-11-01T19:30:42.682412-05:00",
+      "models_loaded_before": "NAME            ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              \nqwen3.5:0.8b    de63045f2975    844 MB    100% CPU     4096       llamacpp    4 minutes from now    \n",
+      "exit_code": 0,
+      "process_elapsed_seconds": 13.229,
+      "reported_request_seconds": 13.0,
+      "cut_off": false,
+      "answer": "The log indicates that a person was detected at 22:05 but not again between 22:00 and 22:06. This suggests the individual may have been present for a short period before leaving, as no further activity is recorded in the provided data.",
+      "stdout_file": "3-example-log.txt",
+      "stderr_file": "3-example-log-stderr.txt"
+    },
+    {
+      "trial": "4-history-comparison",
+      "model": "qwen3:0.6b",
+      "question": "Tell me a bit about the history of Roosevelt Island.",
+      "command": [
+        "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5/.venv/bin/python",
+        "ask_qwen.py",
+        "--model",
+        "qwen3:0.6b",
+        "Tell me a bit about the history of Roosevelt Island."
+      ],
+      "started_at": "2026-11-01T19:30:55.924977-05:00",
+      "models_loaded_before": "NAME            ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              \nqwen3.5:0.8b    de63045f2975    844 MB    100% CPU     4096       llamacpp    4 minutes from now    \n",
+      "exit_code": 0,
+      "process_elapsed_seconds": 15.936,
+      "reported_request_seconds": 15.7,
+      "cut_off": false,
+      "answer": "Roosevelt Island is a small island located off the coast of California, known for its unique geological features and historical significance. It was formed by the collapse of the island of the Pacific, which was once a massive landmass. The island has been a vital part of the region's history, with early settlers and explorers arriving there in the 19th century. It played a key role in the development of the area, serving as a base for various industries and a hub for trade and transportation. Today, Roosevelt Island remains an important part of the region's cultural and ecological identity.",
+      "stdout_file": "4-history-comparison.txt",
+      "stderr_file": "4-history-comparison-stderr.txt"
+    }
+  ],
+  "completed_at": "2026-11-01T19:31:11.874371-05:00"
+}

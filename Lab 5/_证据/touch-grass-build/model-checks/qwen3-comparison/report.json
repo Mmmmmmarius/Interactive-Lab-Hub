@@ -1,0 +1,10 @@
+{
+  "model": "qwen3:0.6b",
+  "request_seconds": 9.64,
+  "generated_at": "2026-11-01T21:19:19.181387-05:00",
+  "raw": "{\n  \"estimated_desk_minutes\": 1.0,\n  \"score\": 100,\n  \"summary\": \"The estimated desk time is 1 minute, with a score of 100. There are 1 P slot, which is a single detection.\",\n  \"uncertainty\": \"Unknown slots: 1 (P), 1 (P). Possible missed detections: 1 P. Short-test limitation: 1 slot is incomplete. Estimated desk time is based on the given data, with some uncertainty.\"\n}",
+  "kind": "setup_test",
+  "score_scale": "Qwen estimates the score. 0 desk hours = 0; 8 or more hours = 100.",
+  "valid": false,
+  "error": "The model estimated more desk time than this recording could contain. Review the original answer."
+}

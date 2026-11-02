@@ -1,0 +1,15 @@
+{
+  "backup": "/home/pi/touch-grass/backups/grass-ui-20261102-012015",
+  "served_sha256": {
+    "style.css": "f9f7aeeda49c3ab472614b34a74cd23da828e023f131b64a840e2bba77e6917f",
+    "app.js": "38d5353520742ad0ebf4ff259bee5a717ea151b3386c8c20b93f354af2e1e6d5",
+    "index.html": "bf0d86df7dabe0c802fb38415fd83aec3aa04f4b250b91bc7ca88aa8be4ecfe1"
+  },
+  "unchanged_backend": true,
+  "unchanged_demo_files": 56,
+  "unchanged_services": true,
+  "unchanged_yolo_process": true,
+  "score": 100,
+  "simulated_minutes": 552,
+  "browser_checks": "Passed. See browser-checks.json and actual browser screenshots."
+}

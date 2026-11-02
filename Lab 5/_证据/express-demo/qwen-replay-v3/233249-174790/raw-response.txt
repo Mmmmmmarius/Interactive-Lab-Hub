@@ -1,0 +1,11 @@
+{
+
+"present_samples": 23,
+"absent_samples": 7,
+"unknown_samples": 0,
+"is_simulation": true,
+"estimated_desk_minutes": 552,
+"score": 100,
+"summary": "Simulated day: 552 minutes, score 100.",
+"uncertainty": "Simulation: unknown slots: 0, possible missed detections and that presence does not prove computer use."
+}

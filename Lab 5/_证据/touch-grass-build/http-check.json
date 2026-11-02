@@ -1,0 +1,62 @@
+{
+  "checked_at": "2026-11-01T21:08:24.716877-05:00",
+  "origin": "Windows LAN client",
+  "checks": [
+    {
+      "path": "/",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "passed": true
+    },
+    {
+      "path": "/style.css",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "passed": true
+    },
+    {
+      "path": "/app.js",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "passed": true
+    },
+    {
+      "path": "/api/state",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "passed": true
+    },
+    {
+      "path": "/api/process",
+      "method": "POST",
+      "expected": 403,
+      "actual": 403,
+      "passed": true
+    },
+    {
+      "path": "/control-token",
+      "method": "GET",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    },
+    {
+      "path": "/api/state?day=../../etc",
+      "method": "GET",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    },
+    {
+      "path": "/media/2026-11-01/../../etc/passwd",
+      "method": "GET",
+      "expected": 404,
+      "actual": 404,
+      "passed": true
+    }
+  ]
+}

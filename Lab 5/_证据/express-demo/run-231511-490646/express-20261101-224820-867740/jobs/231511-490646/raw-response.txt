@@ -1,0 +1,6 @@
+{
+
+"estimated_desk_minutes": 672,
+"score": 140,
+"summary": "The estimated desk time is 672 minutes, resulting in a score of 140, with some uncertainty due to the sampling.",
+"uncertainty": "Unknown slots (28 P's) may indicate missed detections, and the short-test limitation limits the accuracy of the estimate."}

@@ -1,0 +1,24 @@
+{
+  "started_at": "2026-11-01T19:13:31.318077-05:00",
+  "pid": 3710548,
+  "command": [
+    "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5/.venv/bin/python",
+    "-u",
+    "hand_pose_calibrated.py"
+  ],
+  "cwd": "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5",
+  "max_seconds": null,
+  "log": "/home/pi/lab5-setup-records/part-c/hand-calibrated-20261101-191331.log",
+  "previous_pid": 3665884,
+  "original_course_file_unchanged": true,
+  "changed_behavior": "Only distance-to-volume mapping: [50, 300] to [50, 120] pixels in three interpolation calls.",
+  "endpoint_checks": {
+    "20": 0.0,
+    "50": 0.0,
+    "85": 50.0,
+    "120": 100.0,
+    "160": 100.0
+  },
+  "calibrated_sha256": "1007bde5c7cc22c368d769bddede339c68441490bf72950cfd8640c5c4c82ca6",
+  "stop": "Press q in the Img window."
+}

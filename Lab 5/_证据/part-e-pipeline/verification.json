@@ -1,0 +1,27 @@
+{
+  "exit_code": 0,
+  "copied_raw_files_match_pi": true,
+  "camera_released": true,
+  "course_index_check": "passed",
+  "teacher_script_unchanged_before_and_after": true,
+  "log_line_count": 15,
+  "reading_counts": {
+    "1 person(s) at center/far": 8,
+    "nobody": 7
+  },
+  "qwen_reported_seconds": 18.5,
+  "raw_answer_in_readme": true,
+  "raw_log_in_readme": true,
+  "user_confirmation": "有，按提示进出过",
+  "other_readme_sections_preserved": true,
+  "checked_local_links": 34,
+  "broken_links": [],
+  "screenshot_note": "Both screenshots show one person. nobody.png is named for its trigger log, not its captured contents.",
+  "raw_file_sha256": {
+    "watch_log.txt": "182db8ba86da17006e7fa270c29d1cf40beed2765adc53c1dacb543855be52d2",
+    "console.txt": "72c326e9bf8aa58312c33dc18eb12dd7567c9fd8fd78045d1e6b02826b3fdab4",
+    "run.json": "3ee5243cec30fc9ac0e08fa78b39142559c257b0c938a0445817cb0617da7bc0",
+    "person.png": "8748679572330061a06d736e660aa8b4f10702a6a1f5773ebbba4347ace5ca46",
+    "nobody.png": "1c2af2224dd771bbc3e2e2606bd8a8c3afd220a5d8d1eafd35edf6fc8426f584"
+  }
+}

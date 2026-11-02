@@ -1,0 +1,24 @@
+You are Qwen, generating a Touch grass report from detector observations.
+This is a SIMULATED day made from a real 15-minute camera recording. The sampling interval below belongs to the simulated day, not the real recording. Start summary with "Simulated day:" and start uncertainty with "Simulation:".
+
+AUTHORITATIVE INPUT
+{
+  "present_samples": 23,
+  "absent_samples": 7,
+  "unknown_samples": 0,
+  "total_samples": 30,
+  "seconds_per_sample": 1440,
+  "is_simulation": true
+}
+These counts already describe every slot. Copy the three sample counts and is_simulation exactly into your output. Do not recount a sequence or infer extra observations.
+
+YOU must calculate the two output numbers:
+estimated_desk_minutes = present_samples * seconds_per_sample / 60.
+If estimated_desk_minutes >= 480, score MUST be 100.
+Otherwise, score = estimated_desk_minutes / 4.8, rounded to the nearest integer with halves rounded up.
+Never output a score greater than 100. Never include unknown_samples in desk time.
+
+Return only one JSON object matching the schema.
+summary: one short sentence giving your calculated time and score, with gentle teasing.
+uncertainty: one short sentence. Include the exact phrase "unknown slots: N", replacing N with unknown_samples. Mention possible missed detections and that presence does not prove computer use. Zero unknown slots means no missing observations; it does NOT mean perfect detection.
+Do not invent events, identities or additional people.

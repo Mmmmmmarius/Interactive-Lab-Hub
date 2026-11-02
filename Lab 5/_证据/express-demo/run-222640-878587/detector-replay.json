@@ -1,0 +1,506 @@
+{
+  "purpose": "Offline replay of unchanged saved photos; not a new capture or replacement result.",
+  "recorded_at": "2026-11-01T22:32:25.422558-05:00",
+  "original": {
+    "imgsz": 320,
+    "confidence": 0.4,
+    "counts": {
+      "absent": 29,
+      "present": 1
+    }
+  },
+  "variants": [
+    {
+      "imgsz": 640,
+      "confidence": 0.4,
+      "seconds": 3.61,
+      "counts": {
+        "absent": 29,
+        "present": 1
+      },
+      "records": [
+        {
+          "index": 0,
+          "file": "photos/221011-359461.jpg",
+          "captured_at": "2026-11-01T22:10:12.663834-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 1,
+          "file": "photos/221040-834818.jpg",
+          "captured_at": "2026-11-01T22:10:42.169451-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 2,
+          "file": "photos/221111-340846.jpg",
+          "captured_at": "2026-11-01T22:11:12.699379-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 3,
+          "file": "photos/221140-871236.jpg",
+          "captured_at": "2026-11-01T22:11:42.204792-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 4,
+          "file": "photos/221211-376019.jpg",
+          "captured_at": "2026-11-01T22:12:12.705104-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 5,
+          "file": "photos/221240-884850.jpg",
+          "captured_at": "2026-11-01T22:12:42.240537-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 6,
+          "file": "photos/221311-411910.jpg",
+          "captured_at": "2026-11-01T22:13:12.740690-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 7,
+          "file": "photos/221340-959243.jpg",
+          "captured_at": "2026-11-01T22:13:42.278499-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 8,
+          "file": "photos/221411-498510.jpg",
+          "captured_at": "2026-11-01T22:14:12.837544-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 9,
+          "file": "photos/221441-006513.jpg",
+          "captured_at": "2026-11-01T22:14:42.310862-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 10,
+          "file": "photos/221511-481687.jpg",
+          "captured_at": "2026-11-01T22:15:12.840706-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 11,
+          "file": "photos/221541-011511.jpg",
+          "captured_at": "2026-11-01T22:15:42.378677-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 12,
+          "file": "photos/221611-550218.jpg",
+          "captured_at": "2026-11-01T22:16:12.907756-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 13,
+          "file": "photos/221641-080655.jpg",
+          "captured_at": "2026-11-01T22:16:42.416096-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 14,
+          "file": "photos/221711-597367.jpg",
+          "captured_at": "2026-11-01T22:17:12.943178-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 15,
+          "file": "photos/221741-115648.jpg",
+          "captured_at": "2026-11-01T22:17:42.449035-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 16,
+          "file": "photos/221811-660185.jpg",
+          "captured_at": "2026-11-01T22:18:12.978786-05:00",
+          "state": "present",
+          "boxes": [
+            {
+              "xyxy": [
+                224.4375,
+                196.125,
+                368.5625,
+                468.875
+              ],
+              "confidence": 0.77587890625
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "file": "photos/221841-190254.jpg",
+          "captured_at": "2026-11-01T22:18:42.516038-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 18,
+          "file": "photos/221911-688725.jpg",
+          "captured_at": "2026-11-01T22:19:13.013591-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 19,
+          "file": "photos/221941-186458.jpg",
+          "captured_at": "2026-11-01T22:19:42.551704-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 20,
+          "file": "photos/222010-723132.jpg",
+          "captured_at": "2026-11-01T22:20:12.057122-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 21,
+          "file": "photos/222041-240545.jpg",
+          "captured_at": "2026-11-01T22:20:42.587045-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 22,
+          "file": "photos/222110-757931.jpg",
+          "captured_at": "2026-11-01T22:21:12.062748-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 23,
+          "file": "photos/222141-243602.jpg",
+          "captured_at": "2026-11-01T22:21:42.590141-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 24,
+          "file": "photos/222210-761058.jpg",
+          "captured_at": "2026-11-01T22:22:12.098065-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 25,
+          "file": "photos/222241-317411.jpg",
+          "captured_at": "2026-11-01T22:22:42.625435-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 26,
+          "file": "photos/222310-846105.jpg",
+          "captured_at": "2026-11-01T22:23:12.162899-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 27,
+          "file": "photos/222341-334934.jpg",
+          "captured_at": "2026-11-01T22:23:42.660725-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 28,
+          "file": "photos/222410-834149.jpg",
+          "captured_at": "2026-11-01T22:24:12.168428-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 29,
+          "file": "photos/222441-347990.jpg",
+          "captured_at": "2026-11-01T22:24:42.663729-05:00",
+          "state": "absent",
+          "boxes": []
+        }
+      ]
+    },
+    {
+      "imgsz": 640,
+      "confidence": 0.2,
+      "seconds": 2.25,
+      "counts": {
+        "absent": 26,
+        "present": 4
+      },
+      "records": [
+        {
+          "index": 0,
+          "file": "photos/221011-359461.jpg",
+          "captured_at": "2026-11-01T22:10:12.663834-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 1,
+          "file": "photos/221040-834818.jpg",
+          "captured_at": "2026-11-01T22:10:42.169451-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 2,
+          "file": "photos/221111-340846.jpg",
+          "captured_at": "2026-11-01T22:11:12.699379-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 3,
+          "file": "photos/221140-871236.jpg",
+          "captured_at": "2026-11-01T22:11:42.204792-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 4,
+          "file": "photos/221211-376019.jpg",
+          "captured_at": "2026-11-01T22:12:12.705104-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 5,
+          "file": "photos/221240-884850.jpg",
+          "captured_at": "2026-11-01T22:12:42.240537-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 6,
+          "file": "photos/221311-411910.jpg",
+          "captured_at": "2026-11-01T22:13:12.740690-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 7,
+          "file": "photos/221340-959243.jpg",
+          "captured_at": "2026-11-01T22:13:42.278499-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 8,
+          "file": "photos/221411-498510.jpg",
+          "captured_at": "2026-11-01T22:14:12.837544-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 9,
+          "file": "photos/221441-006513.jpg",
+          "captured_at": "2026-11-01T22:14:42.310862-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 10,
+          "file": "photos/221511-481687.jpg",
+          "captured_at": "2026-11-01T22:15:12.840706-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 11,
+          "file": "photos/221541-011511.jpg",
+          "captured_at": "2026-11-01T22:15:42.378677-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 12,
+          "file": "photos/221611-550218.jpg",
+          "captured_at": "2026-11-01T22:16:12.907756-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 13,
+          "file": "photos/221641-080655.jpg",
+          "captured_at": "2026-11-01T22:16:42.416096-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 14,
+          "file": "photos/221711-597367.jpg",
+          "captured_at": "2026-11-01T22:17:12.943178-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 15,
+          "file": "photos/221741-115648.jpg",
+          "captured_at": "2026-11-01T22:17:42.449035-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 16,
+          "file": "photos/221811-660185.jpg",
+          "captured_at": "2026-11-01T22:18:12.978786-05:00",
+          "state": "present",
+          "boxes": [
+            {
+              "xyxy": [
+                224.4375,
+                196.125,
+                368.5625,
+                468.875
+              ],
+              "confidence": 0.77587890625
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "file": "photos/221841-190254.jpg",
+          "captured_at": "2026-11-01T22:18:42.516038-05:00",
+          "state": "present",
+          "boxes": [
+            {
+              "xyxy": [
+                324.625,
+                186.0,
+                474.375,
+                474.0
+              ],
+              "confidence": 0.374267578125
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "file": "photos/221911-688725.jpg",
+          "captured_at": "2026-11-01T22:19:13.013591-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 19,
+          "file": "photos/221941-186458.jpg",
+          "captured_at": "2026-11-01T22:19:42.551704-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 20,
+          "file": "photos/222010-723132.jpg",
+          "captured_at": "2026-11-01T22:20:12.057122-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 21,
+          "file": "photos/222041-240545.jpg",
+          "captured_at": "2026-11-01T22:20:42.587045-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 22,
+          "file": "photos/222110-757931.jpg",
+          "captured_at": "2026-11-01T22:21:12.062748-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 23,
+          "file": "photos/222141-243602.jpg",
+          "captured_at": "2026-11-01T22:21:42.590141-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 24,
+          "file": "photos/222210-761058.jpg",
+          "captured_at": "2026-11-01T22:22:12.098065-05:00",
+          "state": "present",
+          "boxes": [
+            {
+              "xyxy": [
+                296.0,
+                202.0,
+                463.5,
+                473.0
+              ],
+              "confidence": 0.258056640625
+            }
+          ]
+        },
+        {
+          "index": 25,
+          "file": "photos/222241-317411.jpg",
+          "captured_at": "2026-11-01T22:22:42.625435-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 26,
+          "file": "photos/222310-846105.jpg",
+          "captured_at": "2026-11-01T22:23:12.162899-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 27,
+          "file": "photos/222341-334934.jpg",
+          "captured_at": "2026-11-01T22:23:42.660725-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 28,
+          "file": "photos/222410-834149.jpg",
+          "captured_at": "2026-11-01T22:24:12.168428-05:00",
+          "state": "absent",
+          "boxes": []
+        },
+        {
+          "index": 29,
+          "file": "photos/222441-347990.jpg",
+          "captured_at": "2026-11-01T22:24:42.663729-05:00",
+          "state": "present",
+          "boxes": [
+            {
+              "xyxy": [
+                299.5,
+                198.125,
+                471.0,
+                472.875
+              ],
+              "confidence": 0.2237548828125
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

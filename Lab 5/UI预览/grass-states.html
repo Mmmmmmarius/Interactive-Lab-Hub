@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#d9eeff">
+<title>Grass bro · State study</title>
+<style>
+:root{--ink:#173a29;--grass:#71c940;--light:#b7e878;--sky:#d9eeff;--paper:#f7fbff;--yellow:#ffd65a;--pink:#ef8bb2;--muted:#4c6459;--line:#c5d8cb;color:var(--ink);background:var(--paper);font-family:"Trebuchet MS",Arial,sans-serif;font-synthesis:none}
+*{box-sizing:border-box}body{margin:0}button,input{font:inherit}button{color:inherit}a{color:inherit;text-underline-offset:4px}button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #173a29;outline-offset:5px}button{touch-action:manipulation}main{max-width:1480px;margin:auto;padding:30px 40px 35px}p{line-height:1.5;margin:0}h1,h2,h3{margin:0;line-height:1.1}header{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:43px}.brand{font-size:24px;font-weight:800;letter-spacing:-1px;display:flex;align-items:center;gap:10px}.brand svg{width:24px;height:29px;fill:var(--grass);stroke:var(--ink);stroke-width:2;stroke-linejoin:round}.badge{border:1px solid #b9cedf;background:white;border-radius:999px;padding:8px 13px;font-size:13px}.intro{display:flex;justify-content:space-between;gap:36px;align-items:end;margin-bottom:27px}h1{font-family:"Arial Rounded MT Bold","Trebuchet MS",sans-serif;font-size:clamp(30px,3.4vw,48px);font-weight:900;letter-spacing:-1.5px;max-width:800px}.intro p{color:var(--muted);font-size:16px;margin-top:14px;max-width:620px}.tap-hint{flex-shrink:0;font-size:13px;color:var(--muted);padding-bottom:3px}.state-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px}.state-card{min-width:0;border:1px solid #bcd5e5;border-radius:22px;background:var(--sky);overflow:hidden;position:relative}.state-card:nth-child(2){background:#e4f0ee}.state-card:nth-child(3){background:#ecf2d9}.state-card:nth-child(4){background:#fcf0cd}.state-card:nth-child(5){background:#f8e4e6}.card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:17px 17px 0}.range{font-size:19px;font-weight:800;letter-spacing:-.6px}.unit{font-size:11px;font-weight:400;letter-spacing:0;margin-left:3px}.mood{font-size:12px;color:var(--muted)}.speech{position:relative;margin:16px 15px 0;border:2px solid var(--ink);border-radius:18px;background:white;min-height:103px;display:flex;align-items:center;justify-content:center;text-align:center;padding:15px 11px;font-weight:800;font-size:22px;letter-spacing:-.55px;line-height:1.12}.speech::after{content:"";position:absolute;background:white;width:14px;height:14px;bottom:-9px;left:42%;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg)}.pet-button{display:block;width:100%;border:0;background:transparent;padding:1px 3px 0;cursor:pointer;position:relative;border-radius:18px;min-height:250px}.pet-button svg{width:100%;height:260px;display:block;overflow:visible}.pet-button:focus-visible{outline-offset:-6px}.pet-body{transform-origin:135px 251px}.pet-button.react .pet-body{animation:bop .65s ease-in-out}.pet-button.react .eye-pupil{animation:glance .65s ease-in-out}.state-card[data-state="deadass"] .pet-button.react .pet-body{animation:doubletake .7s ease-in-out}.state-card[data-state="cooked"] .pet-button.react .pet-body{animation:sigh .75s ease-in-out}.state-caption{padding:0 17px 17px;font-size:13px;line-height:1.4;min-height:56px;color:var(--muted);text-align:center}.section-line{display:flex;align-items:start;justify-content:space-between;gap:24px;margin:40px 0 20px}h2{font-size:27px;letter-spacing:-.9px}.section-line p{font-size:14px;color:var(--muted);max-width:450px}.runtime-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}.runtime-card{min-width:0;border-top:2px solid #bfd1c6;padding-top:13px}.runtime-card h3{font-size:14px;letter-spacing:0}.runtime-card svg{display:block;width:100%;height:175px;overflow:visible}.runtime-quote{font-size:17px;font-weight:800;letter-spacing:-.4px;line-height:1.2;min-height:42px;margin:0 0 9px}.runtime-detail{font-size:12px;color:var(--muted);line-height:1.5}.lab{background:#e9f3e1;border-radius:22px;padding:28px;display:grid;grid-template-columns:1fr 1.05fr;gap:32px;margin-top:35px}.lab h2{font-size:28px;margin-bottom:13px}.lab p{font-size:14px;color:var(--muted);max-width:440px}.lab-controls{margin-top:25px}label{display:flex;justify-content:space-between;align-items:baseline;gap:15px;font-size:15px;font-weight:700}output{font-size:24px;letter-spacing:-1px}input[type=range]{accent-color:var(--ink);width:100%;margin:17px 0;height:30px;cursor:pointer}.scale{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:18px}.reset{border:1px solid var(--ink);background:transparent;border-radius:9px;min-height:42px;padding:8px 14px;font-weight:700;cursor:pointer}.reset:hover{background:#d9e8cf}.lab-preview{display:grid;grid-template-columns:minmax(150px,1fr) minmax(170px,1fr);align-items:center;gap:9px}.lab-preview svg{width:100%;height:245px;display:block}.lab-quote{font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1.08;max-width:240px}.lab-state{font-size:13px;color:var(--muted);margin-top:13px}.footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px;border-top:1px solid var(--line);padding-top:22px;margin-top:30px;font-size:12px;color:var(--muted)}.preview-note{max-width:740px}.a11y-status{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+@keyframes bop{0%,100%{transform:translateY(0) rotate(0)}30%{transform:translateY(-7px) rotate(-3deg)}65%{transform:translateY(-2px) rotate(3deg)}}@keyframes glance{0%,100%{transform:translateX(0)}45%{transform:translateX(4px)}}@keyframes doubletake{0%,100%{transform:rotate(0)}30%{transform:rotate(-8deg)}55%{transform:rotate(6deg)}80%{transform:rotate(-3deg)}}@keyframes sigh{0%,100%{transform:translateY(0)}45%{transform:translateY(5px) rotate(-3deg)}}
+@media(min-width:1550px){.pet-button svg{height:280px}}
+@media(max-width:1150px){main{padding:25px}.intro{display:block}.tap-hint{margin-top:16px}.speech{font-size:19px;min-height:95px;margin-left:10px;margin-right:10px}.pet-button svg{height:225px}.pet-button{min-height:225px}.card-top{padding:15px 12px 0}.mood{font-size:10px}.range{font-size:17px}.runtime-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}.runtime-card svg{height:190px}.runtime-quote{min-height:0}}
+@media(max-width:820px){.state-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.state-card:last-child{grid-column:1/-1;max-width:370px;width:100%;justify-self:center}.pet-button svg{height:245px}.speech{font-size:22px;min-height:90px}.card-top{padding:17px 17px 0}.mood{font-size:12px}.range{font-size:20px}.lab{grid-template-columns:1fr;gap:15px}.section-line{display:block}.section-line p{margin-top:12px}.intro{margin-bottom:25px}}
+@media(max-width:480px){main{padding:21px 18px}header{margin-bottom:32px}.brand{font-size:22px}.badge{font-size:11px;padding:7px 9px}.intro h1{font-size:34px}.intro p{font-size:15px}.state-grid{grid-template-columns:1fr}.state-card:last-child{max-width:none}.pet-button svg{height:270px}.speech{margin:16px 22px 0;font-size:24px;min-height:88px}.card-top{padding:18px 23px 0}.state-caption{min-height:0;padding-bottom:22px}.runtime-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 17px}.runtime-card svg{height:155px}.runtime-quote{font-size:16px;min-height:39px}.runtime-detail{font-size:12px}.lab{padding:23px}.lab-preview{grid-template-columns:1fr}.lab-preview svg{height:245px}.lab-quote{max-width:none;text-align:center;font-size:27px}.lab-state{text-align:center}.section-line{margin-top:32px}.footer{line-height:1.5}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main>
+  <header><div class="brand"><svg viewBox="0 0 28 32" aria-hidden="true"><path d="M5 29C1 18 7 15 4 8c7 3 9 7 9 12C10 10 15 2 19 1c1 9 0 14-1 20 3-7 6-8 9-9-3 5-2 13-7 17Z"/></svg>Touch grass.</div><span class="badge">Visual proposal</span></header>
+  <section aria-labelledby="score-heading" id="score-states">
+    <div class="intro"><div><h1 id="score-heading">one grass.<br>five levels of disbelief.</h1><p>Meet Grass bro. Same little guy, increasingly concerned about your chair time.</p></div><span class="tap-hint">Tap a pet for another roast.</span></div>
+    <div class="state-grid" id="score-grid"></div>
+  </section>
+  <section aria-labelledby="runtime-heading" id="runtime-states">
+    <div class="section-line"><h2 id="runtime-heading">even grass has a day job.</h2><p>Before a valid score arrives, the pet follows the device state. No score means no verdict.</p></div>
+    <div class="runtime-grid" id="runtime-grid"></div>
+  </section>
+  <section class="lab" aria-labelledby="try-heading">
+    <div><h2 id="try-heading">how cooked are we?</h2><p>Slide through the score bands to preview the expressions. This slider only changes the mockup.</p><div class="lab-controls"><label for="preview-score">Preview score <output id="score-output" for="preview-score">60 / 100</output></label><input id="preview-score" type="range" min="0" max="100" value="60"><div class="scale"><span>Less desk time</span><span>More desk time</span></div><button type="button" class="reset" id="reset-captions">Reset the roasts</button></div></div>
+    <div class="lab-preview"><div id="live-pet" aria-hidden="true"></div><div><div class="lab-quote" id="live-quote"></div><div class="lab-state" id="live-state"></div></div></div>
+  </section>
+  <footer class="footer"><p class="preview-note">Design preview only. These are character states, not new measurements. The live app, Qwen reports and Pi controls are unchanged.</p><a href="../UI改版提案.md">Read the proposal</a></footer>
+  <div class="a11y-status" id="reaction-announcement" role="status" aria-live="polite"></div>
+</main>
+<script>
+'use strict';
+const scoreStates = [
+ {id:'chill',range:'0–24',name:'Chillin',quote:"we're chillin.",extra:['no roast today.','looking pretty chill, brother.'],caption:'Relaxed leaves. Not a care in the turf.'},
+ {id:'locked',range:'25–49',name:'Locked in',quote:'locked in, huh?',extra:['interesting chair commitment.','the chair has your attention.'],caption:'One eyebrow up. Quietly taking notes.'},
+ {id:'nudge',range:'50–74',name:'The nudge',quote:'touch some grass, brother.',extra:["i'm grass. i'm right here.",'the chair can wait.'],caption:'Hands on hips. The hint is no longer subtle.'},
+ {id:'deadass',range:'75–99',name:'Disbelief',quote:'are we deadass rn?',extra:["bro. the chair isn't going anywhere.",'outside is still a thing.'],caption:'A long stare. A very long stare.'},
+ {id:'cooked',range:'100',name:'Fully cooked',quote:'bro is fully cooked.',extra:['the chair won.','touch some grass, brother. seriously.'],caption:'White flag. Absolutely out of words.'}
+];
+const runtimeStates = [
+ {id:'waiting',name:'Waiting',quote:'ready when you are, brother.',detail:'Press the Mini PiTFT button to start the express demo.'},
+ {id:'collecting',name:'Collecting',quote:'gathering the receipts.',detail:'Photos are being saved. Capture progress stays visible.'},
+ {id:'ready',name:'Ready to analyze',quote:'the receipts are in.',detail:'Capture finished. Press the Pi button to start analysis.'},
+ {id:'processing',name:'Analyzing',quote:'let me cook.',detail:'Reading the saved photos and preparing the report.'},
+ {id:'error',name:'Validation failed',quote:"that math ain't mathing.",detail:'The report did not pass validation. Original answer saved.'},
+ {id:'offline',name:'Disconnected',quote:'bro? you there?',detail:'Cannot reach the Pi. Check power and the local network.'}
+];
+const ink='#173a29', green='#71c940', cream='#fffef7';
+const path=(d,fill='none',width=5,stroke=ink)=>`<path d="${d}" fill="${fill}" stroke="${stroke}" stroke-width="${width}" stroke-linecap="round" stroke-linejoin="round"/>`;
+const ellipse=(cx,cy,rx,ry,fill,stroke='none',sw=0)=>`<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="${fill}" stroke="${stroke}" stroke-width="${sw}"/>`;
+const circle=(cx,cy,r,fill,stroke='none',sw=0)=>`<circle cx="${cx}" cy="${cy}" r="${r}" fill="${fill}" stroke="${stroke}" stroke-width="${sw}"/>`;
+function eyes(kind){
+ const pupil=(x,y)=>`<g class="eye-pupil">${ellipse(x,y,5.7,8,ink)}</g>`;
+ if(kind==='chill') return path('M78 165q12-14 25 0M137 165q12-14 25 0','none',5)+path('M109 191q15 14 30-2','none',4)+ellipse(75,183,10,5,'#ef8bb2')+ellipse(167,183,10,5,'#ef8bb2');
+ if(kind==='deadass') return ellipse(92,162,21,27,cream,ink,4)+ellipse(151,162,21,27,cream,ink,4)+pupil(95,161)+pupil(154,161)+path('M72 124q17-13 35-2M136 126l28 9','none',5)+ellipse(124,202,9,13,ink)+path('M54 134l-9-10M184 127l10-10','none',3);
+ if(kind==='cooked') return ellipse(92,172,21,18,cream,ink,4)+ellipse(146,172,21,18,cream,ink,4)+pupil(97,179)+pupil(150,179)+path('M72 163l40 8M127 163l39 8','#a8ca6b',5)+path('M114 204l22 4','none',4)+path('M75 197l15 3M148 198l15 3','none',2.5);
+ if(kind==='error') return ellipse(92,162,21,25,cream,ink,4)+ellipse(151,168,21,19,cream,ink,4)+pupil(92,159)+pupil(147,174)+path('M72 127l30 7M136 139l29-12','none',4)+path('M109 202l8-5 9 7 8-5 7 5','none',3.5);
+ if(kind==='offline') return ellipse(92,166,20,22,cream,ink,4)+ellipse(151,166,20,22,cream,ink,4)+pupil(84,167)+pupil(143,167)+path('M74 130l28 5M138 135l25-5','none',4)+path('M116 203q8-9 17 0','none',4);
+ if(kind==='waiting'||kind==='ready') return ellipse(92,166,19,23,cream,ink,4)+ellipse(150,166,19,23,cream,ink,4)+pupil(95,167)+pupil(153,167)+path('M110 198q15 17 29-2','none',4);
+ const py=kind==='processing'?177:173;
+ const px=kind==='collecting'?-5:kind==='locked'?5:0;
+ return ellipse(92,167,20,23,cream,ink,4)+ellipse(151,167,20,23,cream,ink,4)+pupil(92+px,py)+pupil(151+px,py)+path('M72 160h40M131 160h40','none',4)+path(kind==='locked'?'M75 136l27 3M135 131q15-12 28-3':'M73 139h28M136 139h27','none',4)+path(kind==='nudge'?'M111 200q17 9 31-5':'M113 201h22','none',4);
+}
+function pet(kind){
+ const cooked=kind==='cooked',shock=kind==='deadass',off=kind==='offline';
+ const base=cooked?'#a8ca6b':off?'#99bf91':green;
+ const body=cooked?'M59 223C38 199 41 167 56 146C64 127 70 105 58 85C87 96 99 114 102 140C101 97 120 62 156 67C178 68 182 87 176 102C169 89 155 88 148 108L142 139C160 117 192 104 209 120C215 125 216 137 209 148C204 135 193 134 189 142C206 170 207 199 190 222Q131 247 59 223Z':shock?'M60 223C43 206 40 176 51 150C56 132 61 112 51 91C76 100 90 117 99 141C87 96 94 59 114 34C130 62 138 89 137 125C153 92 178 79 194 88C201 93 201 103 194 109C187 102 180 103 176 110C180 129 189 142 195 158C207 186 204 209 188 225Q128 246 60 223Z':'M59 224C42 207 39 177 50 150C56 130 61 107 51 83C77 93 92 113 99 141C87 99 93 58 112 32C129 58 140 87 138 124C152 91 172 76 193 78C180 102 184 132 194 153C207 180 204 209 187 225Q128 247 59 224Z';
+ let back='',front='';
+ if(cooked){back+=path('M78 224Q65 244 40 249M156 228q13 20 39 19','none',7)+path('M24 249q12-11 28 0v8H25Z',base,4)+path('M187 246q16-13 29 1v9h-26Z',base,4);back+=path('M188 185q23 25 42-13','none',6)+path('M223 211V89','none',4);front+=path('M224 91q19-11 39 2l-6 36q-18-10-33 0Z',cream,3)+path('M56 185q-21 25-18 39','none',6)+circle(39,224,8,base,ink,3);}
+ else {back+=path('M84 225l-5 28M153 227l7 26','none',7)+path('M57 254q13-12 29-2l3 9H58Z',base,4)+path('M152 254q16-11 31 0l1 8h-31Z',base,4);}
+ if(kind==='chill'){back+=path('M53 182q-21 24-29 3M190 183q27 16 34-7','none',6);front+=path('M24 186l-7-4m7 4l-1-9M222 179l9-2m-9 2 3-9','none',3);}
+ if(kind==='locked'){back+=path('M54 184q-25 12-15 30M190 184q30-8 22-33','none',6);front+=path('M207 152q-9-6-13 1m14-1 9-6m-9 6 10 2','none',3.5);}
+ if(kind==='nudge'){back+=path('M53 176q-29 11-15 29l17-8M191 177q30 0 23 21l-23-6','none',6);front+=path('M181 194l14-3m-14 3 8-8m-8 8 10 4','none',4)+path('M58 197l-10-3','none',3.5);}
+ if(shock){back+=path('M51 182q-18 15-26 0l-4-18M193 181q20 13 29-7l3-10','none',6);front+=path('M21 164l-10-6m10 6-1-13m1 13 9-10M225 164l11-8m-11 8 1-14m-1 14-8-10','none',3.5);}
+ if(kind==='waiting'){back+=path('M54 183q-16 25-2 38M191 183q18 27 5 37','none',6);front+=circle(53,222,8,base,ink,3)+circle(195,222,8,base,ink,3)+circle(218,54,19,cream,ink,3)+path('M218 43v12l8 4','none',3);}
+ if(kind==='collecting'){back+=path('M52 182q-14 34 42 47M191 183q22 28-14 46','none',6);front+=path('M99 211l8-9h34l8 9h27v42H90v-42Z','#234d39',4)+circle(133,231,15,'#d9eeff',cream,3)+circle(133,231,7,ink)+circle(162,220,3,'#ffd65a')+path('M199 67l6-11m4 19 13-1m-21 10 6 10','none',3.5);}
+ if(kind==='ready'){back+=path('M54 183q-22 24-5 35M191 182q17 21 32 0','none',6);front+=path('M199 123h57v93h-57Z',cream,3.5)+path('M209 144h34M209 156h25M209 168h34','none',2.5)+path('M212 190l7 7 16-17','none',4)+circle(221,185,7,base,ink,3);}
+ if(kind==='processing'){back+=path('M53 182q-19 27 30 48M191 182q13 30-17 47','none',6);front+=path('M78 225h97l-8 29H87Z','#ffd65a',4)+path('M80 234H65m108 0h15','none',5)+path('M106 211q-7-6 0-12m22 12q-7-6 0-12m22 12q-7-6 0-12','none',3);front+=path('M85 63V47c-19 0-22-26-4-31 8-23 33-19 40-6 15-15 37-6 37 7 23 2 26 29 7 32v14Z',cream,4)+path('M85 51h80','none',3);}
+ if(kind==='error'){back+=path('M54 182q-21 25-4 38M190 182q20 13 28-12','none',6);front+=path('M192 131h55v82h-55Z','#ffd65a',4)+path('M202 141h35v22h-35Z',cream,2.5)+path('M213 146l11 11m-11 0 11-11','none',3)+[204,219,234].map(x=>circle(x,178,3.5,ink)+circle(x,194,3.5,ink)).join('')+path('M54 72q1-14 14-14 18 0 14 15-3 8-13 11v6','none',5)+circle(69,103,3.5,ink);}
+ if(off){back+=path('M54 182q-20 21-21 2l4-28M192 182q20 26 7 38','none',6);front+=path('M36 155q4-13 12-11m-10 10-8-7','none',4)+path('M211 68q15-12 29 0m-22 9q7-5 14 0','none',3)+circle(225,87,2.8,ink)+path('M206 54l37 41','none',4);}
+ const leaves=path(cooked?'M73 121q13 20 14 30M123 102q-4 16 0 34M180 134l-10 18':'M70 119q15 15 17 32M114 70q9 28 8 57M174 106q-11 16-13 39','none',3,'#4e9d32');
+ const tilt=kind==='locked'?'rotate(5 127 218)':cooked?'rotate(-9 128 233)':'';
+ return `<svg viewBox="0 0 280 300" aria-hidden="true" focusable="false">${ellipse(135,272,88,10,'#173a2912')}<g class="pet-body"><g transform="${tilt}">${back}${path(body,base,5)}${path('M67 214q61 28 117-1q-13 23-57 23-37 0-60-22Z','#90d95b',0,'none')}${leaves}${eyes(kind)}${front}</g></g></svg>`;
+}
+function scoreState(score){if(score<25)return scoreStates[0];if(score<50)return scoreStates[1];if(score<75)return scoreStates[2];if(score<100)return scoreStates[3];return scoreStates[4];}
+const grid=document.getElementById('score-grid');
+scoreStates.forEach(state=>{
+ const article=document.createElement('article');article.className='state-card';article.dataset.state=state.id;
+ const top=document.createElement('div');top.className='card-top';top.innerHTML=`<span class="range">${state.range}<span class="unit"> score</span></span><span class="mood">${state.name}</span>`;
+ const quote=document.createElement('div');quote.className='speech';quote.textContent=state.quote;
+ const button=document.createElement('button');button.type='button';button.className='pet-button';button.setAttribute('aria-label',`Make ${state.name} Grass bro react`);button.innerHTML=pet(state.id);
+ const caption=document.createElement('p');caption.className='state-caption';caption.textContent=state.caption;
+ let cycle=0,timer;
+ button.addEventListener('click',()=>{const lines=[state.quote,...state.extra];cycle=(cycle+1)%lines.length;quote.textContent=lines[cycle];document.getElementById('reaction-announcement').textContent=state.name+': '+quote.textContent;clearTimeout(timer);button.classList.remove('react');void button.offsetWidth;button.classList.add('react');timer=setTimeout(()=>button.classList.remove('react'),800);});
+ button.resetQuote=()=>{cycle=0;quote.textContent=state.quote;clearTimeout(timer);button.classList.remove('react');};
+ article.append(top,quote,button,caption);grid.append(article);
+});
+const runtimes=document.getElementById('runtime-grid');
+runtimeStates.forEach(state=>{const article=document.createElement('article');article.className='runtime-card';article.innerHTML=`<h3>${state.name}</h3>${pet(state.id)}<p class="runtime-quote">${state.quote}</p><p class="runtime-detail">${state.detail}</p>`;runtimes.append(article);});
+const slider=document.getElementById('preview-score');let active=null;
+function updatePreview(){const value=Number(slider.value),state=scoreState(value);document.getElementById('score-output').textContent=`${value} / 100`;if(active!==state.id){document.getElementById('live-pet').innerHTML=pet(state.id);document.getElementById('live-quote').textContent=state.quote;document.getElementById('live-state').textContent=state.name+' · '+state.range+' score';active=state.id;}}
+slider.addEventListener('input',updatePreview);updatePreview();
+document.getElementById('reset-captions').addEventListener('click',()=>{document.querySelectorAll('.pet-button').forEach(button=>button.resetQuote());slider.value='60';updatePreview();document.getElementById('reaction-announcement').textContent='All preview captions reset.';});
+</script>
+</body>
+</html>

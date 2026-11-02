@@ -1,0 +1,105 @@
+{
+  "server": {
+    "version": "0.40.11"
+  },
+  "models": [
+    {
+      "name": "qwen3:0.6b",
+      "model": "qwen3:0.6b",
+      "modified_at": "2026-10-25T01:32:04.744387741-04:00",
+      "size": 522653767,
+      "digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "751.63M",
+        "quantization_level": "Q4_K_M",
+        "context_length": 40960,
+        "embedding_length": 1024,
+        "runner": "ggml"
+      },
+      "capabilities": [
+        "completion",
+        "tools",
+        "thinking"
+      ]
+    },
+    {
+      "name": "qwen3.5:0.8b",
+      "model": "qwen3.5:0.8b",
+      "modified_at": "2026-10-25T01:31:33.692747553-04:00",
+      "size": 1322069277,
+      "digest": "de63045f29755d4721c09d54c9b45c2dadb644f4fd7d604d4cac90d96049971c",
+      "details": {
+        "parent_model": "qwen35-validation-20260930:0.8b-stock-q8_0-q8draft2",
+        "format": "gguf",
+        "family": "qwen35",
+        "families": [
+          "qwen35"
+        ],
+        "parameter_size": "752.39M",
+        "quantization_level": "Q8_0",
+        "context_length": 262144,
+        "embedding_length": 1024,
+        "runner": "llamacpp"
+      },
+      "capabilities": [
+        "completion",
+        "vision",
+        "tools",
+        "thinking"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "model": "qwen3:0.6b",
+      "prompt": "What is 2 + 2? Reply with the number only.",
+      "image_input": false,
+      "response": "2",
+      "wall_seconds": 2.36,
+      "load_seconds": 2.14,
+      "eval_tokens": 2,
+      "eval_seconds": 0.04,
+      "done_reason": "stop"
+    },
+    {
+      "model": "qwen3.5:0.8b",
+      "prompt": "What is 2 + 2? Reply with the number only.",
+      "image_input": false,
+      "response": "4",
+      "wall_seconds": 8.87,
+      "load_seconds": 7.79,
+      "eval_tokens": 2,
+      "eval_seconds": 0.35,
+      "done_reason": "stop"
+    },
+    {
+      "model": "qwen3.5:0.8b",
+      "prompt": "Name the main vehicle in this picture. Answer with one word.",
+      "image_input": true,
+      "response": "bus",
+      "wall_seconds": 20.76,
+      "load_seconds": 10.21,
+      "eval_tokens": 2,
+      "eval_seconds": 0.34,
+      "done_reason": "stop"
+    }
+  ],
+  "verification_scope": "installation smoke tests, not the student Part D question experiment",
+  "all_requests_completed": true,
+  "sanity_recheck": {
+    "purpose": "Repeat the arithmetic sanity check after the first incorrect answer",
+    "model": "qwen3:0.6b",
+    "prompt": "Compute the sum of two and two. Give only the final number.",
+    "response": "The final number is 4.",
+    "wall_seconds": 3.11,
+    "done": true,
+    "done_reason": "stop"
+  },
+  "accuracy_observation": "qwen3:0.6b initially answered 2 to 2+2; it answered 4 on a rephrased prompt. Runtime completion does not establish answer correctness."
+}

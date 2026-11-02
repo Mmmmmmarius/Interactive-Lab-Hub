@@ -1,0 +1,8 @@
+{
+  "present_samples": 23,
+  "absent_samples": 7,
+  "unknown_samples": 0,
+  "total_samples": 30,
+  "seconds_per_sample": 1440,
+  "is_simulation": true
+}

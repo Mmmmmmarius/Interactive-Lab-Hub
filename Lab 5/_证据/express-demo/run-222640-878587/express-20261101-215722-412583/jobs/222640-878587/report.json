@@ -1,0 +1,25 @@
+{
+  "model": "qwen3:0.6b",
+  "request_seconds": 31.08,
+  "generated_at": "2026-11-01T22:27:17.254507-05:00",
+  "raw": "{ \"estimated_desk_minutes\": 24, \"score\": 50, \"summary\": \"The estimated desk time is 24 minutes, resulting in a score of 50.\", \"uncertainty\": \"Unknown slots are present, possible missed detections, and the short-test limitation.\" }",
+  "kind": "express_demo",
+  "score_scale": "Qwen estimates the score. 0 desk hours = 0; 8 or more hours = 100.",
+  "simulation": {
+    "label": "Simulated day 08:00-20:00; captured during a real 15-minute demo",
+    "start": "2026-11-01T08:00:00-05:00",
+    "end": "2026-11-01T20:00:00-05:00",
+    "interval_seconds": 1440
+  },
+  "actual_capture_window": {
+    "start": "2026-11-01T22:10:10.698605-05:00",
+    "end": "2026-11-01T22:25:10.698605-05:00"
+  },
+  "answer": {
+    "estimated_desk_minutes": 24,
+    "score": 50,
+    "summary": "The estimated desk time is 24 minutes, resulting in a score of 50.",
+    "uncertainty": "Unknown slots are present, possible missed detections, and the short-test limitation."
+  },
+  "valid": true
+}

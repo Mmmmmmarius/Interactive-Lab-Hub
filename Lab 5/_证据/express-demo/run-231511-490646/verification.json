@@ -1,0 +1,134 @@
+{
+  "checked_at": "2026-11-01T23:19:51.025599-05:00",
+  "source_matches_pi": true,
+  "source_sha256": {
+    "day.json": "fff91b4bde365a77d13aa1fbf9e4d415691081b99232f2e6a6a4764ba714ff21",
+    "preparation.json": "14347b04b401642a23ecfdf17aaf57a2d3f1e9f60197b454c313d05de2209d5a",
+    "photos/230128-933334.jpg": "ec9ea718adc1cb8cd581301ed98434458d35a2e3cf554adef78f934efc8b16bd",
+    "photos/230058-437110.jpg": "1e45060e30a0deffd8bbd344a726bebef8d602461fa0e3c21a6c905b60955ddb",
+    "photos/230158-410207.jpg": "f3f3b8a4d8f86a2a56e34e28c07d6e89c5c5a6f3cfc678a4d3b1271823fe739e",
+    "photos/225928-935648.jpg": "7d28dbeaa560e36eee1594addc2a714de5c5cb2a2c71df0b4023a94ad9ed651e",
+    "photos/225728-921729.jpg": "a94104abdd76dff4f44ca7cf6d3ef9f29d59b3efb64c865f0c34d64aa0c4cc58",
+    "photos/225858-429271.jpg": "1e48553a4bb63d6596b7f5487a09367ed32f90a8dcd425e1a74cb0c66dad0ad0",
+    "photos/230428-944101.jpg": "24d732754d8ce7f8ef2e1f22e43097934e79d7337b0a45756fc5db9fa95fe54c",
+    "photos/230228-904738.jpg": "340f1c773813b979d3e2b78de280f59173e4af2464969bab63cf353c420757f9",
+    "photos/230358-445644.jpg": "9a792429f316f6de5cc5b8d9ab4728f1aaf61fc02e98b10cbfd2f167bb0b3a0f",
+    "photos/225628-931650.jpg": "84058624accc44e897ea7edebbd5b7b86b0711c41e9c981d250e2631582d9f3b",
+    "photos/225758-388279.jpg": "17a33d8fcbdafa626628f8911ba8cd511597ded76c349b2e50bbf83cf1ad9013",
+    "photos/230829-059751.jpg": "44d320fccd1b08a41b2cda9bf88ea817d3b6eab445d39bafc72dceceec162949",
+    "photos/230658-448562.jpg": "dd5e8fe5df47b35686803e30a993542970fd0e2b7d945e7679cde7274704312c",
+    "photos/225528-948565.jpg": "477244c314e1a92caf58eca6e501c24d2bafc94db142f59d54d37b1789ba317d",
+    "photos/230328-915613.jpg": "be901f3071a4fbcf301b2192e73e1ee434fd503ecf6b8cb901b3bb532174f249",
+    "photos/230758-524182.jpg": "a74952d953db3aa7626fd28bfc4df150ec9909d2625bfb8897b935aeb1123572",
+    "photos/225658-428902.jpg": "34a3c8610d69e742b1e343a1ae23f9a2233636896dc6cdea9a77507da91bdeed",
+    "photos/225828-892994.jpg": "55c47f9bb95a9da19c7ec1873196983e7f89ef887c7db968b2a80b67c784ae37",
+    "photos/225558-445706.jpg": "79e879feb0837e01f6e3a7a63e09457417584e0ec3a67e88d0cf8643c14fcc50",
+    "photos/230628-951397.jpg": "79d4bd4bbda62829f739c250a31b0209b0a046ccc017fe50ee30790d36e8ed50",
+    "photos/230558-444632.jpg": "50c0df50709fe301c97b625ea5d13ef5bd7f6c61bd553a99556c1c3264e856fa",
+    "photos/225958-433771.jpg": "de18a2c7b353e953c5562e6286462605d232b361b6bcdc2fbaab6b393e7fe957",
+    "photos/230028-941657.jpg": "6fa8fc40f63cf9515cc27acc08fcd0c96023ecf54f0edb4732c0d2942d0e9dd6",
+    "photos/230929-064438.jpg": "27ff291580943c0265fb479ab6d2bc64fef063cea4e8715ab8ea7a932353aa64",
+    "photos/225458-460344.jpg": "6de52f6edb31587d3263b7f1dbb8972fe7ca3270db38cd8252df610d928e9b37",
+    "photos/230258-401663.jpg": "ee73fab07e44ad53d815f25b9e0c1f975fdb8dbf131d686c2a8b52aeb34ba64c",
+    "photos/230728-955714.jpg": "caca30067d0bf14d61ea45e28c76c6d7bc0908052b65cf17932c2dcc0e3a34d4",
+    "photos/230528-925430.jpg": "f9cc90a054a27e0d5ab419a21179e7149260162f353d52d61b26f5826ddc1535",
+    "photos/230858-581486.jpg": "1b1a535141b01b38429c28f70e391768ffe0be514118f4e6dd73ebdbc886bb64",
+    "photos/230458-443922.jpg": "9e465e2df67ba07bd9372f55ccd69531a59f537f3c3995e48782d89ec4785733",
+    "jobs/231511-490646/sampling-slots.json": "42363eee1ada06d97feaee998882af2e7b84ac160c92340d57c00f79a0cd3e5c",
+    "jobs/231511-490646/model-input.txt": "b85a7c6eb9e7c580edcc58056af50815f9be743b0e6913bf280758b671c5b6bd",
+    "jobs/231511-490646/night_log.jsonl": "f9a753e29b3a5c5996e2b431106e0336bfb3526b30c4200d589e82eedf081d3a",
+    "jobs/231511-490646/detections.json": "bf9d025598f09c3cc4615660e0ac9abfb0dde4cee75cd2af31d7bbc2910bc965",
+    "jobs/231511-490646/console.txt": "703338181a22c45f30a91da3c5caa6f9e3d88cb0f2fb20d8c77d7c085c413c91",
+    "jobs/231511-490646/report.json": "23627226091b9ccd2e4c1db1a10111373361147aa0eb6fb479b015c694e2ed5b",
+    "jobs/231511-490646/ollama-response.json": "94cb35354679cbe01be7bdb3030b9057dd45cff8600e1d98c859d2712c02217c",
+    "jobs/231511-490646/raw-response.txt": "a3e6c9ab8315b58f75a5377cf9055ec34ee8096758310396a4a1b7c88d9eb21b",
+    "jobs/231511-490646/prompt.txt": "9377414b9f27c41d3238731d7c8b2ac77f28575ced665b07a518961078e9c885"
+  },
+  "previous_run_manifest_unchanged": true,
+  "services": {
+    "touch-grass.service": "active",
+    "touch-grass-screen.service": "active"
+  },
+  "all_photos_decoded": true,
+  "photo_count": 30,
+  "capture_failures": 0,
+  "capture_window_seconds": 900.0,
+  "button_events": [
+    {
+      "at": "2026-11-01T22:54:58.305271-05:00",
+      "result": "15-minute capture started.",
+      "source": "physical-button",
+      "batch_id": "express-20261101-224820-867740"
+    },
+    {
+      "at": "2026-11-01T23:15:11.490623-05:00",
+      "result": "Processing started.",
+      "source": "physical-button",
+      "batch_id": "express-20261101-224820-867740"
+    }
+  ],
+  "analysis_seconds": 90.01,
+  "model_request_seconds": 84.72,
+  "slot_counts": {
+    "absent": 7,
+    "present": 23
+  },
+  "model_answer": {
+    "estimated_desk_minutes": 672,
+    "score": 140,
+    "summary": "The estimated desk time is 672 minutes, resulting in a score of 140, with some uncertainty due to the sampling.",
+    "uncertainty": "Unknown slots (28 P's) may indicate missed detections, and the short-test limitation limits the accuracy of the estimate."
+  },
+  "report_valid": false,
+  "error": "The model score must be an integer from 0 to 100.",
+  "review": {
+    "basis": "Diagnostic cross-check of saved detector slots, not a replacement application report or actual full-day measurement.",
+    "expected_simulated_minutes_from_detector_slots": 552,
+    "expected_capped_score_from_detector_slots": 100,
+    "model_minutes_match_detector_slots": false,
+    "model_score_in_required_range": false,
+    "unknown_slot_count": 0,
+    "model_unknown_claim_supported": false,
+    "manually_reviewed_absent_frames": [
+      {
+        "file": "photos/225458-460344.jpg",
+        "person_visible": false
+      },
+      {
+        "file": "photos/225628-931650.jpg",
+        "person_visible": true
+      },
+      {
+        "file": "photos/225728-921729.jpg",
+        "person_visible": true
+      },
+      {
+        "file": "photos/225758-388279.jpg",
+        "person_visible": true
+      },
+      {
+        "file": "photos/225828-892994.jpg",
+        "person_visible": true
+      },
+      {
+        "file": "photos/225928-935648.jpg",
+        "person_visible": true
+      },
+      {
+        "file": "photos/230458-443922.jpg",
+        "person_visible": false
+      }
+    ],
+    "confirmed_false_negatives_in_reviewed_absent_frames": 5,
+    "empty_seat_frames_in_reviewed_absent_frames": 2,
+    "scope": "Only the seven detector-negative photos were manually inspected. This is not continuous ground truth."
+  },
+  "browser_screenshot_this_turn": false,
+  "browser_limitation": "The browser connection returned browser.user is unavailable; status was verified through the live HTTP API and saved files.",
+  "documentation_check": {
+    "local_links_checked": 59,
+    "missing_links": [],
+    "teacher_parts_preserved": true,
+    "second_model_answer_quoted_exactly": true
+  }
+}

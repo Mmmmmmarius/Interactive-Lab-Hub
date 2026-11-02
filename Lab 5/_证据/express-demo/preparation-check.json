@@ -1,0 +1,227 @@
+{
+  "checked_at": "2026-11-01T22:09:26.756479-05:00",
+  "purpose": "Prepared express demo; no capture or model job started by this verification.",
+  "local_tests": {
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "-v",
+      "test_core.py"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_real_timestamps_and_simulated_clock_stay_separate (test_core.ExpressDemoTests.test_real_timestamps_and_simulated_clock_stay_separate) ... ok\ntest_restart_preserves_timer_and_does_not_backfill (test_core.ExpressDemoTests.test_restart_preserves_timer_and_does_not_backfill) ... ok\ntest_two_presses_fifteen_minutes_and_daily_recovery (test_core.ExpressDemoTests.test_two_presses_fifteen_minutes_and_daily_recovery) ... ok\ntest_busy_and_empty_buttons_do_not_start_jobs (test_core.ScheduleTests.test_busy_and_empty_buttons_do_not_start_jobs) ... ok\ntest_calendar_start_across_dst (test_core.ScheduleTests.test_calendar_start_across_dst) ... ok\ntest_debounce_hold_and_release (test_core.ScheduleTests.test_debounce_hold_and_release) ... ok\ntest_eight_and_midnight (test_core.ScheduleTests.test_eight_and_midnight) ... ok\ntest_model_output_is_validated_not_corrected (test_core.ScheduleTests.test_model_output_is_validated_not_corrected) ... ok\ntest_no_capture_before_activation_and_no_catchup (test_core.ScheduleTests.test_no_capture_before_activation_and_no_catchup) ... ok\ntest_only_setup_batches_can_repeat_after_completion (test_core.ScheduleTests.test_only_setup_batches_can_repeat_after_completion) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.180s\n\nOK\n"
+  },
+  "javascript_syntax": {
+    "command": [
+      "node",
+      "--check",
+      "web/app.js"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "python_compile": {
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "-m",
+      "py_compile",
+      "app.py",
+      "core.py",
+      "worker.py",
+      "hardware.py",
+      "control.py",
+      "test_core.py"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "pi_tests": {
+    "command": [
+      "ssh",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "ConnectTimeout=8",
+      "cornell-pi",
+      "cd /home/pi/touch-grass && \"/home/pi/Interactive-Lab-Hub-Lab5/Lab 5/.venv/bin/python\" -m unittest -v test_core.py"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_real_timestamps_and_simulated_clock_stay_separate (test_core.ExpressDemoTests.test_real_timestamps_and_simulated_clock_stay_separate) ... ok\ntest_restart_preserves_timer_and_does_not_backfill (test_core.ExpressDemoTests.test_restart_preserves_timer_and_does_not_backfill) ... ok\ntest_two_presses_fifteen_minutes_and_daily_recovery (test_core.ExpressDemoTests.test_two_presses_fifteen_minutes_and_daily_recovery) ... ok\ntest_busy_and_empty_buttons_do_not_start_jobs (test_core.ScheduleTests.test_busy_and_empty_buttons_do_not_start_jobs) ... ok\ntest_calendar_start_across_dst (test_core.ScheduleTests.test_calendar_start_across_dst) ... ok\ntest_debounce_hold_and_release (test_core.ScheduleTests.test_debounce_hold_and_release) ... ok\ntest_eight_and_midnight (test_core.ScheduleTests.test_eight_and_midnight) ... ok\ntest_model_output_is_validated_not_corrected (test_core.ScheduleTests.test_model_output_is_validated_not_corrected) ... ok\ntest_no_capture_before_activation_and_no_catchup (test_core.ScheduleTests.test_no_capture_before_activation_and_no_catchup) ... ok\ntest_only_setup_batches_can_repeat_after_completion (test_core.ScheduleTests.test_only_setup_batches_can_repeat_after_completion) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.044s\n\nOK\n"
+  },
+  "pi": {
+    "sha256": {
+      "app.py": "0269cdcb1c9f502e49054ed4e160bb9adfee00e5106594b142c5e06ce793d994",
+      "core.py": "4dd766fae4216215fe3217ac8d55826f089e2b04125f23814a730a00adf0d0c0",
+      "worker.py": "fc86993bac7c9514163381c9ebd5a6b22d28c60249f36725edec41f589169364",
+      "hardware.py": "95febbce7375b2e20afe45f697c4b945659d372a31bc7b81ed1538758158bb5c",
+      "control.py": "19b06dcdc90385a927771bf07868c5c8101675fc451788ba0de276f45d76a7ac",
+      "test_core.py": "3af781043fbde38df073456e06d80a02350a0213904960047c49ae2ce9483916",
+      "web/app.js": "e32f31e9ba9099597934369c956af5949f47702effcbecca1c807dcceaa60592",
+      "web/index.html": "3afee55aba87848d7ee2c8000adfc844f2540f69476c8a78249160e5c20b9a4c"
+    },
+    "services": {
+      "touch-grass.service": "active",
+      "touch-grass-screen.service": "active",
+      "piscreen.service": "inactive"
+    },
+    "original_setup_manifest_sha256": "9607aa979249cba415fef830e741d60a21f4cbe170b84b7b780cbf585f0ad3d4",
+    "hardware": {
+      "connected": true,
+      "display": "active",
+      "updated_at": "2026-11-01T22:09:27.672161-05:00",
+      "button_presses": 0
+    }
+  },
+  "local_sha256": {
+    "app.py": "0269cdcb1c9f502e49054ed4e160bb9adfee00e5106594b142c5e06ce793d994",
+    "core.py": "4dd766fae4216215fe3217ac8d55826f089e2b04125f23814a730a00adf0d0c0",
+    "worker.py": "fc86993bac7c9514163381c9ebd5a6b22d28c60249f36725edec41f589169364",
+    "hardware.py": "95febbce7375b2e20afe45f697c4b945659d372a31bc7b81ed1538758158bb5c",
+    "control.py": "19b06dcdc90385a927771bf07868c5c8101675fc451788ba0de276f45d76a7ac",
+    "test_core.py": "3af781043fbde38df073456e06d80a02350a0213904960047c49ae2ce9483916",
+    "web/app.js": "e32f31e9ba9099597934369c956af5949f47702effcbecca1c807dcceaa60592",
+    "web/index.html": "3afee55aba87848d7ee2c8000adfc844f2540f69476c8a78249160e5c20b9a4c"
+  },
+  "http_checks": [
+    {
+      "path": "/",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/app.js",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/style.css",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/api/demo/arm",
+      "method": "POST",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/api/demo/daily",
+      "method": "POST",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/api/process",
+      "method": "POST",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/api/state?day=express-20000101-000000-000000",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/media/invalid/no.jpg",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    }
+  ],
+  "prepared_state": {
+    "batch_id": "express-20261101-215722-412583",
+    "date": "2026-11-01",
+    "kind": "express_demo",
+    "status": "armed",
+    "armed_at": "2026-11-01T21:57:22.412583-05:00",
+    "window_start": null,
+    "window_end": null,
+    "collection_started_at": null,
+    "duration_seconds": 900,
+    "interval_seconds": 30,
+    "samples": [],
+    "last_slot": -1,
+    "progress": null,
+    "report": null,
+    "resume_daily_at": "2026-11-02T08:00:00-05:00",
+    "simulation": {
+      "label": "Simulated day 08:00-20:00; captured during a real 15-minute demo",
+      "start": "2026-11-01T08:00:00-05:00",
+      "end": "2026-11-01T20:00:00-05:00",
+      "interval_seconds": 1440
+    },
+    "remaining_seconds": null,
+    "sample_count": 0,
+    "missing_count": 0,
+    "next_start": "2026-11-02T08:00:00-05:00",
+    "first_day": "2026-11-02",
+    "timezone": "America/New_York",
+    "last_button": null,
+    "hardware": {
+      "connected": true,
+      "display": "active",
+      "updated_at": "2026-11-01T22:09:27.672161-05:00",
+      "button_presses": 0
+    },
+    "days": [
+      "2026-11-01"
+    ],
+    "batches": [
+      {
+        "id": "express-20261101-215722-412583",
+        "date": "2026-11-01",
+        "kind": "express_demo"
+      },
+      {
+        "id": "2026-11-01",
+        "date": "2026-11-01",
+        "kind": "setup_test"
+      }
+    ],
+    "detections": [],
+    "sampling_slots": [],
+    "local_time": "2026-11-01T22:09:28.275259-05:00"
+  },
+  "prior_batch_summary": {
+    "date": "2026-11-01",
+    "kind": "setup_test",
+    "status": "complete",
+    "sample_count": 3,
+    "report": {
+      "model": "qwen3:0.6b",
+      "request_seconds": 37.43,
+      "generated_at": "2026-11-01T21:35:14.449442-05:00",
+      "raw": "{\n\n\"estimated_desk_minutes\": 0.1,\n\"score\": 0,\n\"summary\": \"The estimated desk time is 0.1 minutes, resulting in a score of 0.0. The test is limited to 6 slots, and unknown slots (3) may affect the estimate.\",\n\"uncertainty\": \"Unknown slots (3) and possible missed detections, as the test is limited to 6 slots. The short-test limitation may impact the accuracy of the estimate.\"}",
+      "kind": "setup_test",
+      "score_scale": "Qwen estimates the score. 0 desk hours = 0; 8 or more hours = 100.",
+      "answer": {
+        "estimated_desk_minutes": 0.1,
+        "score": 0,
+        "summary": "The estimated desk time is 0.1 minutes, resulting in a score of 0.0. The test is limited to 6 slots, and unknown slots (3) may affect the estimate.",
+        "uncertainty": "Unknown slots (3) and possible missed detections, as the test is limited to 6 slots. The short-test limitation may impact the accuracy of the estimate."
+      },
+      "valid": true
+    }
+  },
+  "ui_source_id_check": {
+    "missing_ids": [],
+    "passed": true
+  },
+  "browser_visual_verified_this_turn": false,
+  "browser_limitation": "The documented computer-use browser interface returned browser.user is unavailable and later timed out. HTTP and source checks are not visual acceptance.",
+  "actual_demo_started": false,
+  "physical_button_demo_verified": false
+}

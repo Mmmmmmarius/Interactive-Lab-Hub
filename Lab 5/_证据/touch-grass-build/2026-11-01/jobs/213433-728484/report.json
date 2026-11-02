@@ -1,0 +1,15 @@
+{
+  "model": "qwen3:0.6b",
+  "request_seconds": 37.43,
+  "generated_at": "2026-11-01T21:35:14.449442-05:00",
+  "raw": "{\n\n\"estimated_desk_minutes\": 0.1,\n\"score\": 0,\n\"summary\": \"The estimated desk time is 0.1 minutes, resulting in a score of 0.0. The test is limited to 6 slots, and unknown slots (3) may affect the estimate.\",\n\"uncertainty\": \"Unknown slots (3) and possible missed detections, as the test is limited to 6 slots. The short-test limitation may impact the accuracy of the estimate.\"}",
+  "kind": "setup_test",
+  "score_scale": "Qwen estimates the score. 0 desk hours = 0; 8 or more hours = 100.",
+  "answer": {
+    "estimated_desk_minutes": 0.1,
+    "score": 0,
+    "summary": "The estimated desk time is 0.1 minutes, resulting in a score of 0.0. The test is limited to 6 slots, and unknown slots (3) may affect the estimate.",
+    "uncertainty": "Unknown slots (3) and possible missed detections, as the test is limited to 6 slots. The short-test limitation may impact the accuracy of the estimate."
+  },
+  "valid": true
+}

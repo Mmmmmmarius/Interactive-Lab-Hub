@@ -1,0 +1,102 @@
+{
+  "recorded_at": "2026-11-01T21:38:21.045959-05:00",
+  "files": [
+    {
+      "file": "core.py",
+      "sha256": "534d5f6e90031b7fe6f5775c340f8278c3c8dbbbbeb4ff359444838f9d097dcd",
+      "matches_pi": true
+    },
+    {
+      "file": "app.py",
+      "sha256": "63a5a544c69944131ce4786722b804c78c02953d37eb6839f9640a7ab47c6397",
+      "matches_pi": true
+    },
+    {
+      "file": "worker.py",
+      "sha256": "3ef0a6a21d82e06387a46bf448743c2d65c82bb3b1651a3535be3410b487574e",
+      "matches_pi": true
+    },
+    {
+      "file": "hardware.py",
+      "sha256": "682deada9868a689f168d56cf9508e8a84381e60378a0d9d0ff591ecdd8ad701",
+      "matches_pi": true
+    },
+    {
+      "file": "test_core.py",
+      "sha256": "8bdbe75008172a13ab21f60befcfeb9e8b753810d3aafccd40bb711b3ec5c269",
+      "matches_pi": true
+    },
+    {
+      "file": "web/index.html",
+      "sha256": "d62da0024f3790e7fe723ec2fe3dd46d51fa24f7ebbbbdcd74a01e730cc56dbb",
+      "matches_pi": true
+    },
+    {
+      "file": "web/style.css",
+      "sha256": "f9f3bc75466590c5f498144ade65c07098ae6730b5ba4ef19ff428f4defa1804",
+      "matches_pi": true
+    },
+    {
+      "file": "web/app.js",
+      "sha256": "4bb236adf095f9f925bac6e68e76b3467ac6ab023bb202ff5d90a11eb1ad929b",
+      "matches_pi": true
+    },
+    {
+      "file": "touch-grass.service",
+      "sha256": "0fa708107d504b7c808a65bca9ff35dd7a70a8719c065e021a1438340421f50e",
+      "matches_pi": true
+    },
+    {
+      "file": "touch-grass-screen.service",
+      "sha256": "bb1dd5f730a0db2899b30ad4ee95dbc4cd0cb15e2b05a07f9bb07f9fedcd13f4",
+      "matches_pi": true
+    }
+  ],
+  "services": {
+    "touch-grass.service": {
+      "is-active": "active",
+      "is-enabled": "enabled"
+    },
+    "touch-grass-screen.service": {
+      "is-active": "active",
+      "is-enabled": "enabled"
+    },
+    "piscreen.service": {
+      "is-active": "inactive",
+      "is-enabled": "disabled"
+    }
+  },
+  "next_start": "2026-11-02T08:00:00-05:00",
+  "hardware": {
+    "connected": true,
+    "display": "active",
+    "updated_at": "2026-11-01T21:38:20.983114-05:00",
+    "button_presses": 0
+  },
+  "short_test_status": "complete",
+  "physical_button_verified": false,
+  "last_input": {
+    "at": "2026-11-01T21:34:33.728463-05:00",
+    "result": "Processing started.",
+    "source": "software-check"
+  },
+  "model": "qwen3:0.6b",
+  "answer": {
+    "estimated_desk_minutes": 0.1,
+    "score": 0,
+    "summary": "The estimated desk time is 0.1 minutes, resulting in a score of 0.0. The test is limited to 6 slots, and unknown slots (3) may affect the estimate.",
+    "uncertainty": "Unknown slots (3) and possible missed detections, as the test is limited to 6 slots. The short-test limitation may impact the accuracy of the estimate."
+  },
+  "browser": {
+    "desktop_width": 1280,
+    "narrow_width": 390,
+    "horizontal_overflow": false,
+    "console_errors": []
+  },
+  "tests": {
+    "windows": "7 passed",
+    "pi": "7 passed",
+    "lan_http": "8 passed"
+  },
+  "full_day_verified": false
+}

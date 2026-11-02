@@ -1,0 +1,120 @@
+{
+  "checked_at": "2026-11-01T22:33:26.942119-05:00",
+  "source_sha256": {
+    "day.json": "63df453909e272b4afa1bdc5b8d600718b7eeb163d382bc260562735f4a0a725",
+    "photos/221011-359461.jpg": "d0ee3aedcd63f7d2d0cc1868f67c666dc0e23f71d3b795beff3bac4e2b03025c",
+    "photos/221040-834818.jpg": "43f16bac518d97871bbbec37212ffe7eaa739617f75a5721d90646cd7cb54b53",
+    "photos/221111-340846.jpg": "2ed7675926daccd73c0659c0509edc7bc9c7b9984b28d01caaa12c0ed48a61e2",
+    "photos/221140-871236.jpg": "37ed602a971a905652b4f357aec3d20d89dfd5d0779d7aa5e9e8f2879e798477",
+    "photos/221211-376019.jpg": "ee034ca5f237451f2efc1a46a05c011e303bd773aa937af67c80318c8658d218",
+    "photos/221240-884850.jpg": "753212dbca5dad7747694d7b3afa6bb05401f5458db5365e5ee687093b2d4e3a",
+    "photos/221311-411910.jpg": "f9196a0230b642386b920b12d3390bd350bf0e6b837c9333e70fae2b9f6c3f10",
+    "photos/221340-959243.jpg": "15e4644ddb15acba4485af51032832287a2fc3629beadbc183984ff77a8b6536",
+    "photos/221411-498510.jpg": "37de9ec7f8d6a4e43db4adfa45a8724f26c46f1c6859ca341567193522aa6fd7",
+    "photos/221441-006513.jpg": "32fe1cd3235aaefeb2064e0d21332e52d6f541745cef47fafe2296e938780698",
+    "photos/221511-481687.jpg": "c92c1db52094e453df0f7042540242f558f54a86f03556eb6bfce75cd0fa9f45",
+    "photos/221541-011511.jpg": "a42e33f7a4535f2acf7d028481d917d48e6a63f689655c5bfbd7e064b7b4800c",
+    "photos/221611-550218.jpg": "6b8cfd2c55cc0769c7d36608954f34e5edea99c731ba83ed124b7d792d42c600",
+    "photos/221641-080655.jpg": "e6e100647971140633c08960e21977fc531073adac21684a68f54db6df48c47e",
+    "photos/221711-597367.jpg": "a154366b438aeebda0d911804d22f378633ce6f80eb69e941b769e24ab14bac3",
+    "photos/221741-115648.jpg": "79aef29ce32420bf890729de3554bc6161c2979a17ccde75a553417c7b9358b8",
+    "photos/221811-660185.jpg": "f85cf9a8373d9e5669f4b71e25ea7189891feff27fbf9de53794aaea4303ea22",
+    "photos/221841-190254.jpg": "fac8410d87d55b234cc52f18a150f524af1759f246a0b6a27f2820dfbff95d41",
+    "photos/221911-688725.jpg": "eef2ecced1f3501c679b1fa18d8e57f9bbb523b868b4aeadfab3b9e961e69c54",
+    "photos/221941-186458.jpg": "d490b34e2c0d1e46d7c160eb8c3d4a39120d30bc275bf13676da15513c074bae",
+    "photos/222010-723132.jpg": "37340d43d20ee89d664e2b80e44372353ae9d8996cf957d4ee7619c00f1006ae",
+    "photos/222041-240545.jpg": "c15a36f32d301ab95ae7c023dfc22e6d9ff2104ca9ae7603655049d1f13702bd",
+    "photos/222110-757931.jpg": "fb6dd15c246fe4b13da4b812cf2e080513d44b11164cb2345d4f917395ba1c6b",
+    "photos/222141-243602.jpg": "71f3930e94624c4d40bb9152c4c7dedb66921bfc2284a5202d0e97feaa501bb7",
+    "photos/222210-761058.jpg": "c282698aaa1bf7790380d64fa1d492864acef89e17e33e30c141a646fba6ed3a",
+    "photos/222241-317411.jpg": "262c8d7cb37c5befa0d7cff1de6201abb5ed1337a84d141528ed6b99b44aa5c6",
+    "photos/222310-846105.jpg": "073eb9173726e30e07bc3a7a26aa1ff7bd2ecbde837b3bba8dc786dde158afc9",
+    "photos/222341-334934.jpg": "4ce26bbc3f1ee7d56418f218b601c080d2325bfaab8ebceef3dc9797569751cd",
+    "photos/222410-834149.jpg": "c807b245d26cac912ea94214b1337af36d83fc45c1425421f6d6e53fc60c3cb9",
+    "photos/222441-347990.jpg": "d6a3797d69c215614e796a4f7e4e4f01d5544d0c0cfea31a3d19dd3f472c2665",
+    "jobs/222640-878587/console.txt": "45016255f00c4831d5111bced8d70b2e4ad26ff327664dc05e03d3634195e28f",
+    "jobs/222640-878587/detections.json": "283c08b8588fcba200f1a8adac4bb0133df030b5404f724c281b692a25bc6b34",
+    "jobs/222640-878587/model-input.txt": "01ae744eb1b45522f6e75b57d5441f28b26b58d5a8fe7228cf792247ada7d5e9",
+    "jobs/222640-878587/night_log.jsonl": "0123f7784ad3f3b187e5460d0f3cad10b643b758470564e76897cdfa121ef853",
+    "jobs/222640-878587/ollama-response.json": "765e851be84ef84b952f4ea50a5fc6786c108c182f2506f2d0b3c4be93b254f1",
+    "jobs/222640-878587/prompt.txt": "605c80d5ee078aca826175b07c46d1e8bbaf2dff4a56f3991f24dcd0a696f983",
+    "jobs/222640-878587/raw-response.txt": "daae3c8c810d4d186b9ad7b051db3ef12de27a531c8cc5cd061c70a74384e3a4",
+    "jobs/222640-878587/report.json": "3aa7227d8867db345d3016d5a0a3989a06d7e00bdd53fa1800aac914608f499a",
+    "jobs/222640-878587/sampling-slots.json": "4c1acb81d13e3430aee69c79a023046a6092f1fae73e3ee7072ef2d4af80001e"
+  },
+  "source_matches_pi": true,
+  "all_photos_decoded": true,
+  "photo_count": 30,
+  "capture_window_seconds": 900.0,
+  "button_events": [
+    {
+      "at": "2026-11-01T22:10:10.698754-05:00",
+      "result": "15-minute capture started.",
+      "source": "physical-button",
+      "batch_id": "express-20261101-215722-412583"
+    },
+    {
+      "at": "2026-11-01T22:26:40.878564-05:00",
+      "result": "Processing started.",
+      "source": "physical-button",
+      "batch_id": "express-20261101-215722-412583"
+    }
+  ],
+  "analysis_seconds": 36.38,
+  "model_request_seconds": 31.08,
+  "slot_counts": {
+    "absent": 29,
+    "present": 1
+  },
+  "model_answer": {
+    "estimated_desk_minutes": 24,
+    "score": 50,
+    "summary": "The estimated desk time is 24 minutes, resulting in a score of 50.",
+    "uncertainty": "Unknown slots are present, possible missed detections, and the short-test limitation."
+  },
+  "manual_review": {
+    "score_for_24_simulated_minutes_under_configured_rule": 5,
+    "model_score_matches_rule": false,
+    "unknown_slots_claim_matches_log": false,
+    "user_reported_presence_fraction_approximate": 0.7,
+    "assessment": "Processing completed, but desk-time reliability and score accuracy failed. Raw output is unchanged."
+  },
+  "replay": [
+    {
+      "imgsz": 640,
+      "confidence": 0.4,
+      "seconds": 3.61,
+      "counts": {
+        "absent": 29,
+        "present": 1
+      }
+    },
+    {
+      "imgsz": 640,
+      "confidence": 0.2,
+      "seconds": 2.25,
+      "counts": {
+        "absent": 26,
+        "present": 4
+      }
+    }
+  ],
+  "documentation_check": {
+    "local_links_checked": 65,
+    "missing_links": [],
+    "teacher_parts_preserved": true,
+    "quoted_model_answer_matches_raw": true,
+    "screenshots": {
+      "ui-report-detail.jpg": [
+        1180,
+        1110
+      ],
+      "ui-report.jpg": [
+        2777,
+        1532
+      ]
+    },
+    "browser_visual_verified": true,
+    "browser_errors_and_warnings": []
+  }
+}

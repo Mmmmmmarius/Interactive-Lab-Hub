@@ -1,0 +1,47 @@
+{
+  "run_directory": "/home/pi/lab5-setup-records/part-e/run-20261101-193901",
+  "command": [
+    "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5/.venv/bin/python",
+    "-u",
+    "yolo_to_qwen.py",
+    "--seconds",
+    "60"
+  ],
+  "script_sha256": "e97d84f64c0cbca3721647e7b9276e976d1d5a03b4b5f001d9fc84efe81399f8",
+  "teacher_script_unchanged": true,
+  "started_at": "2026-11-01T19:39:01.010653-05:00",
+  "settings": {
+    "seconds": 60,
+    "conf": 0.4,
+    "imgsz": 320,
+    "interval": 0.5,
+    "classes": [
+      "person"
+    ],
+    "model": "qwen3.5:0.8b",
+    "temperature": 0.2,
+    "num_predict": 250,
+    "think": false
+  },
+  "question": "How many people were there, what were they doing, and did anything change?",
+  "status": "complete",
+  "screenshots": [
+    {
+      "file": "person.png",
+      "associated_reading": "19:39:04 1 person(s) at center/far",
+      "captured_at": "2026-11-01T19:39:05.663427-05:00"
+    },
+    {
+      "file": "nobody.png",
+      "associated_reading": "19:39:05 nobody",
+      "captured_at": "2026-11-01T19:39:06.912172-05:00"
+    }
+  ],
+  "pid": 3777236,
+  "first_reading_at": "2026-11-01T19:39:04.590083-05:00",
+  "watch_finished_at": "2026-11-01T19:40:03.237174-05:00",
+  "exit_code": 0,
+  "elapsed_seconds": 81.696,
+  "finished_at": "2026-11-01T19:40:22.706996-05:00",
+  "teacher_script_unchanged_after_run": true
+}

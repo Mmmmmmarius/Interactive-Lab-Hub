@@ -1,0 +1,79 @@
+{
+  "weights": "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5/yolo26n.pt",
+  "ncnn_directory": "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5/yolo26n_ncnn_model",
+  "export_seconds": 11.23,
+  "test_source": "https://ultralytics.com/images/bus.jpg",
+  "detections": [
+    {
+      "class": "bus",
+      "confidence": 0.9038,
+      "xyxy": [
+        11.8125,
+        230.34375,
+        800.71875,
+        747.5625
+      ]
+    },
+    {
+      "class": "person",
+      "confidence": 0.856,
+      "xyxy": [
+        46.828125,
+        399.09375,
+        238.359375,
+        901.125
+      ]
+    },
+    {
+      "class": "person",
+      "confidence": 0.8447,
+      "xyxy": [
+        222.75,
+        406.0546875,
+        345.9375,
+        862.9453125
+      ]
+    },
+    {
+      "class": "person",
+      "confidence": 0.8398,
+      "xyxy": [
+        669.515625,
+        388.125,
+        810.0,
+        880.03125
+      ]
+    },
+    {
+      "class": "person",
+      "confidence": 0.5615,
+      "xyxy": [
+        0.0,
+        552.65625,
+        59.484375,
+        872.4375
+      ]
+    }
+  ],
+  "speed_ms": {
+    "preprocess": 7.442685999990317,
+    "inference": 65.87699900001098,
+    "postprocess": 2.0611809999309116
+  },
+  "output_image": "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5/runs/part-a-bus/part-a-bus.jpg",
+  "second_image_test": {
+    "source": "Ultralytics packaged zidane.jpg sample; not a webcam photo",
+    "detected_classes": [
+      "person",
+      "person",
+      "tie"
+    ],
+    "speed_ms": {
+      "preprocess": 4.086028000074293,
+      "inference": 87.4819480000042,
+      "postprocess": 1.575817000002644
+    },
+    "output_image": "/home/pi/Interactive-Lab-Hub-Lab5/Lab 5/runs/part-a-second-image/snap.jpg"
+  },
+  "webcam_used": false
+}

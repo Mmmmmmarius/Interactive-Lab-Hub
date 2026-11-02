@@ -1,0 +1,10 @@
+{
+  "model": "qwen3.5:0.8b",
+  "request_seconds": 16.36,
+  "generated_at": "2026-11-01T21:16:17.698609-05:00",
+  "raw": "{\n  \"estimated_desk_minutes\": 1.25,\n  \"score\": 48,\n  \"summary\": \"A short test session yielded a desk presence estimate of approximately 1 minute and 15 seconds.\",\n  \"uncertainty\": \"The uncertainty is driven by the limited window size (20 minutes) and the high frequency of detections (P=6), which suggests potential for missed detections or false positives. The scoring formula caps at 100, resulting in a low score despite the presence count.\"\n}",
+  "kind": "setup_test",
+  "score_scale": "Qwen estimates the score. 0 desk hours = 0; 8 or more hours = 100.",
+  "valid": false,
+  "error": "The model estimated more desk time than this recording could contain. Review the original answer."
+}
