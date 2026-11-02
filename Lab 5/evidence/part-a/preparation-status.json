@@ -315,10 +315,11 @@
     "yolo-cli-desktop.png": "017c94d25c8ab573590d0be72a485039b62e9e45faac59c88d624c3b20a98ca1"
   },
   "local_documentation": {
-    "note": "Files/学习/Cornell/Y1S1/INFO5345_交互设备开发与设计/作业/Lab5/README.md",
+    "note": "Lab 5/README.md",
     "note_sha256": "abc3f170ca4494f6b3aae806dffda463b164272738a90824f0a9d5507d8804ee",
-    "reference": "Files/学习/Cornell/Y1S1/INFO5345_交互设备开发与设计/作业/Lab5/evidence/part-a/README.md",
-    "verification": "A-I structure, unchanged B-I content, four embedded evidence images, local links and current Pi state verified"
+    "reference": "Lab 5/evidence/part-a/README.md",
+    "verification": "A-I structure, unchanged B-I content, four embedded evidence images, local links and current Pi state verified",
+    "path_scope": "Repository-relative publication paths. note_sha256 records the original local document at the time of the preparation check, before English publication edits."
   },
   "completion_verified_at": "2026-10-26T02:06:51.439047-04:00",
   "initial_offline_attempt": {

@@ -1,22 +1,22 @@
-# Pi 现场验收清单
+# Pi on-site acceptance checklist
 
-本清单供用户醒来后在自己的 Pi 旁操作。所有结果均为 **待运行**；预期行为是验收标准，不代表已经在真实硬件通过。Mac 模拟结果不能替代本清单。先确认合适的现场环境，再有意识地测试麦克风和扬声器。
+This checklist is for the user to run beside their Pi after waking. Every result is **Not yet run**. Expected behavior is an acceptance criterion, not proof of a successful hardware test. Mac simulation results do not replace this checklist. Confirm a suitable setting before deliberately testing the microphone and speaker.
 
-现场日期：________　Pi / 分支 / HEAD：________　操作者：________
+Test date: ________  Pi / branch / HEAD: ________  Operator: ________
 
-## 1. 部署前确认与备份
+## 1. Pre-deployment checks and backup
 
-- [ ] **待运行**：确认目标是现有 `/home/pi/Interactive-Lab-Hub/Lab 3/`，在 Pi 仓库根目录运行 `git status --short` 并查看现有修改。A/B/C 的个人文字或其他任务改动若存在，先保留并核对，不能用本包覆盖。记录：________
-- [ ] **待运行**：给当前 Lab 3 文件做独立备份，特别是已有 `woz_controller/`、README、对白、脚本和图片；确认备份可读取。记录备份位置：________
-- [ ] **待运行**：核对待部署包的 `.sha256` 与包内容；若目标已有 `woz_controller/`，先比较并保留现场改动，再决定逐文件合并。不要直接覆盖整个 Lab 3。记录：________
-- [ ] **待运行**：本次只部署本包的 `woz_controller/` 到 `Lab 3/woz_controller/`；不替换 Pi 的 `Lab 3/README.md`、`speech-scripts/`、`voices/`、`models/`、`.venv/` 或课程其他文件。记录：________
-- [ ] **待运行**：确认旧 `piscreen.service` 仍保持原状。不停止、禁用或替换该服务；参与者状态先用浏览器页面查看。记录：________
+- [ ] **Not yet run**: Confirm the target is the existing `/home/pi/Interactive-Lab-Hub/Lab 3/`. Run `git status --short` at the Pi repository root and review existing changes. Preserve and review any personal writing for A/B/C or other task changes instead of overwriting them with this package. Record: ________
+- [ ] **Not yet run**: Make a separate backup of the current Lab 3 files, especially `woz_controller/`, the README, dialogue, scripts and images. Confirm the backup is readable. Backup location: ________
+- [ ] **Not yet run**: Check the deployment package against its `.sha256`. If `woz_controller/` already exists, compare it and preserve local changes before merging individual files. Do not overwrite all of Lab 3. Record: ________
+- [ ] **Not yet run**: Deploy only this package's `woz_controller/` to `Lab 3/woz_controller/`. Do not replace the Pi's `Lab 3/README.md`, `speech-scripts/`, `voices/`, `models/`, `.venv/` or other course files. Record: ________
+- [ ] **Not yet run**: Confirm the old `piscreen.service` is unchanged. Do not stop, disable or replace it. Use the browser page for participant status first. Record: ________
 
-本轮没有自动 push、提交 Canvas、启动 Pi 服务或发送教学团队消息。现场也不需要这些操作来完成技术验收。
+This preparation round did not automatically push, submit to Canvas, start Pi services or message the teaching team. None of those actions is required for on-site technical acceptance.
 
-## 2. 先运行不录音、不播放的检查
+## 2. Run checks without recording or playback first
 
-使用 Pi 已有 Lab 3 虚拟环境，不新建环境、不安装依赖、不下载模型：
+Use the Pi's existing Lab 3 virtual environment without creating an environment, installing dependencies or downloading models:
 
 ```sh
 cd "/home/pi/Interactive-Lab-Hub/Lab 3"
@@ -24,96 +24,96 @@ source .venv/bin/activate
 python3 woz_controller/check_environment.py
 ```
 
-- [ ] **待运行**：`check_environment.py` 返回 `ok: true`，模块、Piper voice/config、Silero VAD 模型与 `aplay` 存在。记录缺项或错误：________
-- [ ] **待运行**：确认报告输入为 `16000 Hz mono float32`，voice config 的采样率与现有音箱链路一致，预计为 22050 Hz。记录：________
-- [ ] **待运行**：检查对白 JSON 的 `speech_start_timeout_seconds` 为 `2.0`、`min_silence_seconds` 为 `0.8`；默认模式为 Flower。记录：________
+- [ ] **Not yet run**: `check_environment.py` returns `ok: true`. Modules, Piper voice/config, the Silero VAD model and `aplay` are present. Missing items or errors: ________
+- [ ] **Not yet run**: The reported input is `16000 Hz mono float32`. The voice configuration's sample rate matches the existing speaker path, expected to be 22050 Hz. Record: ________
+- [ ] **Not yet run**: The dialogue JSON has `speech_start_timeout_seconds` set to `2.0` and `min_silence_seconds` set to `0.8`. Flower is the default mode. Record: ________
 
-此检查只查模块位置、文件和配置，不打开音频设备、不加载语音模型，也不能证明 Whisper 缓存、设备音量或真实识别已可用。若缺依赖、模型或出现安装/权限请求，先记录阻碍；不要为了验收修改设备安全或同步设置。
+This check only inspects module locations, files and configuration. It does not open audio devices or load speech models, and it does not establish that the Whisper cache, device volume or real recognition works. Record missing dependencies, models or installation and permission requests as blockers. Do not change device security or synchronization settings merely to complete acceptance.
 
-## 3. 选择一个现场入口
+## 3. Choose one on-site entry point
 
-每次只运行一个入口，避免两个进程争用麦克风。启动本身不录音；执行 `say`、`listen`、`morning` 或工作场景动作才进入真实音频流程。
+Run only one entry point at a time to avoid microphone contention. Startup alone does not record audio. `say`, `listen`, `morning` and work-scene actions enter the real audio flow.
 
-控制台入口：
+Console entry point:
 
 ```sh
 python3 woz_controller/console.py --backend pi --model tiny.en
 ```
 
-可用命令：`status`、`say TEXT`、`listen`、`morning`、`auto on`、`auto off`、`work 0.05`、`work 45`、`remind`、`accept`、`defer`、`pause`、`resume`、`stop`、`reset`、`quit`。`simulate` 仅用于 dry-run，不能代替 Pi 硬件测试。
+Commands: `status`, `say TEXT`, `listen`, `morning`, `auto on`, `auto off`, `work 0.05`, `work 45`, `remind`, `accept`, `defer`, `pause`, `resume`, `stop`, `reset`, `quit`. `simulate` is only for dry runs and does not replace Pi hardware testing.
 
-或启动环回网页入口：
+Alternatively, start the loopback web interface:
 
 ```sh
 python3 woz_controller/server.py --backend pi --model tiny.en
 ```
 
-Pi 本机浏览器：`http://127.0.0.1:8765/wizard` 与 `http://127.0.0.1:8765/participant`。需要从 Mac 查看时，使用现有授权 SSH 连接做端口转发；例如既有别名仍可用时，在 Mac 运行：
+On the Pi, open `http://127.0.0.1:8765/wizard` and `http://127.0.0.1:8765/participant`. To view them from the Mac, forward the port through the existing authorized SSH connection. For example, if the existing alias is still valid, run on the Mac:
 
 ```sh
 ssh -N -L 8765:127.0.0.1:8765 cornell-pi-ts
 ```
 
-服务器保持 `127.0.0.1`，不改为公网或局域网监听，不开端口、不安装常驻服务。若已有连接或端口有变化，用本人已知的配置核对，不新设访问权限。
+Keep the server bound to `127.0.0.1`. Do not expose it publicly or on the LAN, open ports or install a persistent service. If the existing connection or port has changed, check the user's known configuration rather than creating new access permissions.
 
-- [ ] **待运行**：入口显示 `backend=pi`；`status` / 网页状态为 Flower、Quiet、没有错误；参与者页面只显示状态。记录：________
-- [ ] **待运行**：只运行一个音频进程；已知道 `stop` / Stop now 和退出入口的位置。记录：________
+- [ ] **Not yet run**: The entry point shows `backend=pi`. Console or web status shows Flower, Quiet and no error. The participant page displays status only. Record: ________
+- [ ] **Not yet run**: Only one audio process is running. The operator knows where `stop`, Stop now and the exit controls are. Record: ________
 
-## 4. 每句后的回应窗口与完整发言
+## 4. Response windows and complete utterances
 
-先用 `auto off`，便于单独检查输入；每次开始新试验前用 `status` 确认 `active_action` 为空。`reset` 会恢复 `auto on`，因此需要手动测试时再执行 `auto off`。
+Use `auto off` first to check input independently. Before each test, confirm with `status` that `active_action` is empty. `reset` restores `auto on`, so run `auto off` again for manual tests.
 
-计时基准：听到盒子最后一个音节结束，并观察进入 Listening / `waiting_for_start`。窗口用于决定是否**开始**说话；开始后继续捕获整句，结束依赖约 0.8 秒静音。真实音频有设备延迟和约一个 VAD window（通常约 32 ms）的精度，2.0 秒附近需重复测试并记录偏差；VAD 的确认缓冲不应变成接受迟到开口的额外窗口。
+Measure from the end of the box's last audible syllable and observe the transition to Listening / `waiting_for_start`. The window decides whether speech **starts** in time. Once it starts, the system captures the whole utterance until about 0.8 seconds of silence. Device latency and roughly one VAD window, typically about 32 ms, limit timing precision. Repeat tests near 2.0 seconds and record deviations. VAD confirmation buffering should not become extra time for accepting a late start.
 
-- [ ] **待运行**：执行 `say Hello. Take your time.`，无人回应。播报后进入 Listening，约两秒未开始说话后回 Quiet；不自动重复播报、不继续常听。记录：________
-- [ ] **待运行**：在窗口内说一句短句，结束后静音约 0.8 秒，状态转 Thinking；首字、尾字和完整语句未被两秒截止截断。转写错误和录音截断分开记录：________
-- [ ] **待运行**：在窗口内开始一段至少 10 秒的长句，持续自然说话，再静音结束；确认两秒之后仍捕获，结束后才转写。检查最后几个词，不能把 ASR 漏词直接认定为录音截断。记录：________
-- [ ] **待运行**：再测一段超过旧版 38 秒限制的连续发言，中途停顿保持短于 0.8 秒；确认没有旧版固定总时长截止，完整到本人结束。若需终止，用 `stop`。记录：________
-- [ ] **待运行**：一句话内短于 0.8 秒的自然停顿不应立即结束；超过 0.8 秒的静音应结束该轮。记录实际停顿与行为：________
+- [ ] **Not yet run**: Run `say Hello. Take your time.` and remain silent. After playback, Listening returns to Quiet if speech does not start within about two seconds. There is no automatic replay or continuous listening. Record: ________
+- [ ] **Not yet run**: Say a short sentence within the window, then remain silent for about 0.8 seconds. The state changes to Thinking. The two-second deadline does not truncate the first word, last word or full sentence. Record transcription errors separately from recording truncation: ________
+- [ ] **Not yet run**: Start an utterance of at least ten seconds within the window, speak naturally and finish with silence. Capture continues beyond two seconds, and transcription starts only after the utterance ends. Check the last words without treating every ASR omission as recording truncation. Record: ________
+- [ ] **Not yet run**: Test a continuous utterance longer than the old 38-second limit, keeping pauses shorter than 0.8 seconds. Confirm that capture continues until the speaker finishes without the old fixed-duration cutoff. Use `stop` if necessary. Record: ________
+- [ ] **Not yet run**: Natural pauses shorter than 0.8 seconds do not immediately end the utterance. Silence longer than 0.8 seconds ends the turn. Actual pause lengths and behavior: ________
 
-以下三项每次使用同一句短句，重复至少三次。人工秒表和听觉无法证明精确的毫秒边界，记录“约”多少秒以及是否不稳定；边界不稳定应留作现场问题，不能勾选成确定通过。
+For the following three tests, use the same short sentence and repeat each at least three times. A manual stopwatch and listening cannot establish an exact millisecond boundary. Record approximate timings and any instability. Leave unstable boundary behavior as an on-site issue instead of marking it conclusively passed.
 
-| 开口时间目标 | 预期行为 | 结果 |
+| Target speech start | Expected behavior | Result |
 | --- | --- | --- |
-| 约 1.9 秒 | 接受开口，继续捕获完整句并由 VAD 结束 | [ ] 待运行；记录：________ |
-| 约 2.0 秒 | 规则包含正好 2.0 秒的开口；现场需考虑 VAD/设备计时误差 | [ ] 待运行；记录：________ |
-| 约 2.1 秒 | 该窗口超时，不将迟到句当作本轮响应 | [ ] 待运行；记录：________ |
+| About 1.9 seconds | Accept the start, capture the full sentence and let VAD end it. | [ ] Not yet run. Record: ________ |
+| About 2.0 seconds | The rule includes a start at exactly 2.0 seconds. Account for VAD and device timing uncertainty on site. | [ ] Not yet run. Record: ________ |
+| About 2.1 seconds | The window times out and does not accept the late sentence as this turn's response. | [ ] Not yet run. Record: ________ |
 
-## 5. 连续轮次、早晨场景与真实回录
+## 5. Repeated turns, morning scene and speaker feedback
 
-- [ ] **待运行**：执行 `auto on` 后 `say Morning.`，回应至少三轮。每次固定回复后都有新两秒开始窗口；最后一轮保持安静，系统回 Quiet。此版本使用固定回复，语义质量不作为完整语音链路通过的依据。记录：________
-- [ ] **待运行**：执行 `morning`，第一句自言自语后保持安静，确认也有两秒窗口，然后经过既定自言自语停顿进入问候；问候后窗口同样有效。记录：________
-- [ ] **待运行**：重启早晨场景，在第一句后开始回应，确认完整处理该轮，不在真人讲话中抢播第二句。记录：________
-- [ ] **待运行**：执行一段 `say` 后本人完全不说话，观察安静房间中是否出现盒子自己的转写/循环回复。至少重复三次。记录扬声器音量、摆位与行为：________
-- [ ] **待运行**：在实际桌面/方盒子摆位重复前项，重点听最后音节、扬声器尾音和房间回响。播放期间不应打开识别；结束后残余尾音也不应被当作真人响应。若发生，记录原文与时间并 `stop`，保留为未解决硬件项，不把代码顺序检查当作通过。记录：________
-- [ ] **待运行**：盒子播放时本人说话，该声音不应启动识别或成为下一轮旧输入；等新 Listening 窗口再说一句新话，应只处理新一轮。记录：________
+- [ ] **Not yet run**: Run `auto on`, then `say Morning.`, and respond for at least three turns. Each preset reply opens a fresh two-second start window. Remain silent after the final turn and confirm a return to Quiet. This version uses preset replies, so semantic quality does not determine whether the audio pipeline passes. Record: ________
+- [ ] **Not yet run**: Run `morning` and remain silent after the first self-talk line. Confirm its two-second window, followed by the configured self-talk pause and greeting. The greeting also has a working response window. Record: ________
+- [ ] **Not yet run**: Restart the morning scene and respond after its first line. Confirm that the turn is processed fully and the second line does not interrupt the person speaking. Record: ________
+- [ ] **Not yet run**: After a `say` action, remain completely silent and watch for the box transcribing its own output or entering a reply loop in a quiet room. Repeat at least three times. Record speaker volume, placement and behavior: ________
+- [ ] **Not yet run**: Repeat in the actual desktop and box arrangement, listening for the final syllable, speaker decay and room echo. Recognition should not run during playback, and residual sound afterward should not count as a human response. If it does, record the text and timing, use `stop` and retain it as an unresolved hardware issue. A code-order check does not establish success. Record: ________
+- [ ] **Not yet run**: Speak while the box is playing. This must not start recognition or become stale input for the next turn. Speak a new sentence after the next Listening window opens; only the new turn should be processed. Record: ________
 
-## 6. 暂停、复位、失败与取消
+## 6. Pause, reset, failures and cancellation
 
-- [ ] **待运行**：在播放中 `pause`，应停止声音并保持 Paused；在监听中再做一次，输入停止，当前未完成轮次被丢弃。等待时不重新说话或提醒。记录：________
-- [ ] **待运行**：执行 `resume`，恢复 Quiet；不续录旧半句话。等待旧 worker 完成后用 `listen` 或 `say` 开始全新一轮。记录：________
-- [ ] **待运行**：制造一个可恢复的输入失败：暂停并确认音频 worker 完成后，临时断开外接麦克风，执行 `listen`，观察是否显示设备错误；若系统自动切换输入导致无法复现，记为未复现，不认定失败路径通过。重新接好原麦克风，`reset`，再测试新一轮。不要修改系统音频默认配置。记录：________
-- [ ] **待运行**：在清楚发言与含糊发言中核对 ASR；识别错误时用 `auto off` 与网页转写纠正/手动 `say` 兜底。若自然出现“捕获到语音但识别无词”，应显示错误并可重试；未出现时，该失败分支仍标未运行，不移动模型或装依赖来强行触发。记录：________
-- [ ] **待运行**：在 Thinking / `transcribing` 时执行 `stop`。Quiet 可以先显示，但 `active_action` 可能仍为 `cancelling; wait for audio worker`。等原生 Whisper 调用结束、`active_action` 清空再发新动作；此间新动作应返回 Busy，旧转写不能再触发回复。记录等待时长：________
-- [ ] **待运行**：执行 `reset` 清除错误、转写和上一句，回 Flower / Quiet，并恢复固定自动回复；旧 worker 尚在取消时仍需等它完成。之后新一轮可以运行。记录：________
+- [ ] **Not yet run**: Use `pause` during playback. Sound stops and the state remains Paused. Repeat during listening: input stops and the unfinished turn is discarded. No new speech or reminder starts while waiting. Record: ________
+- [ ] **Not yet run**: Use `resume` to return to Quiet without continuing the old partial recording. Wait for the old worker to finish before starting a fresh turn with `listen` or `say`. Record: ________
+- [ ] **Not yet run**: Test a recoverable input failure. Pause and confirm the audio worker has finished, temporarily disconnect the external microphone, then run `listen` and observe whether a device error appears. If automatic input switching prevents reproduction, record it as not reproduced rather than a passed failure path. Reconnect the same microphone, `reset` and test a new turn. Do not change default system audio settings. Record: ________
+- [ ] **Not yet run**: Compare ASR for clear and unclear speech. Use `auto off` and web transcript correction or manual `say` as a fallback for recognition errors. If speech is captured but no words are recognized, the error should be displayed and retry should be possible. If that case does not occur, leave it untested rather than moving models or installing dependencies to force it. Record: ________
+- [ ] **Not yet run**: Use `stop` during Thinking / `transcribing`. Quiet may appear before `active_action` clears, while the latter still reads `cancelling; wait for audio worker`. Wait for the native Whisper call to finish and `active_action` to clear before sending another action. During cancellation, new actions should return Busy, and the old transcript must not trigger a reply. Waiting time: ________
+- [ ] **Not yet run**: Use `reset` to clear errors, the transcript and the previous line, return to Flower / Quiet and restore preset automatic replies. If the old worker is still cancelling, wait until it finishes. A new turn can then run. Record: ________
 
-原生 Whisper 的一次正在执行的计算无法保证立即中断；`stop` 是取消结果与后续动作的请求。不要反复启动进程绕开 Busy，也不要以 Quiet 的显示替代 worker 已结束的证据。
+A native Whisper computation already in progress is not guaranteed to stop immediately. `stop` requests cancellation of its result and subsequent actions. Do not launch repeated processes to bypass Busy, and do not treat Quiet alone as proof that the worker has finished.
 
-## 7. 工作计时与停止后的安静
+## 7. Work timer and silence after stopping
 
-每次工作测试让确认台词后的两秒窗口自然超时；计时从工作动作完成、`work.running=true` 开始，不从刚输入命令的瞬间开始。
+For each work test, let the confirmation line's two-second response window expire naturally. Start timing when the work action completes and `work.running=true`, not when the command is first entered.
 
-- [ ] **待运行**：执行 `work 0.05`（三秒压缩测试），从 `work.running=true` 起观察提醒自动触发一次，不需要网页轮询或手动 `remind`；提醒后也有两秒响应窗口。继续等候至少十秒，不重复提醒。记录：________
-- [ ] **待运行**：分别测试 `accept` 和 `defer`：接受会播放收尾并给回应窗口；延后关闭当前会话并回 Quiet。两者后当前计时停止。记录：________
-- [ ] **待运行**：启动计时后 `pause`，剩余时间冻结、不提醒；`resume` 后从剩余时间继续。记录：________
-- [ ] **待运行**：启动压缩计时，提醒前 `stop`；确认 `work.running=false`、无 deadline，超过原到期时刻继续等候至少十秒，不再播报提醒。再测提醒播放时 `stop`，声音停止且没有后续提醒。记录：________
-- [ ] **待运行**：执行 `work 45`，让确认台词和窗口结束后安静工作。完整 45 分钟内不闲聊、不常听，不提前提醒；到期仅一次提醒。若没有等满 45 分钟，此项保持待运行，只记配置已核对，不能算完整验证。记录开始/到期：________
-- [ ] **待运行**：最后执行 `stop` 并确认 worker 完成，再 `quit` 或 Ctrl+C；观察没有残余播放或提醒，没有留下新常驻服务。记录：________
+- [ ] **Not yet run**: Run `work 0.05`, a three-second compressed test. From `work.running=true`, observe one automatic reminder without web polling or manual `remind`. The reminder also opens a two-second response window. Wait at least ten more seconds and confirm there is no repeated reminder. Record: ________
+- [ ] **Not yet run**: Test `accept` and `defer` separately. Accept plays the closing line and opens a response window. Defer closes the current session and returns to Quiet. Both stop the current timer. Record: ________
+- [ ] **Not yet run**: Use `pause` after starting a timer. Remaining time freezes and no reminder plays. `resume` continues from the remaining time. Record: ________
+- [ ] **Not yet run**: Start a compressed timer and use `stop` before the reminder. Confirm `work.running=false` and no deadline. Wait beyond the old deadline and at least ten additional seconds without another reminder. Also test `stop` during reminder playback: sound stops with no later reminder. Record: ________
+- [ ] **Not yet run**: Run `work 45` and work quietly after the confirmation and response window. For the full 45 minutes, there should be no idle chatter, continuous listening or early reminder. One reminder plays at expiry. If the full interval was not observed, leave this item Not yet run and record only the configuration check. Start and expiry: ________
+- [ ] **Not yet run**: Finally, use `stop`, confirm the worker has finished, then `quit` or press Ctrl+C. Confirm there is no residual playback, reminder or newly installed persistent service. Record: ________
 
-## 8. 未启用接口与记录边界
+## 8. Reserved interfaces and evidence boundaries
 
-- [ ] **待运行**：状态仍显示 `mode: flower`、Muse `available: false` / `wake_interface: reserved`。Muse 本轮只预留未来独立唤醒词接口，不能实际唤醒、配对或发送用户数据；不安装 Muse 或联网服务。记录：________
-- [ ] **待运行**：本人核对既有 AI 技术协助是否曾提前告知教学团队。已查本地材料有 Codex 使用与目的记录，但未见发送/收件/确认凭证；没有替本人声称已通知，也没有发送通知。凭证或待确认状态：________
-- [ ] **待运行**：记录本次实际运行的命令、参数、通过/失败/未运行项与硬件问题。默认不保存参与者音频，会话状态只在进程内；现场记录按本人需要保留，不把未运行项写成通过。记录位置：________
+- [ ] **Not yet run**: Status still shows `mode: flower`, Muse `available: false` and `wake_interface: reserved`. Muse only reserves a future independent wake-word interface in this version. It cannot actually wake, pair or send user data. Do not install Muse or a network service. Record: ________
+- [ ] **Not yet run**: The user checks whether the teaching team was previously notified of AI technical assistance. Local materials document Codex use and purpose, but no sending, receipt or acknowledgment evidence was found. No notification was sent or claimed on the user's behalf. Evidence or pending confirmation: ________
+- [ ] **Not yet run**: Record actual commands, parameters, passed, failed and unrun items, and hardware issues. Participant audio is not saved by default, and session state remains in process memory. Retain on-site records as needed without marking unrun items as passed. Record location: ________
 
-只完成实际执行并满足预期的项目后才勾选；失败和无法复现的项目保留待处理说明。此清单用于技术验收，不是作业完成证明。
+Check an item only after it has actually been executed and meets the expected behavior. Retain explanations for failures and cases that could not be reproduced. This is a technical acceptance checklist, not proof that the assignment is complete.

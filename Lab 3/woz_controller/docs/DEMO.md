@@ -12,10 +12,10 @@ The demo uses the production `TalkingBoxController`, `DailySchedule`, and dialog
 
 ## Two-minute walkthrough
 
-1. Leave **这次模拟用户搭话** unchecked and click **到 10:30，开始早晨**. With no reply to the opening, the box pauses and says its second morning line, then becomes Quiet.
-2. Check **这次模拟用户搭话**, edit the example sentence if desired, and click **跳到下一次随机闲聊**. This jumps exactly to the real scheduler's randomly selected deadline, 30–90 minutes after the last exchange. Observe Speaking → Listening → Thinking → Speaking → Listening → Quiet. The reply comes from the 24-line preset pool, not from interpretation of the sentence.
+1. Leave **Simulate a user reply this time** unchecked and click **Start the morning at 10:30**. With no reply to the opening, the box pauses and says its second morning line, then becomes Quiet.
+2. Check **Simulate a user reply this time**, edit the example sentence if desired, and click **Skip to the next random remark**. This jumps exactly to the real scheduler's randomly selected deadline, 30–90 minutes after the last exchange. Observe Speaking → Listening → Thinking → Speaking → Listening → Quiet. The reply comes from the 24-line preset pool, not from interpretation of the sentence.
 3. Uncheck the response option and try another random event. No response ends the turn without a preset reply.
-4. Click **跳到 20:00**. No new autonomous utterance begins; the next event is tomorrow at 10:30. **重新演示** cancels any current exchange and restores the initial clock.
+4. Click **Skip to 20:00**. No new autonomous utterance begins; the next event is tomorrow at 10:30. **Restart demo** cancels any current exchange and restores the initial clock.
 
 Each click can queue one simulated utterance. Later response windows are silent. Clock-jump controls wait for an active exchange to finish. The full wizard and participant screens are linked below the demo and share its simulated state.
 

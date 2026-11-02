@@ -1,6 +1,6 @@
 # Part E: detector, log and Qwen
 
-The course pipeline ran on the Pi on November 1, 2026, at approximately 19:39 New York time. Codex executed the script and gave live movement prompts. Marius confirmed afterward: “有，按提示进出过”. This confirms an actual exit and return during the test, rather than a sequence inferred only from detections.
+The course pipeline ran on the Pi on November 1, 2026, at approximately 19:39 New York time. Codex executed the script and gave live movement prompts. Marius confirmed afterward, translated from Chinese: “Yes, I left and returned as prompted.” This confirms an actual exit and return during the test, rather than a sequence inferred only from detections.
 
 ## Run and results
 

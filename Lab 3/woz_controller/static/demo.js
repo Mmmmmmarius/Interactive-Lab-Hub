@@ -4,23 +4,23 @@ let sending = false;
 async function refresh(){
   try{
     const response = await fetch('/api/demo');
-    if(!response.ok) throw new Error('演示服务未连接');
+    if(!response.ok) throw new Error('Demo service is not connected');
     const {now,state:s} = await response.json();
     $('clock').textContent = fmt(now,{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
     $('day').textContent = fmt(now,{month:'short',day:'numeric',year:'numeric'});
     document.body.dataset.status=s.status;
     $('status').textContent=s.status.charAt(0).toUpperCase()+s.status.slice(1);
-    $('phase').textContent={speaking:'盒子在说话',listening:'等待你搭话',thinking:'一点戏剧性的停顿',quiet:'此刻只负责摆着',paused:'已暂停'}[s.status];
-    $('line').textContent=s.last_spoken || '在 10:30 之前，安静也是一种才华。';
-    $('heard').textContent=s.transcript ? '上一条模拟用户：'+s.transcript : '';
+    $('phase').textContent={speaking:'The box is speaking',listening:'Waiting for your reply',thinking:'A little dramatic pause',quiet:'Just sitting here for now',paused:'Paused'}[s.status];
+    $('line').textContent=s.last_spoken || 'Before 10:30, silence is a talent too.';
+    $('heard').textContent=s.transcript ? 'Last simulated user reply: '+s.transcript : '';
     const busy=Boolean(s.active_action)||s.schedule.busy;
     $('next').disabled=busy||sending||!s.schedule.next_at;
     $('quiet').disabled=busy||sending;
     $('reset').disabled=sending;
-    $('next').textContent=s.schedule.next_kind==='morning' ? '到 10:30，开始早晨' : '跳到下一次随机闲聊';
-    $('next-event').textContent=s.schedule.next_at ? '下一次：'+fmt(s.schedule.next_at,{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}) : '当前交流结束后再安排下一次。';
+    $('next').textContent=s.schedule.next_kind==='morning' ? 'Start the morning at 10:30' : 'Skip to the next random remark';
+    $('next-event').textContent=s.schedule.next_at ? 'Next: '+fmt(s.schedule.next_at,{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}) : 'The next event is scheduled after this exchange ends.';
     $('events').replaceChildren(...s.events.map(e=>{const li=document.createElement('li');li.textContent=e.message;return li;}));
-  }catch(error){$('error').textContent=error.message+'。请运行 python demo.py。';}
+  }catch(error){$('error').textContent=error.message+'. Please run python demo.py.';}
 }
 async function step(action){
   if(sending)return;

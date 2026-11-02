@@ -72,7 +72,7 @@ These timings are from individual still-image runs, not a live-camera frame-rate
 <details>
 <summary>Original image, parameters and recorded output</summary>
 
-[Original image](assets/part-a/user-street-input.png) · [Run record](_%E8%AF%81%E6%8D%AE/part-a-user-image/README.md) · [Detection data](_%E8%AF%81%E6%8D%AE/part-a-user-image/detection.json) · [Actual terminal output](_%E8%AF%81%E6%8D%AE/part-a-user-image/inference-log-verified.txt)
+[Original image](assets/part-a/user-street-input.png) · [Run record](evidence/part-a-user-image/README.md) · [Detection data](evidence/part-a-user-image/detection.json) · [Actual terminal output](evidence/part-a-user-image/inference-log-verified.txt)
 
 The original image is 2880 × 2160 pixels. The recorded model input was 640 × 640, with a confidence threshold of 0.25. This test used a saved image, with no webcam capture.
 
@@ -181,12 +181,12 @@ This clip demonstrates pinch control and the displayed volume range. The 0% pinc
 - **Timer:** The answer was correct: 20:00 minus 7:30 leaves 12:30.
 - **Example log:** The model correctly identified 22:05, but then suggested that the person left. A missing detection at 22:06 does not establish that they left, and these three readings cannot explain why they were there. The answer did not clearly state that limitation.
 
-**Records:** [Commands, settings and original output](_%E8%AF%81%E6%8D%AE/part-d-qwen/README.md).
+**Records:** [Commands, settings and original output](evidence/part-d-qwen/README.md).
 
 ## Part E.
 ### Connect: from YOLO readings to Qwen reasoning
 
-**Log:** Codex ran the unchanged course `yolo_to_qwen.py --seconds 60` on the Pi and prompted me to enter and leave the camera view. I confirmed that I left and returned during the test. The script saved 15 readings, writing a line only when the detection result changed. The [original log](_%E8%AF%81%E6%8D%AE/part-e-pipeline/watch_log.txt) is reproduced below.
+**Log:** Codex ran the unchanged course `yolo_to_qwen.py --seconds 60` on the Pi and prompted me to enter and leave the camera view. I confirmed that I left and returned during the test. The script saved 15 readings, writing a line only when the detection result changed. The [original log](evidence/part-e-pipeline/watch_log.txt) is reproduced below.
 
 ```text
 19:39:04 1 person(s) at center/far
@@ -214,11 +214,11 @@ This clip demonstrates pinch control and the displayed volume range. The 0% pinc
 
 YOLO produced the boxes, and `interpret()` converted them into coarse count, position and distance labels. Qwen received these words rather than camera images. The frequent switches between a person and `nobody` show why a missing detection should not automatically be treated as someone leaving. The requested left/close movement was not represented in the log, so this run did not demonstrate reliable position changes.
 
-![The actual Pi window showing one person at center/far during Part E](_%E8%AF%81%E6%8D%AE/part-e-pipeline/person.png)
+![The actual Pi window showing one person at center/far during Part E](evidence/part-e-pipeline/person.png)
 
 *The course window during the run. The screenshot shows a detected person partly hidden by the chair and the interpreter's `center/far` label.*
 
-[Full output, settings and verification](_%E8%AF%81%E6%8D%AE/part-e-pipeline/README.md).
+[Full output, settings and verification](evidence/part-e-pipeline/README.md).
 
 # Lab 5 Part 2: Overnight Sensation
 
@@ -243,7 +243,7 @@ I chose to collect photos during the day and process them after a bedtime button
 
 **Revised storyboard:** [Insert the revised version.]
 
-**Location and consent:** The demo camera faced my computer workstation and chair. After the first run missed most of my presence, I adjusted the camera so more of my upper body was visible, then checked live detection before the second run. The [placement-check photo](_%E8%AF%81%E6%8D%AE/express-demo/placement-check-2/frame.jpg) records the revised view. The camera also captures part of the surrounding room. [Confirm who else could appear in this space and record their consent, or confirm that no other person is affected.]
+**Location and consent:** The demo camera faced my computer workstation and chair. After the first run missed most of my presence, I adjusted the camera so more of my upper body was visible, then checked live detection before the second run. The [placement-check photo](evidence/express-demo/placement-check-2/frame.jpg) records the revised view. The camera also captures part of the surrounding room. [Confirm who else could appear in this space and record their consent, or confirm that no other person is affected.]
 
 ## Part G.
 ### Design the interaction before
@@ -254,7 +254,7 @@ I chose to collect photos during the day and process them after a bedtime button
 
 **Express demo:** I used 15 minutes of real capture to demonstrate a clearly labeled simulated day. The camera took one photo every 30 seconds and stopped automatically after 15 minutes. Each sampling slot represents 24 simulated minutes, covering a fictional 08:00–20:00 day. The photos and raw log retain their actual timestamps. The second button press simulates handing the data over for night-time processing. The regular daily schedule remains unchanged.
 
-The run is documented in Parts H and I. The [first button-event log](_%E8%AF%81%E6%8D%AE/express-demo/run-222640-878587/button-events.jsonl) and [second button-event log](_%E8%AF%81%E6%8D%AE/express-demo/run-231511-490646/button-events.jsonl) preserve the physical inputs. Instructions for repeating it are in [快速演示](%E5%BF%AB%E9%80%9F%E6%BC%94%E7%A4%BA.md). This is a completed short demonstration, not a full-day or overnight measurement.
+The run is documented in Parts H and I. The [first button-event log](evidence/express-demo/run-222640-878587/button-events.jsonl) and [second button-event log](evidence/express-demo/run-231511-490646/button-events.jsonl) preserve the physical inputs. Instructions for repeating it are in [Express demo guide](express-demo.md). This is a completed short demonstration, not a full-day or overnight measurement.
 
 ## Part H.
 ### Incorporate the observant system
@@ -275,11 +275,11 @@ The run is documented in Parts H and I. The [first button-event log](_%E8%AF%81%
 
 | Sideways posture, detected | Facing the desk, missed |
 | --- | --- |
-| ![Person detected at 22:18:12 while more of the upper body is visible](_%E8%AF%81%E6%8D%AE/express-demo/run-222640-878587/express-20261101-215722-412583/photos/221811-660185.jpg) | ![Person visible behind the chair at 22:21:12 but not detected](_%E8%AF%81%E6%8D%AE/express-demo/run-222640-878587/express-20261101-215722-412583/photos/222110-757931.jpg) |
+| ![Person detected at 22:18:12 while more of the upper body is visible](evidence/express-demo/run-222640-878587/express-20261101-215722-412583/photos/221811-660185.jpg) | ![Person visible behind the chair at 22:21:12 but not detected](evidence/express-demo/run-222640-878587/express-20261101-215722-412583/photos/222110-757931.jpg) |
 
 I replayed the same 30 saved photos without changing the original run. Increasing the requested input size from 320 to 640 at confidence 0.4 still detected a person in only one photo. Using size 640 and confidence 0.2 detected a person in four photos. This did not resolve the mismatch with my observation. I then repositioned the camera to expose more of my upper body and confirmed that live detection worked. I closed the live preview to release the camera and prepared a separate second 15-minute run.
 
-**Evidence:** The [run record](_%E8%AF%81%E6%8D%AE/express-demo/run-222640-878587/README.md) links the original photos, button events, detector replay and Qwen output. The [night_log.jsonl](_%E8%AF%81%E6%8D%AE/express-demo/run-222640-878587/express-20261101-215722-412583/jobs/222640-878587/night_log.jsonl) records analysis of these short-demo photos and retains their real capture timestamps. It is not an overnight capture log. The actual web screenshot is in Part I.
+**Evidence:** The [run record](evidence/express-demo/run-222640-878587/README.md) links the original photos, button events, detector replay and Qwen output. The [night_log.jsonl](evidence/express-demo/run-222640-878587/express-20261101-215722-412583/jobs/222640-878587/night_log.jsonl) records analysis of these short-demo photos and retains their real capture timestamps. It is not an overnight capture log. The actual web screenshot is in Part I.
 
 **Second run after repositioning:** I used the physical button to start another 15-minute capture and pressed it again to begin analysis. The sampling and simulated-day mapping stayed the same.
 
@@ -294,11 +294,11 @@ I replayed the same 30 saved photos without changing the original run. Increasin
 
 The new position improved the observed detection count, but the saved images still reveal missed detections in seated poses. The two runs contain different activities, so their counts are not a controlled accuracy comparison. Reviewing individual snapshots also does not establish exact continuous desk time.
 
-![Second-run photo showing a seated person that YOLO missed](_%E8%AF%81%E6%8D%AE/express-demo/run-231511-490646/express-20261101-224820-867740/photos/225828-892994.jpg)
+![Second-run photo showing a seated person that YOLO missed](evidence/express-demo/run-231511-490646/express-20261101-224820-867740/photos/225828-892994.jpg)
 
-*Second run, 22:58:30: my upper body is visible, but this saved frame was classified as no person detected. The [second-run record](_%E8%AF%81%E6%8D%AE/express-demo/run-231511-490646/README.md) preserves all photos, detections, button events and the rejected model output.*
+*Second run, 22:58:30: my upper body is visible, but this saved frame was classified as no person detected. The [second-run record](evidence/express-demo/run-231511-490646/README.md) preserves all photos, detections, button events and the rejected model output.*
 
-**Earlier setup check:** Before this run, a separate three-photo check returned 0.1 minutes and 0 points. Its [screenshots and model comparisons](_%E8%AF%81%E6%8D%AE/touch-grass-build/README.md) are retained separately.
+**Earlier setup check:** Before this run, a separate three-photo check returned 0.1 minutes and 0 points. Its [screenshots and model comparisons](evidence/touch-grass-build/README.md) are retained separately.
 
 **Overnight run:** A full-day collection followed by night-time processing is still pending. The normal schedule starts collection at 8:00 AM in New York and ends when I press a Mini PiTFT button before bed. The available evidence here covers the two 15-minute demonstrations and their reanalysis, not a completed normal day or night.
 
@@ -307,9 +307,9 @@ The new position improved the observed detection count, but the saved images sti
 
 **Current demo result:** I reused the second run's 30 saved photos instead of collecting a new batch. After improved the Qwen input and validation, the deployed program completed the replay and displayed **552 simulated minutes, or 9 hours 12 minutes, and 100/100**. The result describes the fictional 08:00–20:00 day mapped from 15 real minutes. It is not a measured full day.
 
-![Deployed Grass bro interface showing the original 552 simulated minutes and 100 points](_%E8%AF%81%E6%8D%AE/grass-ui/desktop.jpg)
+![Deployed Grass bro interface showing the original 552 simulated minutes and 100 points](evidence/grass-ui/desktop.jpg)
 
-*The new interface running on the Pi. The report still uses the same 15-minute capture mapped to a simulated day. The earlier interface screenshot remains in the [replay record](_%E8%AF%81%E6%8D%AE/express-demo/qwen-replay-v3/README.md).*
+*The new interface running on the Pi. The report still uses the same 15-minute capture mapped to a simulated day. The earlier interface screenshot remains in the [replay record](evidence/express-demo/qwen-replay-v3/README.md).*
 
 **What changed:** Python now supplies a structured summary of the detector labels: 23 present samples, 7 absent samples, zero unknown samples and 1,440 simulated seconds per sample. Qwen still calculates the desk minutes and score. The program checks the returned counts, arithmetic relationships, score range and simulation labels. It rejects an incorrect answer and can request up to three attempts, preserving every original reply. It never replaces Qwen's numbers with calculated fallback values.
 
@@ -328,7 +328,7 @@ The final `qwen3:0.6b` request kept reasoning enabled. Qwen returned this answer
 }
 ```
 
-**Verification:** The same 30 photo files, detector labels and sampling slots were preserved. The accepted values match Qwen's raw response and the live LAN page. The earlier rejected report remains in its original job directory. Separate diagnostic cases for one positive sample and zero positives with unknown samples also passed. Those diagnostic inputs are checks, not additional observations. Source files, prompts, attempts and the screenshot are linked in the [replay record](_%E8%AF%81%E6%8D%AE/express-demo/qwen-replay-v3/README.md).
+**Verification:** The same 30 photo files, detector labels and sampling slots were preserved. The accepted values match Qwen's raw response and the live LAN page. The earlier rejected report remains in its original job directory. Separate diagnostic cases for one positive sample and zero positives with unknown samples also passed. Those diagnostic inputs are checks, not additional observations. Source files, prompts, attempts and the screenshot are linked in the [replay record](evidence/express-demo/qwen-replay-v3/README.md).
 
 **Interaction after waking:** I open the Pi's web page from a computer or phone on the same network. Grass bro, a small grass character, reacts to the selected report. The page shows Qwen's estimated desk time and Touch grass score beside the character. I can click or tap the pet to cycle through short preset reactions, or select a timeline sample to see its actual and simulated time. Captured photos and the unchanged Qwen answer remain available under "Show the receipts." Until a valid report is available, the page shows no score.
 
@@ -349,19 +349,19 @@ Waiting, collecting, ready to analyze, processing, validation failure and discon
 <details>
 <summary>Phone layout and character states</summary>
 
-![Actual deployed page at a narrow phone viewport, showing the same simulated report](_%E8%AF%81%E6%8D%AE/grass-ui/mobile.jpg)
+![Actual deployed page at a narrow phone viewport, showing the same simulated report](evidence/grass-ui/mobile.jpg)
 
 *Browser check at a phone-sized viewport. This is not a photograph of a physical phone.*
 
-![Five approved score expressions for the same grass character](UI%E9%A2%84%E8%A7%88/score-states.png)
+![Five approved score expressions for the same grass character](ui-preview/score-states.png)
 
 *Character design sheet showing the five visual bands, not five separate experimental results.*
 
-![Six runtime expressions for waiting, collection, readiness, processing, validation failure and disconnection](UI%E9%A2%84%E8%A7%88/device-states.png)
+![Six runtime expressions for waiting, collection, readiness, processing, validation failure and disconnection](ui-preview/device-states.png)
 
 *Runtime character design sheet. State selection was checked in software; this UI update did not start another capture or deliberately disconnect the Pi.*
 
-The [UI verification record](_%E8%AF%81%E6%8D%AE/grass-ui/README.md) preserves the deployment checks and screenshots.
+The [UI verification record](evidence/grass-ui/README.md) preserves the deployment checks and screenshots.
 
 </details>
 
@@ -370,7 +370,7 @@ The [UI verification record](_%E8%AF%81%E6%8D%AE/grass-ui/README.md) preserves t
 
 **First express demo output:** The LAN page displayed **24 simulated minutes** at the desk and a **Touch grass score of 50/100**. These are Qwen's actual returned values. The page explicitly labels the result as a simulated day based on 15 minutes of real capture. The screenshot preserves the original output, including the incorrect score.
 
-![Actual express-demo page showing simulated-day labels, 24 minutes and the model's incorrect score of 50](_%E8%AF%81%E6%8D%AE/express-demo/run-222640-878587/ui-report-detail.jpg)
+![Actual express-demo page showing simulated-day labels, 24 minutes and the model's incorrect score of 50](evidence/express-demo/run-222640-878587/ui-report-detail.jpg)
 
 The original model answer was:
 
@@ -398,7 +398,7 @@ The original model answer was:
 
 The actual input contains **23 positive slots and zero unknown slots**. A diagnostic calculation gives `23 × 24 = 552` simulated minutes. Applying the configured eight-hour scale gives a capped score of **100**. These are checks against the detector log, not replacement app results or verified actual desk time. Qwen miscounted the positive slots, exceeded the score limit, claimed unknown slots and omitted the requested simulation label from its own prose.
 
-The application rejected the answer with `The model score must be an integer from 0 to 100.` Its saved state and live status API both showed **needs_review**. The original answer remains saved, and no corrected score was substituted. The [second-run evidence](_%E8%AF%81%E6%8D%AE/express-demo/run-231511-490646/README.md) includes the report and checks. A new browser screenshot was unavailable for this run.
+The application rejected the answer with `The model score must be an integer from 0 to 100.` Its saved state and live status API both showed **needs_review**. The original answer remains saved, and no corrected score was substituted. The [second-run evidence](evidence/express-demo/run-231511-490646/README.md) includes the report and checks. A new browser screenshot was unavailable for this run.
 
 </details>
 
@@ -406,9 +406,9 @@ The application rejected the answer with `The model score must be an integer fro
 
 ## Final documentation
 
-**Looks like:** The prototype uses the existing Raspberry Pi 5, USB webcam and Mini PiTFT. The camera faces the workstation, and a physical button on the small display provides the hand-off input. The browser presents Grass bro beside the score and estimated time, with the sample timeline and original evidence below. The [camera-view record](_%E8%AF%81%E6%8D%AE/express-demo/placement-check-2/frame.jpg) and the deployed interface screenshot in Part I show these views. [Add a photograph of the physical Pi, display and camera in their actual placement; a camera-view screenshot does not show the device itself.]
+**Looks like:** The prototype uses the existing Raspberry Pi 5, USB webcam and Mini PiTFT. The camera faces the workstation, and a physical button on the small display provides the hand-off input. The browser presents Grass bro beside the score and estimated time, with the sample timeline and original evidence below. The [camera-view record](evidence/express-demo/placement-check-2/frame.jpg) and the deployed interface screenshot in Part I show these views. [Add a photograph of the physical Pi, display and camera in their actual placement; a camera-view screenshot does not show the device itself.]
 
-**Works like:** A background service saves timestamped photos every five minutes from 8:00 AM. A Mini PiTFT button ends collection and queues processing. YOLO converts each saved image into person detected, no person detected or unknown. Qwen receives structured detection counts and the sampling interval, calculates desk time and produces the score and explanation. Rejection-only checks verify its counts, arithmetic and simulation labels before the report is displayed. The web page reads the saved report. Missing samples remain unknown. The current build uses the full camera view and cannot identify me or prove that I was using the computer. Full-day data is still pending; the [operating notes](%E5%AE%9E%E7%8E%B0%E4%B8%8E%E8%BF%90%E8%A1%8C.md) describe the deployed version.
+**Works like:** A background service saves timestamped photos every five minutes from 8:00 AM. A Mini PiTFT button ends collection and queues processing. YOLO converts each saved image into person detected, no person detected or unknown. Qwen receives structured detection counts and the sampling interval, calculates desk time and produces the score and explanation. Rejection-only checks verify its counts, arithmetic and simulation labels before the report is displayed. The web page reads the saved report. Missing samples remain unknown. The current build uses the full camera view and cannot identify me or prove that I was using the computer. Full-day data is still pending; the [operating notes](implementation-and-operation.md) describe the deployed version.
 
 **Acts like:** In both express demos, I pressed the Mini PiTFT button to start capture and pressed it again after capture ended to hand the photos to analysis. The first run displayed the returned values in the LAN page. The second run initially produced a report that needed review.
 
@@ -420,16 +420,16 @@ The application rejected the answer with `The model score must be an integer fro
 
 **README:** [Lab 5 documentation](README.md) in [my repository](https://github.com/Mmmmmmarius/Interactive-Lab-Hub/tree/Fall2026/Lab%205). Canvas submission is still pending.
 
-**Code:** [Download the current custom source](assets/code/touch-grass-source.zip), including the Grass bro UI, tests, service examples, a configuration template and English usage instructions. The archive excludes model weights, captured photos and live credentials. [Source snapshot notes](assets/code/touch-grass-source.md) and [implementation and operating notes](%E5%AE%9E%E7%8E%B0%E4%B8%8E%E8%BF%90%E8%A1%8C.md) explain the files and the deployed version. The [Part C calibration patch](assets/code/hand-pose-calibration.patch) records the separate change to the course hand demo. The current custom source is included in this repository snapshot.
+**Code:** [Download the current custom source](assets/code/touch-grass-source.zip), including the Grass bro UI, tests, service examples, a configuration template and English usage instructions. The archive excludes model weights, captured photos and live credentials. [Source snapshot notes](assets/code/touch-grass-source.md) and [implementation and operating notes](implementation-and-operation.md) explain the files and the deployed version. The [Part C calibration patch](assets/code/hand-pose-calibration.patch) records the separate change to the course hand demo. The current custom source is included in this repository snapshot.
 
-**Night log:** The current report uses the [second capture's replay log](_%E8%AF%81%E6%8D%AE/express-demo/qwen-replay-v3/233249-174790/night_log.jsonl), [sampling slots](_%E8%AF%81%E6%8D%AE/express-demo/qwen-replay-v3/233249-174790/sampling-slots.json), [structured model input](_%E8%AF%81%E6%8D%AE/express-demo/qwen-replay-v3/233249-174790/evidence.json) and [accepted Qwen report](_%E8%AF%81%E6%8D%AE/express-demo/qwen-replay-v3/233249-174790/report.json). These contain the real 15-minute capture and its simulated-day mapping. A normal full-day capture and night-time processing log still need to be added.
+**Night log:** The current report uses the [second capture's replay log](evidence/express-demo/qwen-replay-v3/233249-174790/night_log.jsonl), [sampling slots](evidence/express-demo/qwen-replay-v3/233249-174790/sampling-slots.json), [structured model input](evidence/express-demo/qwen-replay-v3/233249-174790/evidence.json) and [accepted Qwen report](evidence/express-demo/qwen-replay-v3/233249-174790/report.json). These contain the real 15-minute capture and its simulated-day mapping. A normal full-day capture and night-time processing log still need to be added.
 
 **Supporting material:**
 
-- [Part A environment and image tests](evidence/part-a/README.md) and [my selected-image result](_%E8%AF%81%E6%8D%AE/part-a-user-image/README.md).
+- [Part A environment and image tests](evidence/part-a/README.md) and [my selected-image result](evidence/part-a-user-image/README.md).
 - [Part B phone-photo screenshot](assets/part-b/phone-photo-person.png) and [Part C demonstration video](assets/part-c/hand-volume-demo.mp4).
-- [Part D questions and model outputs](_%E8%AF%81%E6%8D%AE/part-d-qwen/README.md) and [Part E pipeline log](_%E8%AF%81%E6%8D%AE/part-e-pipeline/README.md).
-- [First express demo](_%E8%AF%81%E6%8D%AE/express-demo/run-222640-878587/README.md), [second express demo](_%E8%AF%81%E6%8D%AE/express-demo/run-231511-490646/README.md), and [successful reanalysis](_%E8%AF%81%E6%8D%AE/express-demo/qwen-replay-v3/README.md).
-- [Grass bro interface screenshots and checks](_%E8%AF%81%E6%8D%AE/grass-ui/README.md), [score-expression design sheet](UI%E9%A2%84%E8%A7%88/score-states.png), and [runtime-expression design sheet](UI%E9%A2%84%E8%A7%88/device-states.png).
+- [Part D questions and model outputs](evidence/part-d-qwen/README.md) and [Part E pipeline log](evidence/part-e-pipeline/README.md).
+- [First express demo](evidence/express-demo/run-222640-878587/README.md), [second express demo](evidence/express-demo/run-231511-490646/README.md), and [successful reanalysis](evidence/express-demo/qwen-replay-v3/README.md).
+- [Grass bro interface screenshots and checks](evidence/grass-ui/README.md), [score-expression design sheet](ui-preview/score-states.png), and [runtime-expression design sheet](ui-preview/device-states.png).
 
 The original and revised storyboards, actual peer feedback, physical placement photograph, and whole-system video are still pending at their marked sections above.

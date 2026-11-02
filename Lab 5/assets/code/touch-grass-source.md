@@ -1,7 +1,5 @@
-# Touch grass 源码快照
+# Touch grass source snapshot
 
-[下载源码 ZIP](touch-grass-source.zip)。包含当前应用、已部署网页、测试、服务示例和英文使用说明。它供审阅与复现，正式源码仍在工作站。
+[Download the source ZIP](touch-grass-source.zip). It contains the current application, deployed web interface, tests, service examples and an English usage guide. This snapshot supports review and reproduction; the primary source remains in the workstation.
 
-不包含模型权重、虚拟环境、照片、历史报告、控制令牌或实际 config.json。配置模板的日期和路径需要按运行环境填写。压缩包完整性及源码字节一致性已检查，本轮没有在 Pi 上重新安装或运行它。
-
-SHA-256：`90e9f95ba25a0813cae94ac1fb036ea8f78e8cd8b143a47129cf8d122243d22b`。
+It does not include model weights, virtual environments, photographs, historical reports, control tokens or the live `config.json`. Fill in the configuration template's date and paths for the target environment. Archive integrity and byte equality with the source were checked. This round did not reinstall or run the archive on the Pi.
