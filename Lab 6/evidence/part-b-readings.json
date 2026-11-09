@@ -1,0 +1,137 @@
+{
+  "experiment": "Part B: Collaborative Pixel Grid",
+  "date_local": "2026-11-08",
+  "timezone": "America/New_York",
+  "device": "Raspberry Pi 5 Model B Rev 1.1",
+  "sensor": "APDS-9960",
+  "i2c": {
+    "bus": 1,
+    "address": "0x39",
+    "id_register": "0x92",
+    "id_value": "0xAB"
+  },
+  "screen": "Mini PiTFT, 240 x 135; initialization confirmed by the publisher",
+  "mqtt": {
+    "broker": "farlab.infosci.cornell.edu",
+    "port": 1883,
+    "topic": "IDD/pixelgrid/colors",
+    "broker_connection_confirmed": true,
+    "web_grid": "http://farlab.infosci.cornell.edu:5000/",
+    "matching_method": "Matched the real Pi publisher identifier to the corresponding tile on the live course page."
+  },
+  "user_observation": "Hanle confirmed presenting two differently colored objects.",
+  "contrasting_sensor_readings": [
+    {
+      "time": "2026-11-08T22:34:50.601-05:00",
+      "sensor_channels_rgbc": [
+        3,
+        18,
+        11,
+        26
+      ],
+      "published_rgb": [
+        36,
+        255,
+        218
+      ]
+    },
+    {
+      "time": "2026-11-08T22:29:39.700-05:00",
+      "sensor_channels_rgbc": [
+        14,
+        6,
+        7,
+        21
+      ],
+      "published_rgb": [
+        255,
+        111,
+        175
+      ]
+    }
+  ],
+  "raw_channel_order": [
+    "red",
+    "green",
+    "blue",
+    "clear light"
+  ],
+  "screenshots": [
+    {
+      "file": "part-b-grid-initial.png",
+      "capture_time": "2026-11-08T22:26:36.586-05:00",
+      "tile_number": 7,
+      "visible_tiles": 7,
+      "observed_center_rgb": [
+        186,
+        204,
+        255
+      ],
+      "page_tile_rgb_before_capture": [
+        186,
+        204,
+        255
+      ],
+      "page_tile_rgb_after_capture": [
+        186,
+        204,
+        255
+      ],
+      "nearby_pi_reading": {
+        "time": "2026-11-08T22:26:36.661-05:00",
+        "sensor_channels_rgbc": [
+          154,
+          168,
+          148,
+          399
+        ],
+        "published_rgb": [
+          186,
+          204,
+          255
+        ]
+      }
+    },
+    {
+      "file": "part-b-grid-changed.png",
+      "capture_time": "2026-11-08T22:34:45.759-05:00",
+      "tile_number": 7,
+      "visible_tiles": 7,
+      "observed_center_rgb": [
+        78,
+        255,
+        227
+      ],
+      "page_tile_rgb_before_capture": [
+        78,
+        255,
+        227
+      ],
+      "page_tile_rgb_after_capture": [
+        78,
+        255,
+        227
+      ],
+      "nearby_pi_reading": {
+        "time": "2026-11-08T22:34:45.534-05:00",
+        "sensor_channels_rgbc": [
+          46,
+          149,
+          94,
+          231
+        ],
+        "published_rgb": [
+          78,
+          255,
+          227
+        ]
+      }
+    }
+  ],
+  "service_state_after_test": {
+    "temporary_pixel_publisher": "inactive",
+    "touch-grass-screen.service": "active",
+    "touch-grass.service": "active",
+    "touch-grass-screen.service_boot_setting": "enabled"
+  }
+}
