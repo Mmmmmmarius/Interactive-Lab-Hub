@@ -94,13 +94,17 @@ We first used the on-screen buttons in Demo mode to check the ingredient mapping
 
 ### Where we put the game logic
 
-We kept color recognition on each Pi because each sensor had its own reference readings. The readings also depend on the lighting and how close the object is to the sensor. Changing the setup can mean taking a new set of samples.
+We kept color recognition on each Pi because each sensor had its own reference readings. Changing the setup can mean taking a new set of samples.
 
 We played on one laptop because each browser generates its own orders and keeps its own score. We shared sensor readings across devices, but opening a second browser would start a different game. Sharing one round across multiple screens would require the host to keep track of the order and score as well.
 
 ### Trying it with two other players
 
 Two friends from outside our group tried the game. Both enjoyed the game and liked how it was made. Neither had a specific change to suggest. We recorded their reactions after the session. Their expectations going in and anything that surprised them are still open questions for a follow-up. [Photo from our test session](https://github.com/user-attachments/assets/8ce9471f-477b-4123-b69c-71e01bafdbcf)
+
+### My reflection
+
+The color I got from the sensor changed a lot with the lighting and how close I held it to the object. I had to hold one particular side of the sensor right up against the colored surface, which didn't feel intuitive to me. The readings also seemed to vary from one sensor to another.
 
 ### Running our setup
 
@@ -116,4 +120,4 @@ The programs prompt for the course MQTT login if it is not set in the environmen
 I included my classroom photos and pixel-grid readings here. Shenye shared the game captures, and Bowei documented the playtest. [Shenye's notes and reflection](https://github.com/sw2486-hub/Interactive-Lab-Hub/blob/4a1eb616326efe20b33ee9c5ca16b89e22530188/Lab%206/README.md#6-reflection) · [Bowei's test notes and photo](https://github.com/bh654-dev/Interactive-Lab-Hub/blob/5724b5f8a9241a2a04012259836139f96973158f/Lab%206/README.md#user-testing)
 
 **AI assistance**  
-We used ChatGPT for setup guidance. I used Codex to run the pixel-grid check, compare the readings with the screenshots, and help edit and publish this write-up.
+We used ChatGPT for setup guidance. I used Codex to run the pixel-grid check, compare the readings with the screenshots, and help edit and publish this write-up. I wrote my reflection in Chinese and used Codex to translate it into English.
