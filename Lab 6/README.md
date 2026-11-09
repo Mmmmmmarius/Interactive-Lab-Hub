@@ -1,69 +1,66 @@
-# Lab 6: Distributed Interaction | Color Cocktail Bar
+# Lab 6 | Color Cocktail Bar
 
-**Team:** Hanle Gu (hg542), Shenye Wang (sw2486), and Bowei Huang (bh654).
+**Hanle Gu (hg542)**  
+I worked with Shenye Wang (sw2486) and Bowei Huang (bh654).
 
-Three people make one virtual drink. Each uses a Raspberry Pi and a color sensor to choose one ingredient: the base, the flavor, or the garnish. All three players can see the order and the glass on one laptop. Nobody can finish an order alone.
+We built a game where three people make one drink. A red object selects strawberry for the player choosing the base, cherry for the player choosing the flavor, and a paper umbrella for the player choosing the garnish. We put the order and the glass on one laptop so we could see which ingredient was still missing while our hands were at the sensors.
 
-## Part A: A message between devices
+## Part A | Sending my first MQTT message
 
-On November 8, Hanle opened two Mosquitto clients on his Pi. One subscribed to the course broker. The other sent `Hello!` to `IDD/test/marius`. At 3:46 p.m. New York time, the subscriber printed `IDD/test/marius Hello!`. [Message receipt](evidence/part-a-mqtt.json)
+I started with two Mosquitto clients on my Raspberry Pi. I subscribed to `IDD/#` in one terminal and sent `Hello!` to `IDD/test/marius` from the other. At 3:46 p.m. on November 8, the first terminal printed `IDD/test/marius Hello!`. I could now follow a message from my Pi to the course broker and back to my subscriber. [MQTT receipt](evidence/part-a-mqtt.json)
 
-[Shenye's brainstorm](https://github.com/sw2486-hub/Interactive-Lab-Hub/blob/4a1eb616326efe20b33ee9c5ca16b89e22530188/Lab%206/README.md#part-a-mqtt-messaging) records five ways devices could use the same publish/subscribe pattern:
+We considered five ways to use that exchange across devices.
 
-| Idea | What one device sends | What the other end does |
+| Idea | Interaction |
+| --- | --- |
+| Mix a target color | Each player sends the color under their sensor. Everyone adjusts their own input while watching the combined color on a display. |
+| Play one instrument together | One Pi changes pitch, another keeps time, and a third controls volume. A computer turns those messages into music. |
+| Show who is nearby | A Pi sends a change when someone approaches or leaves. A display in another room shows which locations are occupied. |
+| Pass a gesture around | Each player sends a gesture from their Pi. The game checks the messages against a sequence and advances when the group gets it right. |
+| Show the mood of a room | Several Pis measure light or activity. One computer interprets the readings and sends a shared room state back to the displays. |
+
+We also considered a color lock that opens when everyone holds the right color for two seconds. We used that timing rule for the drinks.
+
+## Part B | Finding my tile on the pixel grid
+
+When I set up my Pi, the Mini PiTFT still showed *Touch grass* from Lab 5. I connected the APDS-9960 color sensor to my Raspberry Pi 5 and ran the pixel-grid publisher. My Pi found the sensor at `0x39` on I²C bus 1 and sent its color readings to `IDD/pixelgrid/colors`. On the class grid, my tile was the one at the bottom left. [Course publisher](https://github.com/IRL-CT/Interactive-Lab-Hub/blob/Fall2026/Lab%206/pixel_grid_publisher.py)
+
+I held two differently colored objects in front of the sensor. My tile went from pale blue to turquoise. The RGB value at the center of each screenshot matched the value my Pi had sent. [Readings and timestamps](evidence/part-b-readings.json)
+
+| My Pi before the test | First reading | After I changed the object |
 | --- | --- | --- |
-| Color mixer | Each Pi sends its RGB reading. | One display blends the colors so players can match a target. |
-| Shared instrument | Pis send pitch, rhythm, or volume changes. | A computer plays the combined musical phrase. |
-| Remote presence | A Pi reports whether someone is near it. | Displays in other locations show which spaces are occupied. |
-| Gesture sequence | Each player sends a detected gesture. | The game checks whether the group performed the gestures in order. |
-| Room mood | Pis report light, motion, or proximity. | A controller combines the readings and sends one room state back to the displays. |
+| ![My Raspberry Pi, Mini PiTFT, and connected APDS-9960](evidence/part-b-pi.jpg) | ![My pale blue tile at the bottom left of the course grid](evidence/part-b-grid-initial.png) | ![My tile in the same position after it turned turquoise](evidence/part-b-grid-changed.png) |
+| The TFT still shows Lab 5. | RGB (186, 204, 255) | RGB (78, 255, 227) |
 
-[Bowei's brainstorm](https://github.com/bh654-dev/Interactive-Lab-Hub/blob/5724b5f8a9241a2a04012259836139f96973158f/Lab%206/README.md#part-a-mqtt-messaging) includes another related idea, *Color Lock*: every player has to hold the right color for two seconds. That same timing rule appears in the cocktail game.
+Each of us had a Pi and a color sensor on the table. [Shenye's setup](https://github.com/user-attachments/assets/511c006d-ebd8-4784-a8bb-c9f63d6dc416) · [Bowei's setup](https://github.com/user-attachments/assets/f10dca43-244e-4521-902f-b680a8be2645) · [Shenye's pixel-grid video](https://github.com/user-attachments/assets/95009eee-a4cc-4b49-87d5-eafd7e94d4da)
 
-## Part B: Collaborative Pixel Grid
+## Part C | Making a drink together
 
-Hanle connected an APDS-9960 to his Raspberry Pi 5. The Pi recognized the sensor on I²C bus 1 at address `0x39` and initialized the Mini PiTFT. The [course publisher](https://github.com/IRL-CT/Interactive-Lab-Hub/blob/Fall2026/Lab%206/pixel_grid_publisher.py) sent RGB values to `IDD/pixelgrid/colors`. On the course grid, Hanle's Pi occupied the bottom-left tile.
+We gave each player one ingredient to control. We could change our selections at the same time or add them one by one. To earn a point, we had to match the whole order and hold all three selections for two seconds. When we moved an object away, the sensor recognized its background and cleared that ingredient.
 
-| Hanle's setup | First grid reading | After changing the object |
-| --- | --- | --- |
-| ![Pi, Mini PiTFT, and wired APDS-9960](evidence/part-b-pi.jpg) | ![Bottom-left tile is pale blue](evidence/part-b-grid-initial.png) | ![Same tile is now turquoise](evidence/part-b-grid-changed.png) |
-| Before the test; the TFT still shows the previous lab. | RGB (186, 204, 255) | RGB (78, 255, 227) |
-
-In both screenshots the center pixel matched the RGB value the Pi had just published. The sensor log also contains both red-dominant and green-dominant readings from the two objects. [Timestamped readings](evidence/part-b-readings.json) · [Shenye's pixel-grid video](https://github.com/user-attachments/assets/95009eee-a4cc-4b49-87d5-eafd7e94d4da)
-
-**Hardware across the team:** [Hanle's Pi and sensor](evidence/part-b-pi.jpg), [Shenye's setup](https://github.com/user-attachments/assets/511c006d-ebd8-4784-a8bb-c9f63d6dc416), and [the setup in Bowei's notes](https://github.com/user-attachments/assets/f10dca43-244e-4521-902f-b680a8be2645). The latter two photographs come from [Shenye's](https://github.com/sw2486-hub/Interactive-Lab-Hub/blob/4a1eb616326efe20b33ee9c5ca16b89e22530188/Lab%206/README.md#part-b-collaborative-pixel-grid) and [Bowei's](https://github.com/bh654-dev/Interactive-Lab-Hub/blob/5724b5f8a9241a2a04012259836139f96973158f/Lab%206/README.md#part-b-collaborative-pixel-grid) lab records.
-
-## Part C: Color Cocktail Bar
-
-### From a colored object to an ingredient
-
-Each player presents an object to their sensor. A color selects a different ingredient depending on who holds it. When the three selections match the order for two uninterrupted seconds, the group earns a point. Moving an object away returns that input to its calibrated background and clears the selection.
-
-| Player controls | Red | Green | Blue |
+| What we controlled | Red | Green | Blue |
 | --- | --- | --- | --- |
 | Base | Strawberry | Green apple | Blueberry |
 | Flavor | Cherry | Lime | Blue syrup |
 | Garnish | Paper umbrella | Mint leaves | Star stirrer |
 
-| The physical input | The shared screen |
+In the two photos below, we were working on *The Garden Party*. We brought the flavor sensor up to a red bottle, and cherry appeared on the screen. The base and garnish were both offline, so we could see the flavor appear in the glass while the order stayed open.
+
+| At our table | On our screen |
 | --- | --- |
-| ![Player holds a color sensor beside a red bottle, with the shared order on a laptop](evidence/cocktail-workbench.jpg) | ![Live display showing The Garden Party with cherry as the only current ingredient](evidence/cocktail-screen.jpg) |
-| A player holds the sensor against a red bottle beside the Pi. | For *The Garden Party*, the flavor reads **Cherry**; the base and garnish are offline. |
+| ![The red bottle beside the color sensor and the shared laptop](evidence/cocktail-workbench.jpg) | ![The Garden Party order with cherry as the only ingredient](evidence/cocktail-screen.jpg) |
 
-These are two photographs of the same moment, provided by Hanle. They show a single ingredient registering. The completed order is a separate capture below.
+### Getting from the sensor to the glass
 
-### How the three Pis share a drink
+Our blue sample gave us a calibration problem. The flavor Pi measured an average of **(156.6, 255.4, 209.2)**. Green was the largest reading even though the object was blue. We took reference readings for red, green, blue, and the uncovered sensor. The program divides each channel by the sum of all three, compares those proportions with the references, and waits for three consecutive classifications to agree before changing the ingredient. [Flavor calibration](cocktail/calibration_B.json) · [Sensor program](cocktail/cocktail_sensor.py)
 
-```mermaid
-flowchart LR
-    base["Base: sensor + Pi"] -->|MQTT| broker["Course MQTT broker"]
-    flavor["Flavor: sensor + Pi"] -->|MQTT| broker
-    garnish["Garnish: sensor + Pi"] -->|MQTT| broker
-    broker -->|Ingredient readings| host["Flask on the host Pi: validate and forward"]
-    host -->|Server-Sent Events| screen["One shared browser: preview, timer and score"]
+```python
+r, g, b, light = sensor.color_data
+rgb = [r, g, b]
+color = stable.update(classify(rgb, light, references))
 ```
 
-Each Pi classifies colors locally using its own calibration. For the flavor sensor, the blue sample averaged **(156.6, 255.4, 209.2)**: picking the largest channel would have called it green. Instead, the program compares the proportions of all three channels with its red, green, blue, and background references. It waits for three consistent classifications before changing the selection. [Sensor code](cocktail/cocktail_sensor.py) · [Flavor calibration](cocktail/calibration_B.json)
+We gave each ingredient its own topic. Each Pi publishes its current selection twice a second. Our Flask server listens to all three topics, checks that the input named in the message matches its topic, and sends the reading to the browser. [Server program](cocktail/cocktail_server.py)
 
 | Ingredient | MQTT topic |
 | --- | --- |
@@ -71,40 +68,52 @@ Each Pi classifies colors locally using its own calibration. For the flavor sens
 | Flavor | `IDD/sw2486/cocktail/input/B` |
 | Garnish | `IDD/sw2486/cocktail/input/C` |
 
-The Pis send their current readings twice a second. The [server](cocktail/cocktail_server.py) checks that a message is fresh (not retained), comes from an ingredient topic, and names the same input as that topic. Only accepted messages are forwarded to the browser:
-
-```python
-def on_message(client, userdata, message):
-    data = validate_message(message.topic, message.payload, message.retain)
-    if data is not None:
-        broadcast(data)
+```mermaid
+flowchart LR
+    base["Base sensor and Pi"] -->|MQTT| broker["Course broker"]
+    flavor["Flavor sensor and Pi"] -->|MQTT| broker
+    garnish["Garnish sensor and Pi"] -->|MQTT| broker
+    broker -->|Ingredient messages| host["Flask on the host Pi"]
+    host -->|Server-Sent Events| screen["Shared browser updates the glass, timer and score"]
 ```
 
-The [browser](cocktail/templates/color_cocktail_bar.html) separately checks when it last heard from each Pi:
+We needed the game to distinguish a player holding a color steady from a Pi that had stopped sending. The browser drops an input from scoring after five seconds without a message. While all three inputs are current, the code below measures how long the colors match. If one player moves away early, the timer starts over. [Game code](cocktail/templates/color_cocktail_bar.html)
 
 ```javascript
-const fresh = (device,now) => Boolean(device && device.seen !== null && now-device.seen < 5000);
-const matches = (target,devices,now) => stations.every(id => fresh(devices[id],now) && devices[id].color === target[id]);
+if (!matched) return {start:null,complete:false,progress:0,awarded:false};
+const start=state.start === null ? now : state.start;
+const progress=Math.min(1,(now-start)/2000);
+return {start,complete:progress>=1,progress,awarded:progress>=1};
 ```
 
-A Pi that goes silent no longer counts toward an order after five seconds. If any ingredient stops matching during the two-second hold, the timer resets. Orders and scores belong to the browser, so the group played on one shared screen.
+### Playing a round
 
-### What happened during play
+We first used the on-screen buttons in Demo mode to check the ingredient mapping and scoring. When we switched to Live mode, the sensors controlled those same selections. During *Blue Hour Special*, blueberry appeared first. Cherry appeared next while the garnish was still offline. In another round, all three inputs came online and we completed order 036, *A Berry Good Time*. [Demo controls](https://github.com/user-attachments/assets/0456c663-4883-4a3b-a558-0bca58cfae2d) · [Blueberry](https://github.com/user-attachments/assets/30f4f758-074a-491f-889c-d83b6cf20d2d) · [Blueberry and cherry](https://github.com/user-attachments/assets/56174d4f-23c6-4544-afb2-b197ca4ce06a)
 
-In [Shenye's first live capture](https://github.com/user-attachments/assets/30f4f758-074a-491f-889c-d83b6cf20d2d), *Blue Hour Special* has only blueberry. In [the next capture](https://github.com/user-attachments/assets/56174d4f-23c6-4544-afb2-b197ca4ce06a), cherry joins the drink while the garnish is still offline. A separate live capture shows order 036, *A Berry Good Time*, marked complete with all three physical inputs online.
+![Our completed order with all three physical inputs online](https://github.com/user-attachments/assets/47bbc87d-7e41-473c-8be9-feb7540363de)
 
-![Completed live order with all three inputs online](https://github.com/user-attachments/assets/47bbc87d-7e41-473c-8be9-feb7540363de)
+### Where we put the game logic
 
-[Shenye's live captures](https://github.com/sw2486-hub/Interactive-Lab-Hub/blob/4a1eb616326efe20b33ee9c5ca16b89e22530188/Lab%206/README.md#5-actual-operation-screenshots) · [Manual demo screenshot](https://github.com/user-attachments/assets/0456c663-4883-4a3b-a558-0bca58cfae2d). The manual demo uses on-screen buttons and can be tried by opening the [HTML file](cocktail/templates/color_cocktail_bar.html) locally. Live mode uses the sensors and the Flask server.
+We kept color recognition on each Pi because each sensor had its own reference readings. The readings also depend on the lighting and how close the object is to the sensor. Changing the setup can mean taking a new set of samples.
 
-**Running the live version:** From the `Lab 6` directory, install the [Pi dependencies](requirements-pi.txt) on the input Pis and the [server dependencies](requirements-server.txt) on the host. Start `python cocktail/cocktail_server.py` on the host. For example, the flavor Pi runs `python cocktail/cocktail_sensor.py --station B --calibration cocktail/calibration_B.json`. The other inputs use their own role argument and calibration. The programs prompt for the course MQTT login unless it is already set in the environment. Open the host on port 8000, select **Live sensors**, and click **Connect**.
+We played on one laptop because each browser generates its own orders and keeps its own score. We shared sensor readings across devices, but opening a second browser would start a different game. Sharing one round across multiple screens would require the host to keep track of the order and score as well.
 
-### Testing with people outside the team
+### Trying it with two other players
 
-[Bowei's test note and photograph](https://github.com/bh654-dev/Interactive-Lab-Hub/blob/5724b5f8a9241a2a04012259836139f96973158f/Lab%206/README.md#user-testing) document a session with two friends who were not on the team. Bowei reports that both enjoyed the game and liked how it was made. Neither proposed a specific change. The team did not record what either person expected before playing or what surprised them. [Photograph from the session](https://github.com/user-attachments/assets/8ce9471f-477b-4123-b69c-71e01bafdbcf)
+Two friends from outside our group tried the game. Both enjoyed the game and liked how it was made. Neither had a specific change to suggest. We recorded their reactions after the session. Their expectations going in and anything that surprised them are still open questions for a follow-up. [Photo from our test session](https://github.com/user-attachments/assets/8ce9471f-477b-4123-b69c-71e01bafdbcf)
 
-### Team reflection
+### Running our setup
 
-In their published reflections, [Shenye](https://github.com/sw2486-hub/Interactive-Lab-Hub/blob/4a1eb616326efe20b33ee9c5ca16b89e22530188/Lab%206/README.md#6-reflection) and [Bowei](https://github.com/bh654-dev/Interactive-Lab-Hub/blob/5724b5f8a9241a2a04012259836139f96973158f/Lab%206/README.md#6-reflection) describe why they tested the interface in Demo mode first and how heartbeats helped distinguish a live selection from an old one. They suggest more consistent lighting at the sensors and moving the orders and score to the server so different browsers could share one game.
+For Demo mode, open the [game HTML](cocktail/templates/color_cocktail_bar.html) locally. For Live mode, install the [Pi dependencies](requirements-pi.txt) on each sensor Pi and the [server dependencies](requirements-server.txt) on the host. From the `Lab 6` directory, start the host with `python cocktail/cocktail_server.py`. The flavor Pi uses the command below with our saved calibration. The other two Pis use their own ingredient argument and calibration file.
 
-**AI assistance:** The team supplied the game files, calibration, brainstorms, test observations, and reflection sources. ChatGPT provided setup guidance. Codex ran the pixel-grid check, verified the recorded values, and helped organize and publish this technical documentation.
+```sh
+python cocktail/cocktail_sensor.py --station B --calibration cocktail/calibration_B.json
+```
+
+The programs prompt for the course MQTT login if it is not set in the environment. Open the host on port 8000 in a browser, select **Live sensors**, and click **Connect**.
+
+**Team materials**  
+I included my classroom photos and pixel-grid readings here. Shenye shared the game captures, and Bowei documented the playtest. [Shenye's notes and reflection](https://github.com/sw2486-hub/Interactive-Lab-Hub/blob/4a1eb616326efe20b33ee9c5ca16b89e22530188/Lab%206/README.md#6-reflection) · [Bowei's test notes and photo](https://github.com/bh654-dev/Interactive-Lab-Hub/blob/5724b5f8a9241a2a04012259836139f96973158f/Lab%206/README.md#user-testing)
+
+**AI assistance**  
+We used ChatGPT for setup guidance. I used Codex to run the pixel-grid check, compare the readings with the screenshots, and help edit and publish this write-up.
